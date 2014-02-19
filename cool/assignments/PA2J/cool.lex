@@ -33,6 +33,9 @@ import java_cup.runtime.Symbol;
     AbstractSymbol curr_filename() {
 	return filename;
     }
+
+    private int comment_count = 0;
+
 %}
 
 %init{
@@ -57,6 +60,7 @@ import java_cup.runtime.Symbol;
     case YYINITIAL:
 	/* nothing special to do in the initial state */
 	break;
+
 	/* If necessary, add code for other states here, e.g:
 	   case COMMENT:
 	   ...
@@ -69,20 +73,38 @@ import java_cup.runtime.Symbol;
 %class CoolLexer
 %cup
 
+%states COMMENT
+
+KEYWORD="if"|"else"
+IDENTIFIER="class"
+
 %%
 
-<YYINITIAL>"=>"     {   /* Sample lexical rule for "=>" arrow.
-                        Further lexical rules should be defined
-                        here, after the last %% separator */
-                        return new Symbol(TokenConstants.DARROW);
-                    }
+<YYINITIAL>","              {   return new Symbol(TokenConstants.COMMA); }
 
-<YYINITIAL>"("      {   return new Symbol(TokenConstants.LPAREN); }
-<YYINITIAL>")"      {   return new Symbol(TokenConstants.RPAREN); }
+<YYINITIAL,COMMENT>\n       { }
 
-<YYINITIAL>.        {   /* This rule should be the very last
-                        in your lexical specification and
-                        will match match everything not
-                        matched by other lexical rules. */
-                        System.err.println("LEXER BUG - UNMATCHED: " + yytext());
-                    }
+<YYINITIAL>"(*"             {   yybegin(COMMENT);
+                                comment_count = comment_count + 1;
+                            }
+
+<COMMENT>"*)"               {   yybegin(YYINITIAL);
+                                comment_count = comment_count - 1;
+                                if (comment_count == 0) {
+                                    yybegin(YYINITIAL);
+                                }
+                            }
+<COMMENT>.                  { }
+<YYINITIAL>{KEYWORD}        {
+                                String text = yytext();
+                                AbstractTable.stringtable.addString(text, text.length());
+                                return new Symbol(TokenConstants.TYPEID, AbstractTable.stringtable.lookup(text));
+                            }
+<YYINITIAL>.                {   /* This rule should be the very last
+                                in your lexical specification and
+                                will match match everything not
+                                matched by other lexical rules. */
+                                System.err.println("LEXER BUG - UNMATCHED: " + yytext());
+                            }
+
+    

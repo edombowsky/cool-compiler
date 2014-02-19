@@ -1,7 +1,7 @@
 
 ASSN = 1
 CLASS= cs143
-CLASSDIR= /usr/class/cs143/cool
+CLASSDIR= ~/cool-compiler/cool
 SRC= stack.cl README 
 LSRC= Makefile atoi.cl stack.test
 

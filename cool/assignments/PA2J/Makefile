@@ -1,7 +1,7 @@
 
 ASSN = 2J
 CLASS= cs143
-CLASSDIR= /usr/class/cs143/cool
+CLASSDIR= ~/cool-compiler/cool
 LIB= -lfl
 
 SRC= cool.lex test.cl README
