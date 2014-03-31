@@ -59,7 +59,7 @@ int comment_depth = 0;
 %x S_LINE_COMMENT
 
 NUMBER          [0-9]
-LOWERCASE       [a-b]
+LOWERCASE       [a-z]
 UPPERCASE       [A-Z]
 ALPHANUM        [a-zA-Z0-9_]
 
@@ -225,7 +225,7 @@ f(?i:false)     {
   * ------------------------------------------------------------------------ */
 
 \n              {   curr_lineno++; }
- /*{WHITESPACE}+   {}*/
+[ \t]           {}
 .               {   
 	                /*cool_yylval.error_msg = yytext;
                     return (ERROR);*/
