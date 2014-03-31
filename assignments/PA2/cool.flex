@@ -40,6 +40,7 @@ extern int verbose_flag;
 extern YYSTYPE cool_yylval;
 
 /* DECLARATIONS
+ * test
  * ======================================================================== */
 
 /* `comment_depth` ensures we do not leave the COMMENT state too early,
