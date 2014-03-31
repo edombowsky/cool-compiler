@@ -42,10 +42,12 @@ extern YYSTYPE cool_yylval;
 /* DECLARATIONS
  * ======================================================================== */
 
-/* `comment_depth` ensures we do not leave the COMMENT state too early,
- * i.e. that we properly handle nested comments.
- */
+/* `comment_depth` ensures that we properly handle nested comments */
 int comment_depth = 0;
+
+/* `string_length` ensures that we do not go over Cool's 1024 char limit */
+int string_length;
+
 
 %}
 
@@ -57,11 +59,12 @@ int comment_depth = 0;
  */
 %x COMMENT
 %x S_LINE_COMMENT
+%x STRING
 
 NUMBER          [0-9]
 LOWERCASE       [a-z]
 UPPERCASE       [A-Z]
-ALPHANUM        [a-zA-Z0-9_]
+ALPHANUMERIC    [a-zA-Z0-9_]
 
 DARROW          =>
 LE              <=
@@ -70,8 +73,8 @@ ASSIGN          <-
 /* space, backspace, tab, newline, formfeed */
 WHITESPACE      [ \t]
 
-TYPEID          {UPPERCASE}{ALPHANUM}+
-OBJECTID        {LOWERCASE}{ALPHANUM}+
+TYPEID          {UPPERCASE}{ALPHANUMERIC}+
+OBJECTID        {LOWERCASE}{ALPHANUMERIC}+
 
 %%
 
@@ -109,9 +112,15 @@ OBJECTID        {LOWERCASE}{ALPHANUM}+
                             BEGIN(INITIAL);
                         }
                     }
+<COMMENT><<EOF>>    {
+                        BEGIN(INITIAL);
+                        cool_yylval.error_msg = "EOF in comment";
+                        return (ERROR);
+	                }
 "*)"                {
+                        BEGIN(INITIAL);
                         cool_yylval.error_msg = "Unmatched *)";
-                        return ERROR;
+                        return (ERROR);
 	                }
 "--"                {   BEGIN(S_LINE_COMMENT); }
 <S_LINE_COMMENT>.   {}
@@ -202,7 +211,6 @@ f(?i:false)     {
 
 
  /* Identifiers
-  * 
   * TONO: Do we need to check if each identifier is in the string table first?
   * ------------------------------------------------------------------------ */
 {TYPEID}        {
@@ -220,6 +228,14 @@ f(?i:false)     {
   * \n \t \b \f, the result is c.
   * ------------------------------------------------------------------------ */
 
+\"              {
+                    BEGIN(STRING);
+                    string_length = 0;
+	            }
+<STRING>\"      {
+                    BEGIN(INITIAL);      
+	            }
+
 
  /* eat up everything else
   * ------------------------------------------------------------------------ */
@@ -232,3 +248,8 @@ f(?i:false)     {
                 }
 
 %%
+
+
+ /* USER SUBROUTINES
+  * ======================================================================== */
+
