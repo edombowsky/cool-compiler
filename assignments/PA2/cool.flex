@@ -60,12 +60,15 @@ int comment_depth = 0;
 /* State declarations, which are syntactic sugar for a global variable that
  * keeps track of the state.
  */
-%Start COMMENT
-%Start S_LINE_COMMENT
+%x COMMENT
+%x S_LINE_COMMENT
 
 DARROW          =>
+LE              <=
 ASSIGN          <-
 DIGIT           [0-9]
+/* space, backspace, tab, newline, formfeed */
+WHITESPACE      [ \b\t\n\f]
 
 %%
 
@@ -95,6 +98,16 @@ DIGIT           [0-9]
   * Note 1: Flex throws an error when these comment blocks are not proceeded by white space.
   * Note 2: Flex throws an error when you explicitly provide the initial state, i.e. "<INITIAL>".
   * Note 3: Flex throws an error when any rule is proceeded by whitespace.
+  *
+  * TODO:
+  * COMMENT - EOF
+  * S_LINE_COMMENT - EOF
+  * NOT
+  * ISVOID
+  *
+  * TONO:
+  * Why () around DARROW?
+  * When do we use a string table?
   * ======================================================================== */
 
 
@@ -102,34 +115,31 @@ DIGIT           [0-9]
   * Comments
   * ------------------------------------------------------------------------ */
 
-"(*"            {
-	                /* `BEGIN` changes the global state variable. Now we can
-	                 * predicate on the COMMMENT rule.
-	                 */
-	                comment_depth++;
-	                BEGIN(COMMENT);
-	            }
-<COMMENT>"*)"   {
-                    comment_depth--;
-                    if (comment_depth == 0) {
+"(*"                {
+	                    /* `BEGIN` changes the global state variable. Now we can
+	                    * predicate on the COMMMENT rule.
+	                    */
+                        comment_depth++;
+                        BEGIN(COMMENT);
+                    }
+<COMMENT>.          {}
+<COMMENT>\n         {   curr_lineno++; }
+<COMMENT>"*)"       {
+                        comment_depth--;
+                        if (comment_depth == 0) {
+                            BEGIN(INITIAL);
+                        }
+                    }
+"*)"                {
+                        cool_yylval.error_msg = "Unmatched *)";
+                        return ERROR;
+	                }
+"--"                {   BEGIN(S_LINE_COMMENT); }
+<S_LINE_COMMENT>.   {}
+<S_LINE_COMMENT>\n  {
+                        curr_lineno++;
                         BEGIN(INITIAL);
                     }
-	            }
-
- /* Handling unmatched "*)" input
-  */
-"\*)"           {
-                    cool_yylval.error_msg = "Unmatched *)";
-                    return ERROR;
-	            }
-"--"            {
-                    BEGIN(S_LINE_COMMENT);
-	            }
-<S_LINE_COMMENT>.     {}
-<S_LINE_COMMENT>\n    {
-                    BEGIN(INITIAL);
-                }
- /* TODO: <S_LINE>COMENT><<EOF>> */
 
 
  /* Miscellaneous
@@ -152,7 +162,6 @@ DIGIT           [0-9]
                      */
                     return INT_CONST;
 	            }
-
 "+"             {   return '+'; }
 "/"             {   return '/'; }
 "-"             {   return '-'; }
@@ -174,8 +183,9 @@ DIGIT           [0-9]
  /* The multiple-character operators.
   * ------------------------------------------------------------------------ */
 
-{DARROW}		{   return DARROW; }
-{ASSIGN}        {   return ASSIGN; }
+{DARROW}		{   return (DARROW); }
+{LE}            {   return (LE); }
+{ASSIGN}        {   return (ASSIGN); }
 
 
  /* Keywords
@@ -185,38 +195,43 @@ DIGIT           [0-9]
   *
   * Flex documentation on patterns:
   * flex.sourceforge.net/manual/Patterns.html
-  *
-  * We do not have to add them to a string table because they are constants to
-  * the compiler. A string table is for things like identifiers.
   * ------------------------------------------------------------------------ */
 
-(?i:class)      {   return CLASS; }
-(?i:else)       {   return ELSE; }
-(?i:fi)         {   return FI; }
-(?i:if)         {   return IF; }
-(?i:in)         {   return IN; }
-(?i:inherits)   {   return INHERITS; }
-(?i:let)        {   return LET; }
-(?i:loop)       {   return LOOP; }
-(?i:pool)       {   return POOL; }
-(?i:then)       {   return THEN; }
-(?i:while)      {   return WHILE; }
-(?i:case)       {   return CASE; }
-(?i:esac)       {   return ESAC; }
-(?i:of)         {   return OF; }
-(?i:new)        {   return NEW; }
-t(?i:rue)       {   return BOOL_CONST; }
-f(?i:false)     {   return BOOL_CONST; }
-    
-    /* TODO: handle... */
-    /* LE, NOT, ISVOID */
+(?i:class)      {   return (CLASS); }
+(?i:else)       {   return (ELSE); }
+(?i:fi)         {   return (FI); }
+(?i:if)         {   return (IF); }
+(?i:in)         {   return (IN); }
+(?i:inherits)   {   return (INHERITS); }
+(?i:let)        {   return (LET); }
+(?i:loop)       {   return (LOOP); }
+(?i:pool)       {   return (POOL); }
+(?i:then)       {   return (THEN); }
+(?i:while)      {   return (WHILE); }
+(?i:case)       {   return (CASE); }
+(?i:esac)       {   return (ESAC); }
+(?i:of)         {   return (OF); }
+(?i:new)        {   return (NEW); }
+
+ /* "For boolean constants, the semantic value is stored in the field
+  * `cool_yylval.boolean`.
+  */
+t(?i:rue)       {   
+	                cool_yylval.boolean = true;
+	                return (BOOL_CONST);
+	            }
+f(?i:false)     {   
+	                cool_yylval.boolean = false;
+	                return (BOOL_CONST);
+	            }
+
 
  /*
   *  String constants (C syntax)
   *  Escape sequence \c is accepted for all characters c. Except for 
   *  \n \t \b \f, the result is c.
-  *
-  */
+  * ------------------------------------------------------------------------ */
+
 
 
 %%
