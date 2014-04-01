@@ -31,7 +31,10 @@ extern FILE *fin; /* we read from this file */
 	if ( (result = fread( (char*)buf, sizeof(char), max_size, fin)) < 0) \
 		YY_FATAL_ERROR( "read() in flex scanner failed");
 
-char string_buf[MAX_STR_CONST]; /* to assemble string constants */
+/* to assembl string constants */
+char string_buf[MAX_STR_CONST];
+
+/* I think this is to find the last position in the array */
 char *string_buf_ptr;
 
 extern int curr_lineno;
@@ -45,7 +48,8 @@ extern YYSTYPE cool_yylval;
 /* `comment_depth` ensures that we properly handle nested comments */
 int comment_depth = 0;
 
-/* `string_length` ensures that we do not go over Cool's 1024 char limit */
+/* `string_length` ensures that we do not go over Cool's 1024 char limit 
+ * I think we can just compare this to MAX_STR_CONST */
 int string_length;
 
 
@@ -226,14 +230,28 @@ f(?i:false)     {
  /* String constants (C syntax)
   * Escape sequence \c is accepted for all characters c. Except for 
   * \n \t \b \f, the result is c.
+  *
+  * TODO: Handle errors
   * ------------------------------------------------------------------------ */
 
 \"              {
                     BEGIN(STRING);
+                    /* char string_buf[MAX_STR_CONST]; */
+                    /* char *string_buf_ptr; */
                     string_length = 0;
 	            }
 <STRING>\"      {
-                    BEGIN(INITIAL);      
+                    BEGIN(INITIAL);
+                    cool_yylval.symbol = inttable.add_string(string_buf);
+                    /* reset char array (string) */
+                    string_buf[0] = '\0';
+                    return (STR_CONST);
+	            }
+<STRING>.       {
+                    /* string_length += 1; */
+                    /* string_buf[string_length] = yytext; */
+                    /* www.cplusplus.com/reference/cstring/strcat/ */
+                    strcat(string_buf, yytext);
 	            }
 
 
