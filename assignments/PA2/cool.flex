@@ -243,15 +243,42 @@ f(?i:false)     {
 <STRING>\"      {
                     BEGIN(INITIAL);
                     cool_yylval.symbol = inttable.add_string(string_buf);
-                    /* reset char array (string) */
                     string_buf[0] = '\0';
                     return (STR_CONST);
 	            }
+<STRING>\0      {
+                    BEGIN(INITIAL);
+                    cool_yylval.error_msg = "String contains null character";
+                    string_buf[0] = '\0';
+                    return (ERROR);
+	            }
+<STRING>\n      {
+                    BEGIN(INITIAL);
+                    cool_yylval.error_msg = "Unterminated string constant";
+                    /* Do not stop lexing */
+                    return (ERROR);
+	            }
+<STRING>\\n     {
+                    string_length = string_length + 2;
+                    if (string_length >= MAX_STR_CONST) {
+                        string_buf[0] = '\0';
+                        cool_yylval.error_msg = "String constant too long";
+                        return (ERROR);
+                    } else {
+                        strcat(string_buf, "\n");
+                    }
+	            }
 <STRING>.       {
-                    /* string_length += 1; */
-                    /* string_buf[string_length] = yytext; */
-                    /* www.cplusplus.com/reference/cstring/strcat/ */
-                    strcat(string_buf, yytext);
+                    string_length += 1;
+                    if (string_length >= MAX_STR_CONST) {
+                    	/* TODO: Not sure this actually works */
+                        string_buf[0] = '\0';
+                        cool_yylval.error_msg = "String constant too long";
+                        return (ERROR);
+                    } else {
+                        /* www.cplusplus.com/reference/cstring/strcat/ */
+                        strcat(string_buf, yytext);
+                    }
 	            }
 
 
