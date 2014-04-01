@@ -1458,8 +1458,8 @@ case 52:
 YY_RULE_SETUP
 #line 245 "cool.flex"
 {   
-	                /*cool_yylval.error_msg = yytext;
-                    return (ERROR);*/
+	                cool_yylval.error_msg = yytext;
+                    return (ERROR);
                 }
 	YY_BREAK
 case 53:

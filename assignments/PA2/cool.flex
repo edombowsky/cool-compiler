@@ -243,8 +243,8 @@ f(?i:false)     {
 \n              {   curr_lineno++; }
 [ \t]           {}
 .               {   
-	                /*cool_yylval.error_msg = yytext;
-                    return (ERROR);*/
+	                cool_yylval.error_msg = yytext;
+                    return (ERROR);
                 }
 
 %%
