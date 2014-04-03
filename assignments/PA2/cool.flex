@@ -250,9 +250,13 @@ f(?i:false)     {
                     return (ERROR);
 	            }
 <STRING>\n      {
-                    BEGIN(INITIAL);
                     cool_yylval.error_msg = "Unterminated string constant";
+                    
                     /* Do not stop lexing */
+                    curr_lineno++;
+                    string_buf[0] = '\0';
+                    BEGIN(INITIAL);
+                    
                     return (ERROR);
 	            }
 <STRING>\\n     {

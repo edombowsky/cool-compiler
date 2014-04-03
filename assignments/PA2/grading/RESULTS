@@ -1,5 +1,4 @@
 	-1 (arith)	  arith example
-	-1 (backslash2)	 more backslashes in strings
 	-1 (book_list)	 sample program
 	-1 (eofstring)	  eof in a string
 	-1 (escaped_chars_in_comment)	 escaped chars in comment

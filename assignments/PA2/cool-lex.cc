@@ -666,8 +666,8 @@ static yyconst flex_int16_t yy_rule_linenum[62] =
       166,  167,  168,  169,  170,  171,  172,  173,  185,  186,
       187,  188,  189,  190,  191,  192,  193,  194,  195,  196,
       197,  198,  199,  204,  208,  217,  221,  234,  240,  246,
-      252,  258,  268,  278,  288,  300,  306,  319,  336,  337,
-      338
+      252,  262,  272,  282,  292,  304,  310,  323,  340,  341,
+      342
     } ;
 
 /* The intent behind this definition is that it'll catch
@@ -1474,15 +1474,19 @@ case 51:
 YY_RULE_SETUP
 #line 252 "cool.flex"
 {
-                    BEGIN(INITIAL);
                     cool_yylval.error_msg = "Unterminated string constant";
+                    
                     /* Do not stop lexing */
+                    curr_lineno++;
+                    string_buf[0] = '\0';
+                    BEGIN(INITIAL);
+                    
                     return (ERROR);
 	            }
 	YY_BREAK
 case 52:
 YY_RULE_SETUP
-#line 258 "cool.flex"
+#line 262 "cool.flex"
 {
                     string_length = string_length + 2;
                     if (string_length >= MAX_STR_CONST) {
@@ -1496,7 +1500,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 53:
 YY_RULE_SETUP
-#line 268 "cool.flex"
+#line 272 "cool.flex"
 {
                     string_length = string_length + 2;
                     if (string_length >= MAX_STR_CONST) {
@@ -1510,7 +1514,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 54:
 YY_RULE_SETUP
-#line 278 "cool.flex"
+#line 282 "cool.flex"
 {
                     string_length = string_length + 2;
                     if (string_length >= MAX_STR_CONST) {
@@ -1524,7 +1528,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 55:
 YY_RULE_SETUP
-#line 288 "cool.flex"
+#line 292 "cool.flex"
 {
                     string_length = string_length + 2;
                     if (string_length >= MAX_STR_CONST) {
@@ -1540,7 +1544,7 @@ YY_RULE_SETUP
 case 56:
 /* rule 56 can match eol */
 YY_RULE_SETUP
-#line 300 "cool.flex"
+#line 304 "cool.flex"
 {
                     curr_lineno++;
                     strcat(string_buf, "\n");
@@ -1549,7 +1553,7 @@ YY_RULE_SETUP
 /* All other escaped characters should just return the character. */
 case 57:
 YY_RULE_SETUP
-#line 306 "cool.flex"
+#line 310 "cool.flex"
 {
                     string_length = string_length + 2;
                     if (string_length >= MAX_STR_CONST) {
@@ -1566,7 +1570,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 58:
 YY_RULE_SETUP
-#line 319 "cool.flex"
+#line 323 "cool.flex"
 {
                     string_length += 1;
                     if (string_length >= MAX_STR_CONST) {
@@ -1585,17 +1589,17 @@ YY_RULE_SETUP
 case 59:
 /* rule 59 can match eol */
 YY_RULE_SETUP
-#line 336 "cool.flex"
+#line 340 "cool.flex"
 {   curr_lineno++; }
 	YY_BREAK
 case 60:
 YY_RULE_SETUP
-#line 337 "cool.flex"
+#line 341 "cool.flex"
 {}
 	YY_BREAK
 case 61:
 YY_RULE_SETUP
-#line 338 "cool.flex"
+#line 342 "cool.flex"
 {   
 	                cool_yylval.error_msg = yytext;
                     return (ERROR);
@@ -1603,10 +1607,10 @@ YY_RULE_SETUP
 	YY_BREAK
 case 62:
 YY_RULE_SETUP
-#line 343 "cool.flex"
+#line 347 "cool.flex"
 ECHO;
 	YY_BREAK
-#line 1610 "cool-lex.cc"
+#line 1614 "cool-lex.cc"
 case YY_STATE_EOF(INITIAL):
 case YY_STATE_EOF(S_LINE_COMMENT):
 case YY_STATE_EOF(STRING):
@@ -2743,7 +2747,7 @@ void yyfree (void * ptr )
 
 /* %ok-for-header */
 
-#line 343 "cool.flex"
+#line 347 "cool.flex"
 
 
 

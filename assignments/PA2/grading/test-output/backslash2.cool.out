@@ -1,7 +1,0 @@
-LONGERROR
-LONGERROR
-LONGERROR
-LONGERROR
-STR_CONST "I'm not going to escape this newlineThis is also not escaped \\This is, though \\\n"
-STR_CONST "\\"
-STR_CONST "It's fine to have this: \n in a string"
