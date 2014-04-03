@@ -82,16 +82,14 @@ OBJECTID        [a-z]{ALPHANUMERIC}*
 
  /* RULES
   *
-  * TODO:
-  * COMMENT - EOF
-  * S_LINE_COMMENT - EOF
-  * NOT
-  * ISVOID
+  * Flex documentation on patterns:
+  * flex.sourceforge.net/manual/Patterns.html
   *
   * TONO:
   * Why () around DARROW?
   * When do we use a string table?
   * Why use inttable rather than string table?
+  * What is an EOF in the file? What does it actually "look" like?
   * ======================================================================== */
 
  /*
@@ -114,8 +112,9 @@ OBJECTID        [a-z]{ALPHANUMERIC}*
                         }
                     }
 <COMMENT><<EOF>>    {
-                        BEGIN(INITIAL);
                         cool_yylval.error_msg = "EOF in comment";
+                        curr_lineno++;
+                        BEGIN(INITIAL);
                         return (ERROR);
 	                }
 "*)"                {
@@ -135,19 +134,8 @@ OBJECTID        [a-z]{ALPHANUMERIC}*
   * ------------------------------------------------------------------------ */
 
 {NUMBER}+       {
-	                /* From the Flex manual:
-	                 * "yytext points to the first character of the match in the input buffer."
-	                 *
-	                 * From the PA1 assignment PDF:
-	                 * "To save space and time, a common compiler practice is to store lexemes in a string table."
-	                 * This line of that when we encounter a character that matches the regular expression [0-9],
-	                 * we add that character (yytext), to the inttable as a string. This ensure that every integer
-	                 * is only added once.
-	                 */
                     cool_yylval.symbol = inttable.add_string(yytext);
-
-                    /* See ./utilities.cc for a list of constants you can return.
-                     */
+                    /* See ./utilities.cc for a list of constants you can return. */
                     return INT_CONST;
 	            }
 
@@ -177,9 +165,6 @@ OBJECTID        [a-z]{ALPHANUMERIC}*
   * 
   * Keywords are case-insensitive except for the values true and false,
   * which must begin with a lower-case letter.
-  *
-  * Flex documentation on patterns:
-  * flex.sourceforge.net/manual/Patterns.html
   * ------------------------------------------------------------------------ */
 
 (?i:class)      {   return (CLASS); }
@@ -212,7 +197,6 @@ f(?i:false)     {
 
 
  /* Identifiers
-  * TONO: Do we need to check if each identifier is in the string table first?
   * ------------------------------------------------------------------------ */
 {TYPEID}        {
                     cool_yylval.symbol = inttable.add_string(yytext);
@@ -227,8 +211,6 @@ f(?i:false)     {
  /* String constants (C syntax)
   * Escape sequence \c is accepted for all characters c. Except for 
   * \n \t \b \f, the result is c.
-  *
-  * TODO: Handle errors
   * ------------------------------------------------------------------------ */
 
 \"              {
@@ -251,7 +233,6 @@ f(?i:false)     {
 	            }
 <STRING>\n      {
                     cool_yylval.error_msg = "Unterminated string constant";
-                    
                     /* Do not stop lexing */
                     curr_lineno++;
                     string_buf[0] = '\0';
@@ -320,6 +301,12 @@ f(?i:false)     {
                         strcat(string_buf, &myStr[1]);
                     }
 	            }
+<STRING><<EOF>> {
+                    cool_yylval.error_msg = "EOF in string constant";
+                    curr_lineno++;
+	                BEGIN(INITIAL);
+                    return (ERROR);
+	            }
 <STRING>.       {
                     string_length += 1;
                     if (string_length >= MAX_STR_CONST) {
@@ -337,6 +324,12 @@ f(?i:false)     {
  /* eat up everything else
   * ------------------------------------------------------------------------ */
 
+ /*\<<EOF>>        {
+	                BEGIN(INITIAL);
+                    curr_lineno++;
+                    cool_yylval.error_msg = "EOF in comment";
+                    return (ERROR);
+	            }*/
 \n              {   curr_lineno++; }
 [ \t]           {}
 .               {   
