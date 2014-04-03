@@ -88,8 +88,6 @@ OBJECTID        [a-z]{ALPHANUMERIC}*
   *
   * TONO:
   * Why () around DARROW?
-  * When do we use a string table?
-  * Why use inttable rather than string table?
   * What is an EOF in the file? What does it actually "look" like?
   * ======================================================================== */
 
@@ -204,11 +202,11 @@ f(?i:alse)     {
  /* Identifiers
   * ------------------------------------------------------------------------ */
 {TYPEID}        {
-                    cool_yylval.symbol = inttable.add_string(yytext);
+                    cool_yylval.symbol = stringtable.add_string(yytext);
                     return (TYPEID);
 	            }
 {OBJECTID}      {
-                    cool_yylval.symbol = inttable.add_string(yytext);
+                    cool_yylval.symbol = stringtable.add_string(yytext);
                     return (OBJECTID);
 	            }
 
@@ -220,12 +218,10 @@ f(?i:alse)     {
 
 \"              {
                     BEGIN(STRING);
-                    /* char string_buf[MAX_STR_CONST]; */
-                    /* char *string_buf_ptr; */
                     string_length = 0;
 	            }
 <STRING>\"      {
-                    cool_yylval.symbol = inttable.add_string(string_buf);
+                    cool_yylval.symbol = stringtable.add_string(string_buf);
                     string_buf[0] = '\0';
                     BEGIN(INITIAL);
                     return (STR_CONST);
@@ -253,7 +249,7 @@ f(?i:alse)     {
 	            }
 <STRING>\\n     {
                     string_length = string_length + 2;
-                    if (string_length >= MAX_STR_CONST) {
+                    if (string_length >= MAX_STR_CONST - 1) {
                         string_buf[0] = '\0';
                         cool_yylval.error_msg = "String constant too long";
                         return (ERROR);
@@ -263,7 +259,7 @@ f(?i:alse)     {
 	            }
 <STRING>\\t     {
                     string_length = string_length + 2;
-                    if (string_length >= MAX_STR_CONST) {
+                    if (string_length >= MAX_STR_CONST - 1) {
                         string_buf[0] = '\0';
                         cool_yylval.error_msg = "String constant too long";
                         return (ERROR);
@@ -273,7 +269,7 @@ f(?i:alse)     {
 	            }
 <STRING>\\b     {
                     string_length = string_length + 2;
-                    if (string_length >= MAX_STR_CONST) {
+                    if (string_length >= MAX_STR_CONST - 1) {
                         string_buf[0] = '\0';
                         cool_yylval.error_msg = "String constant too long";
                         return (ERROR);
@@ -283,7 +279,7 @@ f(?i:alse)     {
 	            }
 <STRING>\\f     {
                     string_length = string_length + 2;
-                    if (string_length >= MAX_STR_CONST) {
+                    if (string_length >= MAX_STR_CONST - 1) {
                         string_buf[0] = '\0';
                         cool_yylval.error_msg = "String constant too long";
                         return (ERROR);
@@ -301,7 +297,7 @@ f(?i:alse)     {
  /* All other escaped characters should just return the character. */
 <STRING>\\.     {
                     string_length = string_length + 2;
-                    if (string_length >= MAX_STR_CONST) {
+                    if (string_length >= MAX_STR_CONST - 1) {
                         string_buf[0] = '\0';
                         cool_yylval.error_msg = "String constant too long";
                         return (ERROR);
@@ -320,7 +316,7 @@ f(?i:alse)     {
 	            }
 <STRING>.       {
                     string_length += 1;
-                    if (string_length >= MAX_STR_CONST) {
+                    if (string_length >= MAX_STR_CONST - 1) {
                     	/* TODO: Not sure this actually works */
                         string_buf[0] = '\0';
                         cool_yylval.error_msg = "String constant too long";
