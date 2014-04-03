@@ -295,6 +295,20 @@ f(?i:false)     {
                         strcat(string_buf, "\f");
                     }
 	            }
+ /* All other escaped characters should just return the character. */
+<STRING>\\.     {
+                    string_length = string_length + 2;
+                    if (string_length >= MAX_STR_CONST) {
+                        string_buf[0] = '\0';
+                        cool_yylval.error_msg = "String constant too long";
+                        return (ERROR);
+                    } else {
+                    	/* `yytext` is a const. Convert it to a pointer to a new string */
+                    	char* myStr = strdup(yytext);
+                    	/* dereference the string and get the first element, disregarding the escape slash */
+                        strcat(string_buf, &myStr[1]);
+                    }
+	            }
 <STRING>.       {
                     string_length += 1;
                     if (string_length >= MAX_STR_CONST) {
