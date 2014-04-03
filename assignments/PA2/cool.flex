@@ -185,6 +185,8 @@ OBJECTID        [a-z]{ALPHANUMERIC}*
 (?i:esac)       {   return (ESAC); }
 (?i:of)         {   return (OF); }
 (?i:new)        {   return (NEW); }
+(?i:not)        {   return (NOT); }
+(?i:isvoid)     {   return (ISVOID); }
 
  /* "For boolean constants, the semantic value is stored in the field
   * `cool_yylval.boolean`.
@@ -193,7 +195,7 @@ t(?i:rue)       {
 	                cool_yylval.boolean = true;
 	                return (BOOL_CONST);
 	            }
-f(?i:false)     {   
+f(?i:alse)     {   
 	                cool_yylval.boolean = false;
 	                return (BOOL_CONST);
 	            }
