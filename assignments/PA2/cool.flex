@@ -64,6 +64,7 @@ int string_length;
 %x COMMENT
 %x S_LINE_COMMENT
 %x STRING
+%x STRING_ERR
 
 NUMBER          [0-9]
 ALPHANUMERIC    [a-zA-Z0-9_]
@@ -97,8 +98,8 @@ OBJECTID        [a-z]{ALPHANUMERIC}*
   * ------------------------------------------------------------------------ */
 
 "(*"                {
-	                    /* `BEGIN` changes the global state variable. Now we can
-	                     * predicate on the COMMMENT rule.
+	                    /* `BEGIN` changes the global state variable. Now we
+	                     * can predicate on the COMMMENT rule.
 	                     */
                         comment_depth++;
                         BEGIN(COMMENT);
@@ -135,8 +136,9 @@ OBJECTID        [a-z]{ALPHANUMERIC}*
   * ------------------------------------------------------------------------ */
 
 {NUMBER}+       {
+                    /* See ./utilities.cc for a list of constants you can
+                     * return. */
                     cool_yylval.symbol = inttable.add_string(yytext);
-                    /* See ./utilities.cc for a list of constants you can return. */
                     return INT_CONST;
 	            }
 
@@ -221,24 +223,30 @@ f(?i:false)     {
                     string_length = 0;
 	            }
 <STRING>\"      {
-                    BEGIN(INITIAL);
                     cool_yylval.symbol = inttable.add_string(string_buf);
                     string_buf[0] = '\0';
+                    BEGIN(INITIAL);
                     return (STR_CONST);
 	            }
 <STRING>\0      {
-                    BEGIN(INITIAL);
                     cool_yylval.error_msg = "String contains null character";
+                    curr_lineno++;
                     string_buf[0] = '\0';
+                    BEGIN(STRING_ERR);
+                    return (ERROR);
+	            }
+<STRING>\\\0    {
+                    cool_yylval.error_msg = "String contains escaped null character.";
+                    curr_lineno++;
+                    string_buf[0] = '\0';
+                    BEGIN(STRING_ERR);
                     return (ERROR);
 	            }
 <STRING>\n      {
                     cool_yylval.error_msg = "Unterminated string constant";
-                    /* Do not stop lexing */
                     curr_lineno++;
                     string_buf[0] = '\0';
                     BEGIN(INITIAL);
-                    
                     return (ERROR);
 	            }
 <STRING>\\n     {
@@ -321,6 +329,9 @@ f(?i:false)     {
                     }
 	            }
 
+<STRING_ERR>\"  {
+                    BEGIN(INITIAL);
+	            }
 
  /* eat up everything else
   * ------------------------------------------------------------------------ */

@@ -1,6 +1,5 @@
 	-1 (arith)	  arith example
 	-1 (book_list)	 sample program
-	-1 (escapednull)	 escaped null char in a string
 	-1 (keywords)	 all of the keywords
 	-1 (life)	 the life program
 	-1 (longstring_escapedbackslashes)	 long strings with escaped characters

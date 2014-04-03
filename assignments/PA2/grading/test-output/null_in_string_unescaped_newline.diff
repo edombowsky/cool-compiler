@@ -1,2 +1,7 @@
-1a2
-> ASSIGN
+2,3c2,3
+< OBJECTID a
+< '+'
+---
+> <-
+> a +
+\ No newline at end of file
