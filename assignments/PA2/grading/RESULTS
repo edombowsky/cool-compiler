@@ -1,13 +1,11 @@
 	-1 (arith)	  arith example
-	-1 (backslash)	 various backslashes in strings
 	-1 (backslash2)	 more backslashes in strings
 	-1 (book_list)	 sample program
-	-1 (comment_in_string)	 comment in string
 	-1 (eofstring)	  eof in a string
 	-1 (escaped_chars_in_comment)	 escaped chars in comment
+	-1 (escapedeof)	 escaped eof in a string
 	-1 (escapednull)	 escaped null char in a string
 	-1 (escapedquote)	 escaped quote
-	-1 (escapedunprintables)	 escaped nonprinting chars
 	-1 (keywords)	 all of the keywords
 	-1 (life)	 the life program
 	-1 (lineno2)	 line number test 2
@@ -24,10 +22,7 @@
 	-1 (palindrome)	 palindrome example
 	-1 (pathologicalstrings)	 some pathological strings
 	-1 (s04)	 different types of whitespaces
-	-1 (s34)	 unterminated string
 	-1 (sort_list)	 sample program
 	-1 (stringwithescapes)	 a long string with escaped characters
 	-1 (twice_512_nested_comments)	 many nested comments
 	-1 (wq0607-c2)	 sequences of block comments and strings
-	-1 (wq0607-c3)	 sequence of quotes and backslashes
-	-1 (wq0607-c4)	 sequence of quotes, backslashes, and double-dash comment symbols

@@ -1,2 +1,4 @@
-1a2
-> LONGERROR
+1c1
+< LONGERROR
+---
+> STR_CONST "This contains an escaped null character "

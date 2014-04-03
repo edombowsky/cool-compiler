@@ -1,8 +1,0 @@
-1,3c1,3
-< STR_CONST "This is a tab:\t"
-< STR_CONST "This is a backspace:\b"
-< STR_CONST "This is a formfeed:\f"
----
-> STR_CONST "This is a tab:\\\t"
-> STR_CONST "This is a backspace:\\\b"
-> STR_CONST "This is a formfeed:\\\f"

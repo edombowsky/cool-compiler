@@ -295,6 +295,13 @@ f(?i:false)     {
                         strcat(string_buf, "\f");
                     }
 	            }
+
+ /* Escaped newline character*/
+<STRING>\\\n    {
+                    curr_lineno++;
+                    strcat(string_buf, "\n");
+                }
+
  /* All other escaped characters should just return the character. */
 <STRING>\\.     {
                     string_length = string_length + 2;
