@@ -66,8 +66,6 @@ int string_length;
 %x STRING
 
 NUMBER          [0-9]
-LOWERCASE       [a-z]
-UPPERCASE       [A-Z]
 ALPHANUMERIC    [a-zA-Z0-9_]
 
 DARROW          =>
@@ -77,8 +75,8 @@ ASSIGN          <-
 /* space, backspace, tab, newline, formfeed */
 WHITESPACE      [ \t]
 
-TYPEID          {UPPERCASE}{ALPHANUMERIC}+
-OBJECTID        {LOWERCASE}{ALPHANUMERIC}+
+TYPEID          [A-Z]{ALPHANUMERIC}*
+OBJECTID        [a-z]{ALPHANUMERIC}*
 
 %%
 
@@ -102,12 +100,12 @@ OBJECTID        {LOWERCASE}{ALPHANUMERIC}+
 
 "(*"                {
 	                    /* `BEGIN` changes the global state variable. Now we can
-	                    * predicate on the COMMMENT rule.
-	                    */
+	                     * predicate on the COMMMENT rule.
+	                     */
                         comment_depth++;
                         BEGIN(COMMENT);
                     }
-<COMMENT>.          {}
+<COMMENT>.          {   /* eat everything but newline */ }
 <COMMENT>\n         {   curr_lineno++; }
 <COMMENT>"*)"       {
                         comment_depth--;
