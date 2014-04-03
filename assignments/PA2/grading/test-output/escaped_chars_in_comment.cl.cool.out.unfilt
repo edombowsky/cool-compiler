@@ -1,9 +1,0 @@
-#name "./escaped_chars_in_comment.cl.cool"
-#2 '*'
-#2 ERROR "\\"
-#2 ')'
-#3 OBJECTID abc
-#4 ERROR "\\"
-#5 OBJECTID jkl
-#6 ERROR "Unmatched *)"
-#7 OBJECTID mno

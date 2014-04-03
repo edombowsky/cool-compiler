@@ -103,7 +103,8 @@ OBJECTID        [a-z]{ALPHANUMERIC}*
                         comment_depth++;
                         BEGIN(COMMENT);
                     }
-<COMMENT>.          {   /* eat everything but newline */ }
+<COMMENT>"(*"       {   comment_depth++; }
+<COMMENT>.          {   /* do nothing */ }
 <COMMENT>\n         {   curr_lineno++; }
 <COMMENT>"*)"       {
                         comment_depth--;
