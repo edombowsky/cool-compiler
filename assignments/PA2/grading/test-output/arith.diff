@@ -1,0 +1,720 @@
+2c2
+< TYPEID A
+---
+> ERROR "A"
+61c61
+< TYPEID B
+---
+> ERROR "B"
+65c65
+< OBJECTID x
+---
+> ERROR "x"
+70c70
+< OBJECTID x
+---
+> ERROR "x"
+78c78
+< TYPEID B
+---
+> ERROR "B"
+83c83
+< OBJECTID x
+---
+> ERROR "x"
+97c97
+< TYPEID C
+---
+> ERROR "C"
+101c101
+< OBJECTID x
+---
+> ERROR "x"
+106c106
+< OBJECTID x
+---
+> ERROR "x"
+113c113
+< TYPEID C
+---
+> ERROR "C"
+118c118
+< OBJECTID x
+---
+> ERROR "x"
+136c136
+< TYPEID D
+---
+> ERROR "D"
+145c145
+< OBJECTID x
+---
+> ERROR "x"
+150c150
+< OBJECTID x
+---
+> ERROR "x"
+158c158
+< TYPEID D
+---
+> ERROR "D"
+163c163
+< OBJECTID x
+---
+> ERROR "x"
+171c171
+< OBJECTID x
+---
+> ERROR "x"
+176c176
+< OBJECTID x
+---
+> ERROR "x"
+184c184
+< TYPEID D
+---
+> ERROR "D"
+189c189
+< OBJECTID x
+---
+> ERROR "x"
+204c204
+< TYPEID E
+---
+> ERROR "E"
+208c208
+< OBJECTID x
+---
+> ERROR "x"
+217c217
+< OBJECTID y
+---
+> ERROR "y"
+224c224
+< OBJECTID y
+---
+> ERROR "y"
+229c229
+< OBJECTID x
+---
+> ERROR "x"
+231c231
+< OBJECTID x
+---
+> ERROR "x"
+233c233
+< OBJECTID y
+---
+> ERROR "y"
+235c235
+< OBJECTID y
+---
+> ERROR "y"
+237c237
+< OBJECTID y
+---
+> ERROR "y"
+247c247
+< TYPEID E
+---
+> ERROR "E"
+252c252
+< OBJECTID x
+---
+> ERROR "x"
+262c262
+< TYPEID B
+---
+> ERROR "B"
+264c264
+< TYPEID A
+---
+> ERROR "A"
+273c273
+< TYPEID E
+---
+> ERROR "E"
+277c277
+< OBJECTID x
+---
+> ERROR "x"
+282c282
+< OBJECTID x
+---
+> ERROR "x"
+290c290
+< TYPEID E
+---
+> ERROR "E"
+295c295
+< OBJECTID x
+---
+> ERROR "x"
+305c305
+< TYPEID C
+---
+> ERROR "C"
+307c307
+< TYPEID B
+---
+> ERROR "B"
+316c316
+< TYPEID A
+---
+> ERROR "A"
+320c320
+< OBJECTID x
+---
+> ERROR "x"
+325c325
+< OBJECTID x
+---
+> ERROR "x"
+332c332
+< TYPEID A
+---
+> ERROR "A"
+337c337
+< OBJECTID x
+---
+> ERROR "x"
+351c351
+< TYPEID E
+---
+> ERROR "E"
+355c355
+< OBJECTID x
+---
+> ERROR "x"
+360c360
+< OBJECTID x
+---
+> ERROR "x"
+370c370
+< TYPEID E
+---
+> ERROR "E"
+375c375
+< OBJECTID x
+---
+> ERROR "x"
+385c385
+< TYPEID D
+---
+> ERROR "D"
+387c387
+< TYPEID B
+---
+> ERROR "B"
+400c400
+< OBJECTID x
+---
+> ERROR "x"
+407c407
+< OBJECTID x
+---
+> ERROR "x"
+414c414
+< OBJECTID x
+---
+> ERROR "x"
+420c420
+< OBJECTID x
+---
+> ERROR "x"
+427c427
+< OBJECTID x
+---
+> ERROR "x"
+429c429
+< BOOL_CONST false
+---
+> OBJECTID false
+434c434
+< OBJECTID x
+---
+> ERROR "x"
+436c436
+< BOOL_CONST false
+---
+> OBJECTID false
+440c440
+< OBJECTID x
+---
+> ERROR "x"
+454c454
+< TYPEID E
+---
+> ERROR "E"
+456c456
+< TYPEID D
+---
+> ERROR "D"
+465c465
+< TYPEID A
+---
+> ERROR "A"
+469c469
+< OBJECTID x
+---
+> ERROR "x"
+474c474
+< OBJECTID x
+---
+> ERROR "x"
+482c482
+< TYPEID A
+---
+> ERROR "A"
+487c487
+< OBJECTID x
+---
+> ERROR "x"
+600c600
+< OBJECTID i
+---
+> ERROR "i"
+608c608
+< OBJECTID i
+---
+> ERROR "i"
+615c615
+< OBJECTID i
+---
+> ERROR "i"
+622c622
+< OBJECTID i
+---
+> ERROR "i"
+629c629
+< OBJECTID i
+---
+> ERROR "i"
+636c636
+< OBJECTID i
+---
+> ERROR "i"
+643c643
+< OBJECTID i
+---
+> ERROR "i"
+650c650
+< OBJECTID i
+---
+> ERROR "i"
+657c657
+< OBJECTID i
+---
+> ERROR "i"
+664c664
+< OBJECTID i
+---
+> ERROR "i"
+671c671
+< OBJECTID i
+---
+> ERROR "i"
+699c699
+< OBJECTID s
+---
+> ERROR "s"
+707c707
+< OBJECTID s
+---
+> ERROR "s"
+718c718
+< OBJECTID s
+---
+> ERROR "s"
+732c732
+< OBJECTID s
+---
+> ERROR "s"
+738c738
+< OBJECTID s
+---
+> ERROR "s"
+749c749
+< OBJECTID s
+---
+> ERROR "s"
+762c762
+< OBJECTID s
+---
+> ERROR "s"
+768c768
+< OBJECTID s
+---
+> ERROR "s"
+780c780
+< OBJECTID s
+---
+> ERROR "s"
+789c789
+< OBJECTID s
+---
+> ERROR "s"
+807c807
+< OBJECTID j
+---
+> ERROR "j"
+811c811
+< OBJECTID s
+---
+> ERROR "s"
+819c819
+< OBJECTID i
+---
+> ERROR "i"
+826c826
+< OBJECTID i
+---
+> ERROR "i"
+828c828
+< OBJECTID j
+---
+> ERROR "j"
+839c839
+< OBJECTID s
+---
+> ERROR "s"
+843c843
+< OBJECTID i
+---
+> ERROR "i"
+849c849
+< OBJECTID i
+---
+> ERROR "i"
+851c851
+< OBJECTID i
+---
+> ERROR "i"
+868c868
+< OBJECTID i
+---
+> ERROR "i"
+876c876
+< OBJECTID i
+---
+> ERROR "i"
+885c885
+< OBJECTID i
+---
+> ERROR "i"
+889c889
+< OBJECTID i
+---
+> ERROR "i"
+898c898
+< OBJECTID i
+---
+> ERROR "i"
+910c910
+< OBJECTID i
+---
+> ERROR "i"
+918c918
+< OBJECTID i
+---
+> ERROR "i"
+930c930
+< OBJECTID i
+---
+> ERROR "i"
+943c943
+< OBJECTID i
+---
+> ERROR "i"
+967c967
+< TYPEID A
+---
+> ERROR "A"
+971c971
+< TYPEID A
+---
+> ERROR "A"
+988c988
+< STR_CONST "\n\tTo add a number to "
+---
+> STR_CONST "\n\\tTo add a number to "
+1003c1003
+< STR_CONST "\tTo negate "
+---
+> STR_CONST "\\tTo negate "
+1018c1018
+< STR_CONST "\tTo find the difference between "
+---
+> STR_CONST "\\tTo find the difference between "
+1033c1033
+< STR_CONST "\tTo find the factorial of "
+---
+> STR_CONST "\\tTo find the factorial of "
+1048c1048
+< STR_CONST "\tTo square "
+---
+> STR_CONST "\\tTo square "
+1063c1063
+< STR_CONST "\tTo cube "
+---
+> STR_CONST "\\tTo cube "
+1078c1078
+< STR_CONST "\tTo find out if "
+---
+> STR_CONST "\\tTo find out if "
+1093c1093
+< STR_CONST "\tTo divide "
+---
+> STR_CONST "\\tTo divide "
+1108c1108
+< STR_CONST "\tTo get a new number...enter j:\n"
+---
+> STR_CONST "\\tTo get a new number...enter j:\n"
+1113c1113
+< STR_CONST "\tTo quit...enter q:\n\n"
+---
+> STR_CONST "\\tTo quit...enter q:\n\n"
+1156c1156
+< OBJECTID z
+---
+> ERROR "z"
+1165c1165
+< OBJECTID s
+---
+> ERROR "s"
+1173c1173
+< OBJECTID z
+---
+> ERROR "z"
+1177c1177
+< OBJECTID s
+---
+> ERROR "s"
+1196c1196
+< OBJECTID x
+---
+> ERROR "x"
+1203c1203
+< OBJECTID x
+---
+> ERROR "x"
+1210c1210
+< OBJECTID x
+---
+> ERROR "x"
+1216c1216
+< OBJECTID x
+---
+> ERROR "x"
+1223c1223
+< OBJECTID x
+---
+> ERROR "x"
+1225c1225
+< BOOL_CONST false
+---
+> OBJECTID false
+1229c1229
+< OBJECTID x
+---
+> ERROR "x"
+1243c1243
+< TYPEID A
+---
+> ERROR "A"
+1251c1251
+< OBJECTID a
+---
+> ERROR "a"
+1253c1253
+< TYPEID A
+---
+> ERROR "A"
+1260c1260
+< OBJECTID b
+---
+> ERROR "b"
+1262c1262
+< TYPEID B
+---
+> ERROR "B"
+1269c1269
+< OBJECTID c
+---
+> ERROR "c"
+1271c1271
+< TYPEID C
+---
+> ERROR "C"
+1278c1278
+< OBJECTID d
+---
+> ERROR "d"
+1280c1280
+< TYPEID D
+---
+> ERROR "D"
+1287c1287
+< OBJECTID e
+---
+> ERROR "e"
+1289c1289
+< TYPEID E
+---
+> ERROR "E"
+1296c1296
+< OBJECTID o
+---
+> ERROR "o"
+1312c1312
+< TYPEID A
+---
+> ERROR "A"
+1319c1319
+< OBJECTID z
+---
+> ERROR "z"
+1329c1329
+< OBJECTID z
+---
+> ERROR "z"
+1361c1361
+< TYPEID A
+---
+> ERROR "A"
+1420c1420
+< TYPEID A
+---
+> ERROR "A"
+1434c1434
+< TYPEID B
+---
+> ERROR "B"
+1462c1462
+< OBJECTID c
+---
+> ERROR "c"
+1464c1464
+< TYPEID C
+---
+> ERROR "C"
+1468c1468
+< OBJECTID c
+---
+> ERROR "c"
+1472c1472
+< OBJECTID c
+---
+> ERROR "c"
+1479c1479
+< OBJECTID a
+---
+> ERROR "a"
+1481c1481
+< TYPEID A
+---
+> ERROR "A"
+1485c1485
+< OBJECTID a
+---
+> ERROR "a"
+1489c1489
+< OBJECTID a
+---
+> ERROR "a"
+1496c1496
+< OBJECTID o
+---
+> ERROR "o"
+1526c1526
+< TYPEID A
+---
+> ERROR "A"
+1540c1540
+< TYPEID D
+---
+> ERROR "D"
+1569c1569
+< TYPEID C
+---
+> ERROR "C"
+1572c1572
+< TYPEID A
+---
+> ERROR "A"
+1592c1592
+< TYPEID C
+---
+> ERROR "C"
+1595c1595
+< TYPEID B
+---
+> ERROR "B"
+1615c1615
+< TYPEID C
+---
+> ERROR "C"
+1618c1618
+< TYPEID C
+---
+> ERROR "C"
+1638c1638
+< TYPEID D
+---
+> ERROR "D"
+1695c1695
+< OBJECTID x
+---
+> ERROR "x"
+1697c1697
+< TYPEID A
+---
+> ERROR "A"
+1700c1700
+< OBJECTID x
+---
+> ERROR "x"
+1704c1704
+< TYPEID E
+---
+> ERROR "E"
+1718c1718
+< OBJECTID r
+---
+> ERROR "r"
+1730c1730
+< OBJECTID x
+---
+> ERROR "x"
+1758c1758
+< OBJECTID x
+---
+> ERROR "x"
+1768c1768
+< OBJECTID a
+---
+> ERROR "a"
+1778c1778
+< OBJECTID a
+---
+> ERROR "a"
+1782c1782
+< OBJECTID r
+---
+> ERROR "r"
+1799c1799
+< OBJECTID x
+---
+> ERROR "x"
+1813c1813
+< TYPEID A
+---
+> ERROR "A"
+1823c1823
+< BOOL_CONST false
+---
+> OBJECTID false
+1829c1829
+< TYPEID A
+---
+> ERROR "A"

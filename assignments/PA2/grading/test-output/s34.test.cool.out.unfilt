@@ -1,0 +1,7 @@
+#name "./s34.test.cool"
+#1 OBJECTID before_it
+#3 ERROR "Unterminated string constant"
+#3 OBJECTID doens
+#3 ERROR "'"
+#3 ERROR "t"
+#3 OBJECTID end

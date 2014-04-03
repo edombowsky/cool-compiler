@@ -1,0 +1,130 @@
+CLASS
+TYPEID Main
+INHERITS
+TYPEID IO
+'{'
+OBJECTID pal
+'('
+ERROR "s"
+':'
+TYPEID String
+')'
+':'
+TYPEID Bool
+'{'
+IF
+ERROR "s"
+'.'
+OBJECTID length
+'('
+')'
+'='
+INT_CONST 0
+THEN
+BOOL_CONST true
+ELSE
+IF
+ERROR "s"
+'.'
+OBJECTID length
+'('
+')'
+'='
+INT_CONST 1
+THEN
+BOOL_CONST true
+ELSE
+IF
+ERROR "s"
+'.'
+OBJECTID substr
+'('
+INT_CONST 0
+','
+INT_CONST 1
+')'
+'='
+ERROR "s"
+'.'
+OBJECTID substr
+'('
+ERROR "s"
+'.'
+OBJECTID length
+'('
+')'
+'-'
+INT_CONST 1
+','
+INT_CONST 1
+')'
+THEN
+OBJECTID pal
+'('
+ERROR "s"
+'.'
+OBJECTID substr
+'('
+INT_CONST 1
+','
+ERROR "s"
+'.'
+OBJECTID length
+'('
+')'
+'-'
+INT_CONST 2
+')'
+')'
+ELSE
+OBJECTID false
+FI
+FI
+FI
+'}'
+';'
+ERROR "i"
+':'
+TYPEID Int
+';'
+OBJECTID main
+'('
+')'
+':'
+TYPEID SELF_TYPE
+'{'
+'{'
+ERROR "i"
+ASSIGN
+'~'
+INT_CONST 1
+';'
+OBJECTID out_string
+'('
+STR_CONST "enter a string\n"
+')'
+';'
+IF
+OBJECTID pal
+'('
+OBJECTID in_string
+'('
+')'
+')'
+THEN
+OBJECTID out_string
+'('
+STR_CONST "that was a palindrome\n"
+')'
+ELSE
+OBJECTID out_string
+'('
+STR_CONST "that was not a palindrome\n"
+')'
+FI
+';'
+'}'
+'}'
+';'
+'}'
+';'

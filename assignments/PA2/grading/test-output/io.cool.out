@@ -1,0 +1,143 @@
+CLASS
+ERROR "A"
+'{'
+OBJECTID io
+':'
+TYPEID IO
+ASSIGN
+NEW
+TYPEID IO
+';'
+OBJECTID out_a
+'('
+')'
+':'
+TYPEID Object
+'{'
+OBJECTID io
+'.'
+OBJECTID out_string
+'('
+STR_CONST "A: Hello world\n"
+')'
+'}'
+';'
+'}'
+';'
+CLASS
+ERROR "B"
+INHERITS
+ERROR "A"
+'{'
+OBJECTID out_b
+'('
+')'
+':'
+TYPEID Object
+'{'
+OBJECTID io
+'.'
+OBJECTID out_string
+'('
+STR_CONST "B: Hello world\n"
+')'
+'}'
+';'
+'}'
+';'
+CLASS
+ERROR "C"
+INHERITS
+TYPEID IO
+'{'
+OBJECTID out_c
+'('
+')'
+':'
+TYPEID Object
+'{'
+OBJECTID out_string
+'('
+STR_CONST "C: Hello world\n"
+')'
+'}'
+';'
+'}'
+';'
+CLASS
+ERROR "D"
+INHERITS
+ERROR "C"
+'{'
+OBJECTID out_d
+'('
+')'
+':'
+TYPEID Object
+'{'
+OBJECTID out_string
+'('
+STR_CONST "D: Hello world\n"
+')'
+'}'
+';'
+'}'
+';'
+CLASS
+TYPEID Main
+INHERITS
+TYPEID IO
+'{'
+OBJECTID main
+'('
+')'
+':'
+TYPEID Object
+'{'
+'{'
+'('
+NEW
+ERROR "A"
+')'
+'.'
+OBJECTID out_a
+'('
+')'
+';'
+'('
+NEW
+ERROR "B"
+')'
+'.'
+OBJECTID out_b
+'('
+')'
+';'
+'('
+NEW
+ERROR "C"
+')'
+'.'
+OBJECTID out_c
+'('
+')'
+';'
+'('
+NEW
+ERROR "D"
+')'
+'.'
+OBJECTID out_d
+'('
+')'
+';'
+OBJECTID out_string
+'('
+STR_CONST "Done.\n"
+')'
+';'
+'}'
+'}'
+';'
+'}'
+';'

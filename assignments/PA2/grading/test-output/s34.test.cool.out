@@ -1,0 +1,6 @@
+OBJECTID before_it
+LONGERROR
+OBJECTID doens
+ERROR "'"
+ERROR "t"
+OBJECTID end

@@ -1,0 +1,13 @@
+#name "./wq0607-c4.cool"
+#3 STR_CONST "\\\\-"
+#3 '-'
+#3 STR_CONST "-\\-"
+#4 STR_CONST "\\\\"
+#4 STR_CONST "\\"
+#5 STR_CONST "\\\\"
+#5 STR_CONST "\\"
+#6 STR_CONST "\\-\\"
+#6 STR_CONST "\\--"
+#6 ERROR "\\"
+#6 STR_CONST ""
+#6 ERROR "\\"

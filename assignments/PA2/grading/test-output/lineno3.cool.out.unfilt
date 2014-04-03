@@ -1,0 +1,8 @@
+#name "./lineno3.cool"
+#4 OBJECTID fourth
+#4 OBJECTID line
+#5 ERROR "Unmatched *)"
+#7 '+'
+#8 OBJECTID abc
+#12 TYPEID DEF
+#13 STR_CONST "string"

@@ -1,0 +1,14 @@
+1c1
+< NOT
+---
+> OBJECTID not
+3c3
+< OBJECTID a
+---
+> ERROR "a"
+7,8c7,8
+< NOT
+< OBJECTID a
+---
+> OBJECTID not
+> ERROR "a"

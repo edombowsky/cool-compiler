@@ -1,0 +1,281 @@
+CLASS
+TYPEID Main
+INHERITS
+TYPEID IO
+'{'
+OBJECTID main
+'('
+')'
+':'
+TYPEID SELF_TYPE
+'{'
+'('
+LET
+ERROR "c"
+':'
+TYPEID Complex
+ASSIGN
+'('
+NEW
+TYPEID Complex
+')'
+'.'
+OBJECTID init
+'('
+INT_CONST 1
+','
+INT_CONST 1
+')'
+IN
+'{'
+IF
+ERROR "c"
+'.'
+OBJECTID reflect_X
+'('
+')'
+'='
+ERROR "c"
+'.'
+OBJECTID reflect_0
+'('
+')'
+THEN
+OBJECTID out_string
+'('
+STR_CONST "=)\n"
+')'
+ELSE
+OBJECTID out_string
+'('
+STR_CONST "=(\n"
+')'
+FI
+';'
+IF
+ERROR "c"
+'.'
+OBJECTID reflect_X
+'('
+')'
+'.'
+OBJECTID reflect_Y
+'('
+')'
+'.'
+OBJECTID equal
+'('
+ERROR "c"
+'.'
+OBJECTID reflect_0
+'('
+')'
+')'
+THEN
+OBJECTID out_string
+'('
+STR_CONST "=)\n"
+')'
+ELSE
+OBJECTID out_string
+'('
+STR_CONST "=(\n"
+')'
+FI
+';'
+'}'
+')'
+'}'
+';'
+'}'
+';'
+CLASS
+TYPEID Complex
+INHERITS
+TYPEID IO
+'{'
+ERROR "x"
+':'
+TYPEID Int
+';'
+ERROR "y"
+':'
+TYPEID Int
+';'
+OBJECTID init
+'('
+ERROR "a"
+':'
+TYPEID Int
+','
+ERROR "b"
+':'
+TYPEID Int
+')'
+':'
+TYPEID Complex
+'{'
+'{'
+ERROR "x"
+'='
+ERROR "a"
+';'
+ERROR "y"
+'='
+ERROR "b"
+';'
+OBJECTID self
+';'
+'}'
+'}'
+';'
+OBJECTID print
+'('
+')'
+':'
+TYPEID Object
+'{'
+IF
+ERROR "y"
+'='
+INT_CONST 0
+THEN
+OBJECTID out_int
+'('
+ERROR "x"
+')'
+ELSE
+OBJECTID out_int
+'('
+ERROR "x"
+')'
+'.'
+OBJECTID out_string
+'('
+STR_CONST "+"
+')'
+'.'
+OBJECTID out_int
+'('
+ERROR "y"
+')'
+'.'
+OBJECTID out_string
+'('
+STR_CONST "I"
+')'
+FI
+'}'
+';'
+OBJECTID reflect_0
+'('
+')'
+':'
+TYPEID Complex
+'{'
+'{'
+ERROR "x"
+'='
+'~'
+ERROR "x"
+';'
+ERROR "y"
+'='
+'~'
+ERROR "y"
+';'
+OBJECTID self
+';'
+'}'
+'}'
+';'
+OBJECTID reflect_X
+'('
+')'
+':'
+TYPEID Complex
+'{'
+'{'
+ERROR "y"
+'='
+'~'
+ERROR "y"
+';'
+OBJECTID self
+';'
+'}'
+'}'
+';'
+OBJECTID reflect_Y
+'('
+')'
+':'
+TYPEID Complex
+'{'
+'{'
+ERROR "x"
+'='
+'~'
+ERROR "x"
+';'
+OBJECTID self
+';'
+'}'
+'}'
+';'
+OBJECTID equal
+'('
+ERROR "d"
+':'
+TYPEID Complex
+')'
+':'
+TYPEID Bool
+'{'
+IF
+ERROR "x"
+'='
+ERROR "d"
+'.'
+OBJECTID x_value
+'('
+')'
+THEN
+IF
+ERROR "y"
+'='
+ERROR "d"
+'.'
+OBJECTID y_value
+'('
+')'
+THEN
+BOOL_CONST true
+ELSE
+OBJECTID false
+FI
+ELSE
+OBJECTID false
+FI
+'}'
+';'
+OBJECTID x_value
+'('
+')'
+':'
+TYPEID Int
+'{'
+ERROR "x"
+'}'
+';'
+OBJECTID y_value
+'('
+')'
+':'
+TYPEID Int
+'{'
+ERROR "y"
+'}'
+';'
+'}'
+';'

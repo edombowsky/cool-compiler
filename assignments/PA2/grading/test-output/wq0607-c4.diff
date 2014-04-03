@@ -1,0 +1,37 @@
+1c1
+< STR_CONST "\\-"
+---
+> STR_CONST "\\\\-"
+3,12c3,4
+< STR_CONST "--"
+< STR_CONST "\\"
+< STR_CONST "\"--\""
+< LONGERROR
+< '-'
+< LONGERROR
+< STR_CONST ""
+< LONGERROR
+< STR_CONST "--\\"
+< LONGERROR
+---
+> STR_CONST "-\\-"
+> STR_CONST "\\\\"
+13a6
+> STR_CONST "\\\\"
+15,16c8,9
+< STR_CONST "\"--\""
+< LONGERROR
+---
+> STR_CONST "\\-\\"
+> STR_CONST "\\--"
+20,29d12
+< STR_CONST "--\\"
+< LONGERROR
+< STR_CONST "\\"
+< STR_CONST "--"
+< LONGERROR
+< STR_CONST "\""
+< LONGERROR
+< LONGERROR
+< STR_CONST "-\""
+< LONGERROR

@@ -1,0 +1,40 @@
+2c2
+< TYPEID A
+---
+> ERROR "A"
+28c28
+< TYPEID B
+---
+> ERROR "B"
+30c30
+< TYPEID A
+---
+> ERROR "A"
+49c49
+< TYPEID C
+---
+> ERROR "C"
+68c68
+< TYPEID D
+---
+> ERROR "D"
+70c70
+< TYPEID C
+---
+> ERROR "C"
+100c100
+< TYPEID A
+---
+> ERROR "A"
+109c109
+< TYPEID B
+---
+> ERROR "B"
+118c118
+< TYPEID C
+---
+> ERROR "C"
+127c127
+< TYPEID D
+---
+> ERROR "D"

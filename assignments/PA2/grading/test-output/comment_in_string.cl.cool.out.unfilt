@@ -1,0 +1,8 @@
+#name "./comment_in_string.cl.cool"
+#1 STR_CONST "string (* 123 *) string"
+#2 ERROR "Unterminated string constant"
+#2 ERROR "Unterminated string constant"
+#2 ERROR "Unterminated string constant"
+#2 INT_CONST 123
+#2 ERROR "Unmatched *)"
+#2 ERROR "Unterminated string constant"

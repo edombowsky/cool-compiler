@@ -1,0 +1,5 @@
+2c2,3
+< OBJECTID a
+---
+> ASSIGN
+> ERROR "a"

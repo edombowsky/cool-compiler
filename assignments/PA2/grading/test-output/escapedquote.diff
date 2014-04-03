@@ -1,0 +1,4 @@
+1c1
+< LONGERROR
+---
+> STR_CONST "string with no closing quote\\"

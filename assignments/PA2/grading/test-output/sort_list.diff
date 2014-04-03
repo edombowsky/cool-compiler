@@ -1,0 +1,100 @@
+109c109
+< OBJECTID i
+---
+> ERROR "i"
+123c123
+< OBJECTID i
+---
+> ERROR "i"
+167c167
+< BOOL_CONST false
+---
+> OBJECTID false
+257c257
+< OBJECTID i
+---
+> ERROR "i"
+265c265
+< OBJECTID i
+---
+> ERROR "i"
+276c276
+< OBJECTID i
+---
+> ERROR "i"
+294c294
+< OBJECTID i
+---
+> ERROR "i"
+302c302
+< OBJECTID i
+---
+> ERROR "i"
+322c322
+< OBJECTID i
+---
+> ERROR "i"
+389c389
+< OBJECTID i
+---
+> ERROR "i"
+398c398
+< OBJECTID i
+---
+> ERROR "i"
+404c404
+< OBJECTID i
+---
+> ERROR "i"
+418c418
+< OBJECTID i
+---
+> ERROR "i"
+440c440
+< OBJECTID l
+---
+> ERROR "l"
+446c446
+< OBJECTID i
+---
+> ERROR "i"
+454c454
+< OBJECTID l
+---
+> ERROR "l"
+461c461
+< OBJECTID j
+---
+> ERROR "j"
+468c468
+< OBJECTID j
+---
+> ERROR "j"
+470c470
+< OBJECTID i
+---
+> ERROR "i"
+473c473
+< OBJECTID l
+---
+> ERROR "l"
+482c482
+< OBJECTID j
+---
+> ERROR "j"
+484c484
+< OBJECTID l
+---
+> ERROR "l"
+487c487
+< OBJECTID j
+---
+> ERROR "j"
+489c489
+< OBJECTID j
+---
+> ERROR "j"
+497c497
+< OBJECTID l
+---
+> ERROR "l"
