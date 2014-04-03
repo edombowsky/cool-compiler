@@ -243,7 +243,7 @@
 #124 '{'
 #126 '('
 #126 LET
-#126 ERROR "i"
+#126 OBJECTID i
 #126 ':'
 #126 TYPEID Int
 #126 ASSIGN
@@ -264,7 +264,7 @@
 #129 ')'
 #129 ';'
 #130 WHILE
-#130 ERROR "i"
+#130 OBJECTID i
 #130 '<'
 #130 OBJECTID num
 #130 LOOP
@@ -275,7 +275,7 @@
 #132 '.'
 #132 OBJECTID substr
 #132 '('
-#132 ERROR "i"
+#132 OBJECTID i
 #132 ','
 #132 OBJECTID columns
 #132 ')'
@@ -286,9 +286,9 @@
 #133 STR_CONST "\n"
 #133 ')'
 #133 ';'
-#134 ERROR "i"
+#134 OBJECTID i
 #134 ASSIGN
-#134 ERROR "i"
+#134 OBJECTID i
 #134 '+'
 #134 OBJECTID columns
 #134 ';'
@@ -938,107 +938,107 @@
 #288 ';'
 #289 OBJECTID out_string
 #289 '('
-#289 STR_CONST "\\t1: A cross\n"
+#289 STR_CONST "\t1: A cross\n"
 #289 ')'
 #289 ';'
 #290 OBJECTID out_string
 #290 '('
-#290 STR_CONST "\\t2: A slash from the upper left to lower right\n"
+#290 STR_CONST "\t2: A slash from the upper left to lower right\n"
 #290 ')'
 #290 ';'
 #291 OBJECTID out_string
 #291 '('
-#291 STR_CONST "\\t3: A slash from the upper right to lower left\n"
+#291 STR_CONST "\t3: A slash from the upper right to lower left\n"
 #291 ')'
 #291 ';'
 #292 OBJECTID out_string
 #292 '('
-#292 STR_CONST "\\t4: An X\n"
+#292 STR_CONST "\t4: An X\n"
 #292 ')'
 #292 ';'
 #293 OBJECTID out_string
 #293 '('
-#293 STR_CONST "\\t5: A greater than sign \n"
+#293 STR_CONST "\t5: A greater than sign \n"
 #293 ')'
 #293 ';'
 #294 OBJECTID out_string
 #294 '('
-#294 STR_CONST "\\t6: A less than sign\n"
+#294 STR_CONST "\t6: A less than sign\n"
 #294 ')'
 #294 ';'
 #295 OBJECTID out_string
 #295 '('
-#295 STR_CONST "\\t7: Two greater than signs\n"
+#295 STR_CONST "\t7: Two greater than signs\n"
 #295 ')'
 #295 ';'
 #296 OBJECTID out_string
 #296 '('
-#296 STR_CONST "\\t8: Two less than signs\n"
+#296 STR_CONST "\t8: Two less than signs\n"
 #296 ')'
 #296 ';'
 #297 OBJECTID out_string
 #297 '('
-#297 STR_CONST "\\t9: A 'V'\n"
+#297 STR_CONST "\t9: A 'V'\n"
 #297 ')'
 #297 ';'
 #298 OBJECTID out_string
 #298 '('
-#298 STR_CONST "\\t10: An inverse 'V'\n"
+#298 STR_CONST "\t10: An inverse 'V'\n"
 #298 ')'
 #298 ';'
 #299 OBJECTID out_string
 #299 '('
-#299 STR_CONST "\\t11: Numbers 9 and 10 combined\n"
+#299 STR_CONST "\t11: Numbers 9 and 10 combined\n"
 #299 ')'
 #299 ';'
 #300 OBJECTID out_string
 #300 '('
-#300 STR_CONST "\\t12: A full grid\n"
+#300 STR_CONST "\t12: A full grid\n"
 #300 ')'
 #300 ';'
 #301 OBJECTID out_string
 #301 '('
-#301 STR_CONST "\\t13: A 'T'\n"
+#301 STR_CONST "\t13: A 'T'\n"
 #301 ')'
 #301 ';'
 #302 OBJECTID out_string
 #302 '('
-#302 STR_CONST "\\t14: A plus '+'\n"
+#302 STR_CONST "\t14: A plus '+'\n"
 #302 ')'
 #302 ';'
 #303 OBJECTID out_string
 #303 '('
-#303 STR_CONST "\\t15: A 'W'\n"
+#303 STR_CONST "\t15: A 'W'\n"
 #303 ')'
 #303 ';'
 #304 OBJECTID out_string
 #304 '('
-#304 STR_CONST "\\t16: An 'M'\n"
+#304 STR_CONST "\t16: An 'M'\n"
 #304 ')'
 #304 ';'
 #305 OBJECTID out_string
 #305 '('
-#305 STR_CONST "\\t17: An 'E'\n"
+#305 STR_CONST "\t17: An 'E'\n"
 #305 ')'
 #305 ';'
 #306 OBJECTID out_string
 #306 '('
-#306 STR_CONST "\\t18: A '3'\n"
+#306 STR_CONST "\t18: A '3'\n"
 #306 ')'
 #306 ';'
 #307 OBJECTID out_string
 #307 '('
-#307 STR_CONST "\\t19: An 'O'\n"
+#307 STR_CONST "\t19: An 'O'\n"
 #307 ')'
 #307 ';'
 #308 OBJECTID out_string
 #308 '('
-#308 STR_CONST "\\t20: An '8'\n"
+#308 STR_CONST "\t20: An '8'\n"
 #308 ')'
 #308 ';'
 #309 OBJECTID out_string
 #309 '('
-#309 STR_CONST "\\t21: An 'S'\n"
+#309 STR_CONST "\t21: An 'S'\n"
 #309 ')'
 #309 ';'
 #310 OBJECTID out_string

@@ -1,11 +1,11 @@
 OBJECTID not
 IN
-ERROR "a"
+OBJECTID a
 OBJECTID comment
 '('
 '*'
 OBJECTID not
-ERROR "a"
+OBJECTID a
 OBJECTID comment
 '*'
 ')'

@@ -106,7 +106,7 @@ OBJECTID cdr
 ';'
 OBJECTID insert
 '('
-ERROR "i"
+OBJECTID i
 ':'
 TYPEID Int
 ')'
@@ -120,7 +120,7 @@ OBJECTID cdr
 ';'
 OBJECTID rcons
 '('
-ERROR "i"
+OBJECTID i
 ':'
 TYPEID Int
 ')'
@@ -254,7 +254,7 @@ OBJECTID xcar
 ';'
 OBJECTID insert
 '('
-ERROR "i"
+OBJECTID i
 ':'
 TYPEID Int
 ')'
@@ -262,7 +262,7 @@ TYPEID Int
 TYPEID List
 '{'
 IF
-ERROR "i"
+OBJECTID i
 '<'
 OBJECTID xcar
 THEN
@@ -273,7 +273,7 @@ TYPEID Cons
 '.'
 OBJECTID init
 '('
-ERROR "i"
+OBJECTID i
 ','
 OBJECTID self
 ')'
@@ -291,7 +291,7 @@ OBJECTID xcdr
 '.'
 OBJECTID insert
 '('
-ERROR "i"
+OBJECTID i
 ')'
 ')'
 FI
@@ -299,7 +299,7 @@ FI
 ';'
 OBJECTID rcons
 '('
-ERROR "i"
+OBJECTID i
 ':'
 TYPEID Int
 ')'
@@ -319,7 +319,7 @@ OBJECTID xcdr
 '.'
 OBJECTID rcons
 '('
-ERROR "i"
+OBJECTID i
 ')'
 ')'
 '}'
@@ -386,7 +386,7 @@ OBJECTID self
 ';'
 OBJECTID insert
 '('
-ERROR "i"
+OBJECTID i
 ':'
 TYPEID Int
 ')'
@@ -395,13 +395,13 @@ TYPEID List
 '{'
 OBJECTID rcons
 '('
-ERROR "i"
+OBJECTID i
 ')'
 '}'
 ';'
 OBJECTID rcons
 '('
-ERROR "i"
+OBJECTID i
 ':'
 TYPEID Int
 ')'
@@ -415,7 +415,7 @@ TYPEID Cons
 '.'
 OBJECTID init
 '('
-ERROR "i"
+OBJECTID i
 ','
 OBJECTID self
 ')'
@@ -437,13 +437,13 @@ TYPEID Main
 INHERITS
 TYPEID IO
 '{'
-ERROR "l"
+OBJECTID l
 ':'
 TYPEID List
 ';'
 OBJECTID iota
 '('
-ERROR "i"
+OBJECTID i
 ':'
 TYPEID Int
 ')'
@@ -451,26 +451,26 @@ TYPEID Int
 TYPEID List
 '{'
 '{'
-ERROR "l"
+OBJECTID l
 ASSIGN
 NEW
 TYPEID Nil
 ';'
 '('
 LET
-ERROR "j"
+OBJECTID j
 ':'
 TYPEID Int
 ASSIGN
 INT_CONST 0
 IN
 WHILE
-ERROR "j"
+OBJECTID j
 '<'
-ERROR "i"
+OBJECTID i
 LOOP
 '{'
-ERROR "l"
+OBJECTID l
 ASSIGN
 '('
 NEW
@@ -479,14 +479,14 @@ TYPEID Cons
 '.'
 OBJECTID init
 '('
-ERROR "j"
+OBJECTID j
 ','
-ERROR "l"
+OBJECTID l
 ')'
 ';'
-ERROR "j"
+OBJECTID j
 ASSIGN
-ERROR "j"
+OBJECTID j
 '+'
 INT_CONST 1
 ';'
@@ -494,7 +494,7 @@ INT_CONST 1
 POOL
 ')'
 ';'
-ERROR "l"
+OBJECTID l
 ';'
 '}'
 '}'

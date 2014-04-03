@@ -1,5 +1,5 @@
 CLASS
-ERROR "A"
+TYPEID A
 '{'
 OBJECTID var
 ':'
@@ -58,16 +58,16 @@ OBJECTID num2
 TYPEID Int
 ')'
 ':'
-ERROR "B"
+TYPEID B
 '{'
 '('
 LET
-ERROR "x"
+OBJECTID x
 ':'
 TYPEID Int
 IN
 '{'
-ERROR "x"
+OBJECTID x
 ASSIGN
 OBJECTID num1
 '+'
@@ -75,12 +75,12 @@ OBJECTID num2
 ';'
 '('
 NEW
-ERROR "B"
+TYPEID B
 ')'
 '.'
 OBJECTID set_var
 '('
-ERROR "x"
+OBJECTID x
 ')'
 ';'
 '}'
@@ -94,28 +94,28 @@ OBJECTID num
 TYPEID Int
 ')'
 ':'
-ERROR "C"
+TYPEID C
 '{'
 '('
 LET
-ERROR "x"
+OBJECTID x
 ':'
 TYPEID Int
 IN
 '{'
-ERROR "x"
+OBJECTID x
 ASSIGN
 '~'
 OBJECTID num
 ';'
 '('
 NEW
-ERROR "C"
+TYPEID C
 ')'
 '.'
 OBJECTID set_var
 '('
-ERROR "x"
+OBJECTID x
 ')'
 ';'
 '}'
@@ -133,7 +133,7 @@ OBJECTID num2
 TYPEID Int
 ')'
 ':'
-ERROR "D"
+TYPEID D
 '{'
 IF
 OBJECTID num2
@@ -142,12 +142,12 @@ OBJECTID num1
 THEN
 '('
 LET
-ERROR "x"
+OBJECTID x
 ':'
 TYPEID Int
 IN
 '{'
-ERROR "x"
+OBJECTID x
 ASSIGN
 OBJECTID num1
 '-'
@@ -155,12 +155,12 @@ OBJECTID num2
 ';'
 '('
 NEW
-ERROR "D"
+TYPEID D
 ')'
 '.'
 OBJECTID set_var
 '('
-ERROR "x"
+OBJECTID x
 ')'
 ';'
 '}'
@@ -168,12 +168,12 @@ ERROR "x"
 ELSE
 '('
 LET
-ERROR "x"
+OBJECTID x
 ':'
 TYPEID Int
 IN
 '{'
-ERROR "x"
+OBJECTID x
 ASSIGN
 OBJECTID num2
 '-'
@@ -181,12 +181,12 @@ OBJECTID num1
 ';'
 '('
 NEW
-ERROR "D"
+TYPEID D
 ')'
 '.'
 OBJECTID set_var
 '('
-ERROR "x"
+OBJECTID x
 ')'
 ';'
 '}'
@@ -201,11 +201,11 @@ OBJECTID num
 TYPEID Int
 ')'
 ':'
-ERROR "E"
+TYPEID E
 '{'
 '('
 LET
-ERROR "x"
+OBJECTID x
 ':'
 TYPEID Int
 ASSIGN
@@ -214,27 +214,27 @@ IN
 '{'
 '('
 LET
-ERROR "y"
+OBJECTID y
 ':'
 TYPEID Int
 ASSIGN
 INT_CONST 1
 IN
 WHILE
-ERROR "y"
+OBJECTID y
 LE
 OBJECTID num
 LOOP
 '{'
-ERROR "x"
+OBJECTID x
 ASSIGN
-ERROR "x"
+OBJECTID x
 '*'
-ERROR "y"
+OBJECTID y
 ';'
-ERROR "y"
+OBJECTID y
 ASSIGN
-ERROR "y"
+OBJECTID y
 '+'
 INT_CONST 1
 ';'
@@ -244,12 +244,12 @@ POOL
 ';'
 '('
 NEW
-ERROR "E"
+TYPEID E
 ')'
 '.'
 OBJECTID set_var
 '('
-ERROR "x"
+OBJECTID x
 ')'
 ';'
 '}'
@@ -259,9 +259,9 @@ ERROR "x"
 '}'
 ';'
 CLASS
-ERROR "B"
+TYPEID B
 INHERITS
-ERROR "A"
+TYPEID A
 '{'
 OBJECTID method5
 '('
@@ -270,16 +270,16 @@ OBJECTID num
 TYPEID Int
 ')'
 ':'
-ERROR "E"
+TYPEID E
 '{'
 '('
 LET
-ERROR "x"
+OBJECTID x
 ':'
 TYPEID Int
 IN
 '{'
-ERROR "x"
+OBJECTID x
 ASSIGN
 OBJECTID num
 '*'
@@ -287,12 +287,12 @@ OBJECTID num
 ';'
 '('
 NEW
-ERROR "E"
+TYPEID E
 ')'
 '.'
 OBJECTID set_var
 '('
-ERROR "x"
+OBJECTID x
 ')'
 ';'
 '}'
@@ -302,9 +302,9 @@ ERROR "x"
 '}'
 ';'
 CLASS
-ERROR "C"
+TYPEID C
 INHERITS
-ERROR "B"
+TYPEID B
 '{'
 OBJECTID method6
 '('
@@ -313,28 +313,28 @@ OBJECTID num
 TYPEID Int
 ')'
 ':'
-ERROR "A"
+TYPEID A
 '{'
 '('
 LET
-ERROR "x"
+OBJECTID x
 ':'
 TYPEID Int
 IN
 '{'
-ERROR "x"
+OBJECTID x
 ASSIGN
 '~'
 OBJECTID num
 ';'
 '('
 NEW
-ERROR "A"
+TYPEID A
 ')'
 '.'
 OBJECTID set_var
 '('
-ERROR "x"
+OBJECTID x
 ')'
 ';'
 '}'
@@ -348,16 +348,16 @@ OBJECTID num
 TYPEID Int
 ')'
 ':'
-ERROR "E"
+TYPEID E
 '{'
 '('
 LET
-ERROR "x"
+OBJECTID x
 ':'
 TYPEID Int
 IN
 '{'
-ERROR "x"
+OBJECTID x
 ASSIGN
 OBJECTID num
 '*'
@@ -367,12 +367,12 @@ OBJECTID num
 ';'
 '('
 NEW
-ERROR "E"
+TYPEID E
 ')'
 '.'
 OBJECTID set_var
 '('
-ERROR "x"
+OBJECTID x
 ')'
 ';'
 '}'
@@ -382,9 +382,9 @@ ERROR "x"
 '}'
 ';'
 CLASS
-ERROR "D"
+TYPEID D
 INHERITS
-ERROR "B"
+TYPEID B
 '{'
 OBJECTID method7
 '('
@@ -397,47 +397,47 @@ TYPEID Bool
 '{'
 '('
 LET
-ERROR "x"
+OBJECTID x
 ':'
 TYPEID Int
 ASSIGN
 OBJECTID num
 IN
 IF
-ERROR "x"
+OBJECTID x
 '<'
 INT_CONST 0
 THEN
 OBJECTID method7
 '('
 '~'
-ERROR "x"
+OBJECTID x
 ')'
 ELSE
 IF
 INT_CONST 0
 '='
-ERROR "x"
+OBJECTID x
 THEN
 BOOL_CONST true
 ELSE
 IF
 INT_CONST 1
 '='
-ERROR "x"
+OBJECTID x
 THEN
 OBJECTID false
 ELSE
 IF
 INT_CONST 2
 '='
-ERROR "x"
+OBJECTID x
 THEN
 OBJECTID false
 ELSE
 OBJECTID method7
 '('
-ERROR "x"
+OBJECTID x
 '-'
 INT_CONST 3
 ')'
@@ -451,9 +451,9 @@ FI
 '}'
 ';'
 CLASS
-ERROR "E"
+TYPEID E
 INHERITS
-ERROR "D"
+TYPEID D
 '{'
 OBJECTID method6
 '('
@@ -462,16 +462,16 @@ OBJECTID num
 TYPEID Int
 ')'
 ':'
-ERROR "A"
+TYPEID A
 '{'
 '('
 LET
-ERROR "x"
+OBJECTID x
 ':'
 TYPEID Int
 IN
 '{'
-ERROR "x"
+OBJECTID x
 ASSIGN
 OBJECTID num
 '/'
@@ -479,12 +479,12 @@ INT_CONST 8
 ';'
 '('
 NEW
-ERROR "A"
+TYPEID A
 ')'
 '.'
 OBJECTID set_var
 '('
-ERROR "x"
+OBJECTID x
 ')'
 ';'
 '}'
@@ -597,7 +597,7 @@ FI
 ';'
 OBJECTID i2c
 '('
-ERROR "i"
+OBJECTID i
 ':'
 TYPEID Int
 ')'
@@ -605,70 +605,70 @@ TYPEID Int
 TYPEID String
 '{'
 IF
-ERROR "i"
+OBJECTID i
 '='
 INT_CONST 0
 THEN
 STR_CONST "0"
 ELSE
 IF
-ERROR "i"
+OBJECTID i
 '='
 INT_CONST 1
 THEN
 STR_CONST "1"
 ELSE
 IF
-ERROR "i"
+OBJECTID i
 '='
 INT_CONST 2
 THEN
 STR_CONST "2"
 ELSE
 IF
-ERROR "i"
+OBJECTID i
 '='
 INT_CONST 3
 THEN
 STR_CONST "3"
 ELSE
 IF
-ERROR "i"
+OBJECTID i
 '='
 INT_CONST 4
 THEN
 STR_CONST "4"
 ELSE
 IF
-ERROR "i"
+OBJECTID i
 '='
 INT_CONST 5
 THEN
 STR_CONST "5"
 ELSE
 IF
-ERROR "i"
+OBJECTID i
 '='
 INT_CONST 6
 THEN
 STR_CONST "6"
 ELSE
 IF
-ERROR "i"
+OBJECTID i
 '='
 INT_CONST 7
 THEN
 STR_CONST "7"
 ELSE
 IF
-ERROR "i"
+OBJECTID i
 '='
 INT_CONST 8
 THEN
 STR_CONST "8"
 ELSE
 IF
-ERROR "i"
+OBJECTID i
 '='
 INT_CONST 9
 THEN
@@ -696,7 +696,7 @@ FI
 ';'
 OBJECTID a2i
 '('
-ERROR "s"
+OBJECTID s
 ':'
 TYPEID String
 ')'
@@ -704,7 +704,7 @@ TYPEID String
 TYPEID Int
 '{'
 IF
-ERROR "s"
+OBJECTID s
 '.'
 OBJECTID length
 '('
@@ -715,7 +715,7 @@ THEN
 INT_CONST 0
 ELSE
 IF
-ERROR "s"
+OBJECTID s
 '.'
 OBJECTID substr
 '('
@@ -729,13 +729,13 @@ THEN
 '~'
 OBJECTID a2i_aux
 '('
-ERROR "s"
+OBJECTID s
 '.'
 OBJECTID substr
 '('
 INT_CONST 1
 ','
-ERROR "s"
+OBJECTID s
 '.'
 OBJECTID length
 '('
@@ -746,7 +746,7 @@ INT_CONST 1
 ')'
 ELSE
 IF
-ERROR "s"
+OBJECTID s
 '.'
 OBJECTID substr
 '('
@@ -759,13 +759,13 @@ STR_CONST "+"
 THEN
 OBJECTID a2i_aux
 '('
-ERROR "s"
+OBJECTID s
 '.'
 OBJECTID substr
 '('
 INT_CONST 1
 ','
-ERROR "s"
+OBJECTID s
 '.'
 OBJECTID length
 '('
@@ -777,7 +777,7 @@ INT_CONST 1
 ELSE
 OBJECTID a2i_aux
 '('
-ERROR "s"
+OBJECTID s
 ')'
 FI
 FI
@@ -786,7 +786,7 @@ FI
 ';'
 OBJECTID a2i_aux
 '('
-ERROR "s"
+OBJECTID s
 ':'
 TYPEID String
 ')'
@@ -804,11 +804,11 @@ IN
 '{'
 '('
 LET
-ERROR "j"
+OBJECTID j
 ':'
 TYPEID Int
 ASSIGN
-ERROR "s"
+OBJECTID s
 '.'
 OBJECTID length
 '('
@@ -816,16 +816,16 @@ OBJECTID length
 IN
 '('
 LET
-ERROR "i"
+OBJECTID i
 ':'
 TYPEID Int
 ASSIGN
 INT_CONST 0
 IN
 WHILE
-ERROR "i"
+OBJECTID i
 '<'
-ERROR "j"
+OBJECTID j
 LOOP
 '{'
 OBJECTID int
@@ -836,19 +836,19 @@ INT_CONST 10
 '+'
 OBJECTID c2i
 '('
-ERROR "s"
+OBJECTID s
 '.'
 OBJECTID substr
 '('
-ERROR "i"
+OBJECTID i
 ','
 INT_CONST 1
 ')'
 ')'
 ';'
-ERROR "i"
+OBJECTID i
 ASSIGN
-ERROR "i"
+OBJECTID i
 '+'
 INT_CONST 1
 ';'
@@ -865,7 +865,7 @@ OBJECTID int
 ';'
 OBJECTID i2a
 '('
-ERROR "i"
+OBJECTID i
 ':'
 TYPEID Int
 ')'
@@ -873,7 +873,7 @@ TYPEID Int
 TYPEID String
 '{'
 IF
-ERROR "i"
+OBJECTID i
 '='
 INT_CONST 0
 THEN
@@ -882,11 +882,11 @@ ELSE
 IF
 INT_CONST 0
 '<'
-ERROR "i"
+OBJECTID i
 THEN
 OBJECTID i2a_aux
 '('
-ERROR "i"
+OBJECTID i
 ')'
 ELSE
 STR_CONST "-"
@@ -895,7 +895,7 @@ OBJECTID concat
 '('
 OBJECTID i2a_aux
 '('
-ERROR "i"
+OBJECTID i
 '*'
 '~'
 INT_CONST 1
@@ -907,7 +907,7 @@ FI
 ';'
 OBJECTID i2a_aux
 '('
-ERROR "i"
+OBJECTID i
 ':'
 TYPEID Int
 ')'
@@ -915,7 +915,7 @@ TYPEID Int
 TYPEID String
 '{'
 IF
-ERROR "i"
+OBJECTID i
 '='
 INT_CONST 0
 THEN
@@ -927,7 +927,7 @@ OBJECTID next
 ':'
 TYPEID Int
 ASSIGN
-ERROR "i"
+OBJECTID i
 '/'
 INT_CONST 10
 IN
@@ -940,7 +940,7 @@ OBJECTID concat
 '('
 OBJECTID i2c
 '('
-ERROR "i"
+OBJECTID i
 '-'
 OBJECTID next
 '*'
@@ -964,11 +964,11 @@ TYPEID String
 ';'
 OBJECTID avar
 ':'
-ERROR "A"
+TYPEID A
 ';'
 OBJECTID a_var
 ':'
-ERROR "A"
+TYPEID A
 ';'
 OBJECTID flag
 ':'
@@ -985,7 +985,7 @@ TYPEID String
 '{'
 OBJECTID out_string
 '('
-STR_CONST "\n\\tTo add a number to "
+STR_CONST "\n\tTo add a number to "
 ')'
 ';'
 OBJECTID print
@@ -1000,7 +1000,7 @@ STR_CONST "...enter a:\n"
 ';'
 OBJECTID out_string
 '('
-STR_CONST "\\tTo negate "
+STR_CONST "\tTo negate "
 ')'
 ';'
 OBJECTID print
@@ -1015,7 +1015,7 @@ STR_CONST "...enter b:\n"
 ';'
 OBJECTID out_string
 '('
-STR_CONST "\\tTo find the difference between "
+STR_CONST "\tTo find the difference between "
 ')'
 ';'
 OBJECTID print
@@ -1030,7 +1030,7 @@ STR_CONST "and another number...enter c:\n"
 ';'
 OBJECTID out_string
 '('
-STR_CONST "\\tTo find the factorial of "
+STR_CONST "\tTo find the factorial of "
 ')'
 ';'
 OBJECTID print
@@ -1045,7 +1045,7 @@ STR_CONST "...enter d:\n"
 ';'
 OBJECTID out_string
 '('
-STR_CONST "\\tTo square "
+STR_CONST "\tTo square "
 ')'
 ';'
 OBJECTID print
@@ -1060,7 +1060,7 @@ STR_CONST "...enter e:\n"
 ';'
 OBJECTID out_string
 '('
-STR_CONST "\\tTo cube "
+STR_CONST "\tTo cube "
 ')'
 ';'
 OBJECTID print
@@ -1075,7 +1075,7 @@ STR_CONST "...enter f:\n"
 ';'
 OBJECTID out_string
 '('
-STR_CONST "\\tTo find out if "
+STR_CONST "\tTo find out if "
 ')'
 ';'
 OBJECTID print
@@ -1090,7 +1090,7 @@ STR_CONST "is a multiple of 3...enter g:\n"
 ';'
 OBJECTID out_string
 '('
-STR_CONST "\\tTo divide "
+STR_CONST "\tTo divide "
 ')'
 ';'
 OBJECTID print
@@ -1105,12 +1105,12 @@ STR_CONST "by 8...enter h:\n"
 ';'
 OBJECTID out_string
 '('
-STR_CONST "\\tTo get a new number...enter j:\n"
+STR_CONST "\tTo get a new number...enter j:\n"
 ')'
 ';'
 OBJECTID out_string
 '('
-STR_CONST "\\tTo quit...enter q:\n\n"
+STR_CONST "\tTo quit...enter q:\n\n"
 ')'
 ';'
 OBJECTID in_string
@@ -1153,7 +1153,7 @@ TYPEID Int
 '{'
 '('
 LET
-ERROR "z"
+OBJECTID z
 ':'
 TYPEID A2I
 ASSIGN
@@ -1162,7 +1162,7 @@ TYPEID A2I
 IN
 '('
 LET
-ERROR "s"
+OBJECTID s
 ':'
 TYPEID String
 ASSIGN
@@ -1170,11 +1170,11 @@ OBJECTID prompt
 '('
 ')'
 IN
-ERROR "z"
+OBJECTID z
 '.'
 OBJECTID a2i
 '('
-ERROR "s"
+OBJECTID s
 ')'
 ')'
 ')'
@@ -1193,40 +1193,40 @@ TYPEID Bool
 '{'
 '('
 LET
-ERROR "x"
+OBJECTID x
 ':'
 TYPEID Int
 ASSIGN
 OBJECTID num
 IN
 IF
-ERROR "x"
+OBJECTID x
 '<'
 INT_CONST 0
 THEN
 OBJECTID is_even
 '('
 '~'
-ERROR "x"
+OBJECTID x
 ')'
 ELSE
 IF
 INT_CONST 0
 '='
-ERROR "x"
+OBJECTID x
 THEN
 BOOL_CONST true
 ELSE
 IF
 INT_CONST 1
 '='
-ERROR "x"
+OBJECTID x
 THEN
 OBJECTID false
 ELSE
 OBJECTID is_even
 '('
-ERROR "x"
+OBJECTID x
 '-'
 INT_CONST 2
 ')'
@@ -1240,7 +1240,7 @@ OBJECTID class_type
 '('
 OBJECTID var
 ':'
-ERROR "A"
+TYPEID A
 ')'
 ':'
 TYPEID SELF_TYPE
@@ -1248,52 +1248,52 @@ TYPEID SELF_TYPE
 CASE
 OBJECTID var
 OF
-ERROR "a"
+OBJECTID a
 ':'
-ERROR "A"
+TYPEID A
 DARROW
 OBJECTID out_string
 '('
 STR_CONST "Class type is now A\n"
 ')'
 ';'
-ERROR "b"
+OBJECTID b
 ':'
-ERROR "B"
+TYPEID B
 DARROW
 OBJECTID out_string
 '('
 STR_CONST "Class type is now B\n"
 ')'
 ';'
-ERROR "c"
+OBJECTID c
 ':'
-ERROR "C"
+TYPEID C
 DARROW
 OBJECTID out_string
 '('
 STR_CONST "Class type is now C\n"
 ')'
 ';'
-ERROR "d"
+OBJECTID d
 ':'
-ERROR "D"
+TYPEID D
 DARROW
 OBJECTID out_string
 '('
 STR_CONST "Class type is now D\n"
 ')'
 ';'
-ERROR "e"
+OBJECTID e
 ':'
-ERROR "E"
+TYPEID E
 DARROW
 OBJECTID out_string
 '('
 STR_CONST "Class type is now E\n"
 ')'
 ';'
-ERROR "o"
+OBJECTID o
 ':'
 TYPEID Object
 DARROW
@@ -1309,14 +1309,14 @@ OBJECTID print
 '('
 OBJECTID var
 ':'
-ERROR "A"
+TYPEID A
 ')'
 ':'
 TYPEID SELF_TYPE
 '{'
 '('
 LET
-ERROR "z"
+OBJECTID z
 ':'
 TYPEID A2I
 ASSIGN
@@ -1326,7 +1326,7 @@ IN
 '{'
 OBJECTID out_string
 '('
-ERROR "z"
+OBJECTID z
 '.'
 OBJECTID i2a
 '('
@@ -1358,7 +1358,7 @@ OBJECTID avar
 ASSIGN
 '('
 NEW
-ERROR "A"
+TYPEID A
 ')'
 ';'
 WHILE
@@ -1417,7 +1417,7 @@ OBJECTID a_var
 ASSIGN
 '('
 NEW
-ERROR "A"
+TYPEID A
 ')'
 '.'
 OBJECTID set_var
@@ -1431,7 +1431,7 @@ OBJECTID avar
 ASSIGN
 '('
 NEW
-ERROR "B"
+TYPEID B
 ')'
 '.'
 OBJECTID method2
@@ -1459,41 +1459,41 @@ THEN
 CASE
 OBJECTID avar
 OF
-ERROR "c"
+OBJECTID c
 ':'
-ERROR "C"
+TYPEID C
 DARROW
 OBJECTID avar
 ASSIGN
-ERROR "c"
+OBJECTID c
 '.'
 OBJECTID method6
 '('
-ERROR "c"
+OBJECTID c
 '.'
 OBJECTID value
 '('
 ')'
 ')'
 ';'
-ERROR "a"
+OBJECTID a
 ':'
-ERROR "A"
+TYPEID A
 DARROW
 OBJECTID avar
 ASSIGN
-ERROR "a"
+OBJECTID a
 '.'
 OBJECTID method3
 '('
-ERROR "a"
+OBJECTID a
 '.'
 OBJECTID value
 '('
 ')'
 ')'
 ';'
-ERROR "o"
+OBJECTID o
 ':'
 TYPEID Object
 DARROW
@@ -1523,7 +1523,7 @@ OBJECTID a_var
 ASSIGN
 '('
 NEW
-ERROR "A"
+TYPEID A
 ')'
 '.'
 OBJECTID set_var
@@ -1537,7 +1537,7 @@ OBJECTID avar
 ASSIGN
 '('
 NEW
-ERROR "D"
+TYPEID D
 ')'
 '.'
 OBJECTID method4
@@ -1566,10 +1566,10 @@ OBJECTID avar
 ASSIGN
 '('
 NEW
-ERROR "C"
+TYPEID C
 ')'
 '@'
-ERROR "A"
+TYPEID A
 '.'
 OBJECTID method5
 '('
@@ -1589,10 +1589,10 @@ OBJECTID avar
 ASSIGN
 '('
 NEW
-ERROR "C"
+TYPEID C
 ')'
 '@'
-ERROR "B"
+TYPEID B
 '.'
 OBJECTID method5
 '('
@@ -1612,10 +1612,10 @@ OBJECTID avar
 ASSIGN
 '('
 NEW
-ERROR "C"
+TYPEID C
 ')'
 '@'
-ERROR "C"
+TYPEID C
 '.'
 OBJECTID method5
 '('
@@ -1635,7 +1635,7 @@ IF
 '('
 '('
 NEW
-ERROR "D"
+TYPEID D
 ')'
 '.'
 OBJECTID method7
@@ -1692,16 +1692,16 @@ STR_CONST "h"
 THEN
 '('
 LET
-ERROR "x"
+OBJECTID x
 ':'
-ERROR "A"
+TYPEID A
 IN
 '{'
-ERROR "x"
+OBJECTID x
 ASSIGN
 '('
 NEW
-ERROR "E"
+TYPEID E
 ')'
 '.'
 OBJECTID method6
@@ -1715,7 +1715,7 @@ OBJECTID value
 ';'
 '('
 LET
-ERROR "r"
+OBJECTID r
 ':'
 TYPEID Int
 ASSIGN
@@ -1727,7 +1727,7 @@ OBJECTID value
 ')'
 '-'
 '('
-ERROR "x"
+OBJECTID x
 '.'
 OBJECTID value
 '('
@@ -1755,7 +1755,7 @@ STR_CONST "is equal to "
 ';'
 OBJECTID print
 '('
-ERROR "x"
+OBJECTID x
 ')'
 ';'
 OBJECTID out_string
@@ -1765,7 +1765,7 @@ STR_CONST "times 8 with a remainder of "
 ';'
 '('
 LET
-ERROR "a"
+OBJECTID a
 ':'
 TYPEID A2I
 ASSIGN
@@ -1775,11 +1775,11 @@ IN
 '{'
 OBJECTID out_string
 '('
-ERROR "a"
+OBJECTID a
 '.'
 OBJECTID i2a
 '('
-ERROR "r"
+OBJECTID r
 ')'
 ')'
 ';'
@@ -1796,7 +1796,7 @@ STR_CONST "\n"
 ';'
 OBJECTID avar
 ASSIGN
-ERROR "x"
+OBJECTID x
 ';'
 '}'
 ')'
@@ -1810,7 +1810,7 @@ OBJECTID avar
 ASSIGN
 '('
 NEW
-ERROR "A"
+TYPEID A
 ')'
 ELSE
 IF
@@ -1826,7 +1826,7 @@ OBJECTID avar
 ASSIGN
 '('
 NEW
-ERROR "A"
+TYPEID A
 ')'
 '.'
 OBJECTID method1

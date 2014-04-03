@@ -1,6 +1,6 @@
 #name "./arith.cool"
 #7 CLASS
-#7 ERROR "A"
+#7 TYPEID A
 #7 '{'
 #9 OBJECTID var
 #9 ':'
@@ -59,16 +59,16 @@
 #24 TYPEID Int
 #24 ')'
 #24 ':'
-#24 ERROR "B"
+#24 TYPEID B
 #24 '{'
 #25 '('
 #25 LET
-#25 ERROR "x"
+#25 OBJECTID x
 #25 ':'
 #25 TYPEID Int
 #25 IN
 #26 '{'
-#27 ERROR "x"
+#27 OBJECTID x
 #27 ASSIGN
 #27 OBJECTID num1
 #27 '+'
@@ -76,12 +76,12 @@
 #27 ';'
 #28 '('
 #28 NEW
-#28 ERROR "B"
+#28 TYPEID B
 #28 ')'
 #28 '.'
 #28 OBJECTID set_var
 #28 '('
-#28 ERROR "x"
+#28 OBJECTID x
 #28 ')'
 #28 ';'
 #29 '}'
@@ -95,28 +95,28 @@
 #33 TYPEID Int
 #33 ')'
 #33 ':'
-#33 ERROR "C"
+#33 TYPEID C
 #33 '{'
 #34 '('
 #34 LET
-#34 ERROR "x"
+#34 OBJECTID x
 #34 ':'
 #34 TYPEID Int
 #34 IN
 #35 '{'
-#36 ERROR "x"
+#36 OBJECTID x
 #36 ASSIGN
 #36 '~'
 #36 OBJECTID num
 #36 ';'
 #37 '('
 #37 NEW
-#37 ERROR "C"
+#37 TYPEID C
 #37 ')'
 #37 '.'
 #37 OBJECTID set_var
 #37 '('
-#37 ERROR "x"
+#37 OBJECTID x
 #37 ')'
 #37 ';'
 #38 '}'
@@ -134,7 +134,7 @@
 #42 TYPEID Int
 #42 ')'
 #42 ':'
-#42 ERROR "D"
+#42 TYPEID D
 #42 '{'
 #43 IF
 #43 OBJECTID num2
@@ -143,12 +143,12 @@
 #43 THEN
 #44 '('
 #44 LET
-#44 ERROR "x"
+#44 OBJECTID x
 #44 ':'
 #44 TYPEID Int
 #44 IN
 #45 '{'
-#46 ERROR "x"
+#46 OBJECTID x
 #46 ASSIGN
 #46 OBJECTID num1
 #46 '-'
@@ -156,12 +156,12 @@
 #46 ';'
 #47 '('
 #47 NEW
-#47 ERROR "D"
+#47 TYPEID D
 #47 ')'
 #47 '.'
 #47 OBJECTID set_var
 #47 '('
-#47 ERROR "x"
+#47 OBJECTID x
 #47 ')'
 #47 ';'
 #48 '}'
@@ -169,12 +169,12 @@
 #50 ELSE
 #51 '('
 #51 LET
-#51 ERROR "x"
+#51 OBJECTID x
 #51 ':'
 #51 TYPEID Int
 #51 IN
 #52 '{'
-#53 ERROR "x"
+#53 OBJECTID x
 #53 ASSIGN
 #53 OBJECTID num2
 #53 '-'
@@ -182,12 +182,12 @@
 #53 ';'
 #54 '('
 #54 NEW
-#54 ERROR "D"
+#54 TYPEID D
 #54 ')'
 #54 '.'
 #54 OBJECTID set_var
 #54 '('
-#54 ERROR "x"
+#54 OBJECTID x
 #54 ')'
 #54 ';'
 #55 '}'
@@ -202,11 +202,11 @@
 #60 TYPEID Int
 #60 ')'
 #60 ':'
-#60 ERROR "E"
+#60 TYPEID E
 #60 '{'
 #61 '('
 #61 LET
-#61 ERROR "x"
+#61 OBJECTID x
 #61 ':'
 #61 TYPEID Int
 #61 ASSIGN
@@ -215,27 +215,27 @@
 #62 '{'
 #63 '('
 #63 LET
-#63 ERROR "y"
+#63 OBJECTID y
 #63 ':'
 #63 TYPEID Int
 #63 ASSIGN
 #63 INT_CONST 1
 #63 IN
 #64 WHILE
-#64 ERROR "y"
+#64 OBJECTID y
 #64 LE
 #64 OBJECTID num
 #64 LOOP
 #65 '{'
-#66 ERROR "x"
+#66 OBJECTID x
 #66 ASSIGN
-#66 ERROR "x"
+#66 OBJECTID x
 #66 '*'
-#66 ERROR "y"
+#66 OBJECTID y
 #66 ';'
-#67 ERROR "y"
+#67 OBJECTID y
 #67 ASSIGN
-#67 ERROR "y"
+#67 OBJECTID y
 #67 '+'
 #67 INT_CONST 1
 #67 ';'
@@ -245,12 +245,12 @@
 #70 ';'
 #71 '('
 #71 NEW
-#71 ERROR "E"
+#71 TYPEID E
 #71 ')'
 #71 '.'
 #71 OBJECTID set_var
 #71 '('
-#71 ERROR "x"
+#71 OBJECTID x
 #71 ')'
 #71 ';'
 #72 '}'
@@ -260,9 +260,9 @@
 #76 '}'
 #76 ';'
 #78 CLASS
-#78 ERROR "B"
+#78 TYPEID B
 #78 INHERITS
-#78 ERROR "A"
+#78 TYPEID A
 #78 '{'
 #80 OBJECTID method5
 #80 '('
@@ -271,16 +271,16 @@
 #80 TYPEID Int
 #80 ')'
 #80 ':'
-#80 ERROR "E"
+#80 TYPEID E
 #80 '{'
 #81 '('
 #81 LET
-#81 ERROR "x"
+#81 OBJECTID x
 #81 ':'
 #81 TYPEID Int
 #81 IN
 #82 '{'
-#83 ERROR "x"
+#83 OBJECTID x
 #83 ASSIGN
 #83 OBJECTID num
 #83 '*'
@@ -288,12 +288,12 @@
 #83 ';'
 #84 '('
 #84 NEW
-#84 ERROR "E"
+#84 TYPEID E
 #84 ')'
 #84 '.'
 #84 OBJECTID set_var
 #84 '('
-#84 ERROR "x"
+#84 OBJECTID x
 #84 ')'
 #84 ';'
 #85 '}'
@@ -303,9 +303,9 @@
 #89 '}'
 #89 ';'
 #91 CLASS
-#91 ERROR "C"
+#91 TYPEID C
 #91 INHERITS
-#91 ERROR "B"
+#91 TYPEID B
 #91 '{'
 #93 OBJECTID method6
 #93 '('
@@ -314,28 +314,28 @@
 #93 TYPEID Int
 #93 ')'
 #93 ':'
-#93 ERROR "A"
+#93 TYPEID A
 #93 '{'
 #94 '('
 #94 LET
-#94 ERROR "x"
+#94 OBJECTID x
 #94 ':'
 #94 TYPEID Int
 #94 IN
 #95 '{'
-#96 ERROR "x"
+#96 OBJECTID x
 #96 ASSIGN
 #96 '~'
 #96 OBJECTID num
 #96 ';'
 #97 '('
 #97 NEW
-#97 ERROR "A"
+#97 TYPEID A
 #97 ')'
 #97 '.'
 #97 OBJECTID set_var
 #97 '('
-#97 ERROR "x"
+#97 OBJECTID x
 #97 ')'
 #97 ';'
 #98 '}'
@@ -349,16 +349,16 @@
 #102 TYPEID Int
 #102 ')'
 #102 ':'
-#102 ERROR "E"
+#102 TYPEID E
 #102 '{'
 #103 '('
 #103 LET
-#103 ERROR "x"
+#103 OBJECTID x
 #103 ':'
 #103 TYPEID Int
 #103 IN
 #104 '{'
-#105 ERROR "x"
+#105 OBJECTID x
 #105 ASSIGN
 #105 OBJECTID num
 #105 '*'
@@ -368,12 +368,12 @@
 #105 ';'
 #106 '('
 #106 NEW
-#106 ERROR "E"
+#106 TYPEID E
 #106 ')'
 #106 '.'
 #106 OBJECTID set_var
 #106 '('
-#106 ERROR "x"
+#106 OBJECTID x
 #106 ')'
 #106 ';'
 #107 '}'
@@ -383,9 +383,9 @@
 #111 '}'
 #111 ';'
 #113 CLASS
-#113 ERROR "D"
+#113 TYPEID D
 #113 INHERITS
-#113 ERROR "B"
+#113 TYPEID B
 #113 '{'
 #115 OBJECTID method7
 #115 '('
@@ -398,47 +398,47 @@
 #115 '{'
 #116 '('
 #116 LET
-#116 ERROR "x"
+#116 OBJECTID x
 #116 ':'
 #116 TYPEID Int
 #116 ASSIGN
 #116 OBJECTID num
 #116 IN
 #117 IF
-#117 ERROR "x"
+#117 OBJECTID x
 #117 '<'
 #117 INT_CONST 0
 #117 THEN
 #117 OBJECTID method7
 #117 '('
 #117 '~'
-#117 ERROR "x"
+#117 OBJECTID x
 #117 ')'
 #117 ELSE
 #118 IF
 #118 INT_CONST 0
 #118 '='
-#118 ERROR "x"
+#118 OBJECTID x
 #118 THEN
 #118 BOOL_CONST true
 #118 ELSE
 #119 IF
 #119 INT_CONST 1
 #119 '='
-#119 ERROR "x"
+#119 OBJECTID x
 #119 THEN
 #119 OBJECTID false
 #119 ELSE
 #120 IF
 #120 INT_CONST 2
 #120 '='
-#120 ERROR "x"
+#120 OBJECTID x
 #120 THEN
 #120 OBJECTID false
 #120 ELSE
 #121 OBJECTID method7
 #121 '('
-#121 ERROR "x"
+#121 OBJECTID x
 #121 '-'
 #121 INT_CONST 3
 #121 ')'
@@ -452,9 +452,9 @@
 #126 '}'
 #126 ';'
 #128 CLASS
-#128 ERROR "E"
+#128 TYPEID E
 #128 INHERITS
-#128 ERROR "D"
+#128 TYPEID D
 #128 '{'
 #130 OBJECTID method6
 #130 '('
@@ -463,16 +463,16 @@
 #130 TYPEID Int
 #130 ')'
 #130 ':'
-#130 ERROR "A"
+#130 TYPEID A
 #130 '{'
 #131 '('
 #131 LET
-#131 ERROR "x"
+#131 OBJECTID x
 #131 ':'
 #131 TYPEID Int
 #131 IN
 #132 '{'
-#133 ERROR "x"
+#133 OBJECTID x
 #133 ASSIGN
 #133 OBJECTID num
 #133 '/'
@@ -480,12 +480,12 @@
 #133 ';'
 #134 '('
 #134 NEW
-#134 ERROR "A"
+#134 TYPEID A
 #134 ')'
 #134 '.'
 #134 OBJECTID set_var
 #134 '('
-#134 ERROR "x"
+#134 OBJECTID x
 #134 ')'
 #134 ';'
 #135 '}'
@@ -598,7 +598,7 @@
 #171 ';'
 #176 OBJECTID i2c
 #176 '('
-#176 ERROR "i"
+#176 OBJECTID i
 #176 ':'
 #176 TYPEID Int
 #176 ')'
@@ -606,70 +606,70 @@
 #176 TYPEID String
 #176 '{'
 #177 IF
-#177 ERROR "i"
+#177 OBJECTID i
 #177 '='
 #177 INT_CONST 0
 #177 THEN
 #177 STR_CONST "0"
 #177 ELSE
 #178 IF
-#178 ERROR "i"
+#178 OBJECTID i
 #178 '='
 #178 INT_CONST 1
 #178 THEN
 #178 STR_CONST "1"
 #178 ELSE
 #179 IF
-#179 ERROR "i"
+#179 OBJECTID i
 #179 '='
 #179 INT_CONST 2
 #179 THEN
 #179 STR_CONST "2"
 #179 ELSE
 #180 IF
-#180 ERROR "i"
+#180 OBJECTID i
 #180 '='
 #180 INT_CONST 3
 #180 THEN
 #180 STR_CONST "3"
 #180 ELSE
 #181 IF
-#181 ERROR "i"
+#181 OBJECTID i
 #181 '='
 #181 INT_CONST 4
 #181 THEN
 #181 STR_CONST "4"
 #181 ELSE
 #182 IF
-#182 ERROR "i"
+#182 OBJECTID i
 #182 '='
 #182 INT_CONST 5
 #182 THEN
 #182 STR_CONST "5"
 #182 ELSE
 #183 IF
-#183 ERROR "i"
+#183 OBJECTID i
 #183 '='
 #183 INT_CONST 6
 #183 THEN
 #183 STR_CONST "6"
 #183 ELSE
 #184 IF
-#184 ERROR "i"
+#184 OBJECTID i
 #184 '='
 #184 INT_CONST 7
 #184 THEN
 #184 STR_CONST "7"
 #184 ELSE
 #185 IF
-#185 ERROR "i"
+#185 OBJECTID i
 #185 '='
 #185 INT_CONST 8
 #185 THEN
 #185 STR_CONST "8"
 #185 ELSE
 #186 IF
-#186 ERROR "i"
+#186 OBJECTID i
 #186 '='
 #186 INT_CONST 9
 #186 THEN
@@ -697,7 +697,7 @@
 #189 ';'
 #199 OBJECTID a2i
 #199 '('
-#199 ERROR "s"
+#199 OBJECTID s
 #199 ':'
 #199 TYPEID String
 #199 ')'
@@ -705,7 +705,7 @@
 #199 TYPEID Int
 #199 '{'
 #200 IF
-#200 ERROR "s"
+#200 OBJECTID s
 #200 '.'
 #200 OBJECTID length
 #200 '('
@@ -716,7 +716,7 @@
 #200 INT_CONST 0
 #200 ELSE
 #201 IF
-#201 ERROR "s"
+#201 OBJECTID s
 #201 '.'
 #201 OBJECTID substr
 #201 '('
@@ -730,13 +730,13 @@
 #201 '~'
 #201 OBJECTID a2i_aux
 #201 '('
-#201 ERROR "s"
+#201 OBJECTID s
 #201 '.'
 #201 OBJECTID substr
 #201 '('
 #201 INT_CONST 1
 #201 ','
-#201 ERROR "s"
+#201 OBJECTID s
 #201 '.'
 #201 OBJECTID length
 #201 '('
@@ -747,7 +747,7 @@
 #201 ')'
 #201 ELSE
 #202 IF
-#202 ERROR "s"
+#202 OBJECTID s
 #202 '.'
 #202 OBJECTID substr
 #202 '('
@@ -760,13 +760,13 @@
 #202 THEN
 #202 OBJECTID a2i_aux
 #202 '('
-#202 ERROR "s"
+#202 OBJECTID s
 #202 '.'
 #202 OBJECTID substr
 #202 '('
 #202 INT_CONST 1
 #202 ','
-#202 ERROR "s"
+#202 OBJECTID s
 #202 '.'
 #202 OBJECTID length
 #202 '('
@@ -778,7 +778,7 @@
 #202 ELSE
 #203 OBJECTID a2i_aux
 #203 '('
-#203 ERROR "s"
+#203 OBJECTID s
 #203 ')'
 #204 FI
 #204 FI
@@ -787,7 +787,7 @@
 #205 ';'
 #211 OBJECTID a2i_aux
 #211 '('
-#211 ERROR "s"
+#211 OBJECTID s
 #211 ':'
 #211 TYPEID String
 #211 ')'
@@ -805,11 +805,11 @@
 #213 '{'
 #214 '('
 #214 LET
-#214 ERROR "j"
+#214 OBJECTID j
 #214 ':'
 #214 TYPEID Int
 #214 ASSIGN
-#214 ERROR "s"
+#214 OBJECTID s
 #214 '.'
 #214 OBJECTID length
 #214 '('
@@ -817,16 +817,16 @@
 #214 IN
 #215 '('
 #215 LET
-#215 ERROR "i"
+#215 OBJECTID i
 #215 ':'
 #215 TYPEID Int
 #215 ASSIGN
 #215 INT_CONST 0
 #215 IN
 #216 WHILE
-#216 ERROR "i"
+#216 OBJECTID i
 #216 '<'
-#216 ERROR "j"
+#216 OBJECTID j
 #216 LOOP
 #217 '{'
 #218 OBJECTID int
@@ -837,19 +837,19 @@
 #218 '+'
 #218 OBJECTID c2i
 #218 '('
-#218 ERROR "s"
+#218 OBJECTID s
 #218 '.'
 #218 OBJECTID substr
 #218 '('
-#218 ERROR "i"
+#218 OBJECTID i
 #218 ','
 #218 INT_CONST 1
 #218 ')'
 #218 ')'
 #218 ';'
-#219 ERROR "i"
+#219 OBJECTID i
 #219 ASSIGN
-#219 ERROR "i"
+#219 OBJECTID i
 #219 '+'
 #219 INT_CONST 1
 #219 ';'
@@ -866,7 +866,7 @@
 #227 ';'
 #232 OBJECTID i2a
 #232 '('
-#232 ERROR "i"
+#232 OBJECTID i
 #232 ':'
 #232 TYPEID Int
 #232 ')'
@@ -874,7 +874,7 @@
 #232 TYPEID String
 #232 '{'
 #233 IF
-#233 ERROR "i"
+#233 OBJECTID i
 #233 '='
 #233 INT_CONST 0
 #233 THEN
@@ -883,11 +883,11 @@
 #234 IF
 #234 INT_CONST 0
 #234 '<'
-#234 ERROR "i"
+#234 OBJECTID i
 #234 THEN
 #234 OBJECTID i2a_aux
 #234 '('
-#234 ERROR "i"
+#234 OBJECTID i
 #234 ')'
 #234 ELSE
 #235 STR_CONST "-"
@@ -896,7 +896,7 @@
 #235 '('
 #235 OBJECTID i2a_aux
 #235 '('
-#235 ERROR "i"
+#235 OBJECTID i
 #235 '*'
 #235 '~'
 #235 INT_CONST 1
@@ -908,7 +908,7 @@
 #237 ';'
 #241 OBJECTID i2a_aux
 #241 '('
-#241 ERROR "i"
+#241 OBJECTID i
 #241 ':'
 #241 TYPEID Int
 #241 ')'
@@ -916,7 +916,7 @@
 #241 TYPEID String
 #241 '{'
 #242 IF
-#242 ERROR "i"
+#242 OBJECTID i
 #242 '='
 #242 INT_CONST 0
 #242 THEN
@@ -928,7 +928,7 @@
 #243 ':'
 #243 TYPEID Int
 #243 ASSIGN
-#243 ERROR "i"
+#243 OBJECTID i
 #243 '/'
 #243 INT_CONST 10
 #243 IN
@@ -941,7 +941,7 @@
 #244 '('
 #244 OBJECTID i2c
 #244 '('
-#244 ERROR "i"
+#244 OBJECTID i
 #244 '-'
 #244 OBJECTID next
 #244 '*'
@@ -965,11 +965,11 @@
 #253 ';'
 #254 OBJECTID avar
 #254 ':'
-#254 ERROR "A"
+#254 TYPEID A
 #254 ';'
 #255 OBJECTID a_var
 #255 ':'
-#255 ERROR "A"
+#255 TYPEID A
 #255 ';'
 #256 OBJECTID flag
 #256 ':'
@@ -986,7 +986,7 @@
 #260 '{'
 #261 OBJECTID out_string
 #261 '('
-#261 STR_CONST "\n\\tTo add a number to "
+#261 STR_CONST "\n\tTo add a number to "
 #261 ')'
 #261 ';'
 #262 OBJECTID print
@@ -1001,7 +1001,7 @@
 #263 ';'
 #264 OBJECTID out_string
 #264 '('
-#264 STR_CONST "\\tTo negate "
+#264 STR_CONST "\tTo negate "
 #264 ')'
 #264 ';'
 #265 OBJECTID print
@@ -1016,7 +1016,7 @@
 #266 ';'
 #267 OBJECTID out_string
 #267 '('
-#267 STR_CONST "\\tTo find the difference between "
+#267 STR_CONST "\tTo find the difference between "
 #267 ')'
 #267 ';'
 #268 OBJECTID print
@@ -1031,7 +1031,7 @@
 #269 ';'
 #270 OBJECTID out_string
 #270 '('
-#270 STR_CONST "\\tTo find the factorial of "
+#270 STR_CONST "\tTo find the factorial of "
 #270 ')'
 #270 ';'
 #271 OBJECTID print
@@ -1046,7 +1046,7 @@
 #272 ';'
 #273 OBJECTID out_string
 #273 '('
-#273 STR_CONST "\\tTo square "
+#273 STR_CONST "\tTo square "
 #273 ')'
 #273 ';'
 #274 OBJECTID print
@@ -1061,7 +1061,7 @@
 #275 ';'
 #276 OBJECTID out_string
 #276 '('
-#276 STR_CONST "\\tTo cube "
+#276 STR_CONST "\tTo cube "
 #276 ')'
 #276 ';'
 #277 OBJECTID print
@@ -1076,7 +1076,7 @@
 #278 ';'
 #279 OBJECTID out_string
 #279 '('
-#279 STR_CONST "\\tTo find out if "
+#279 STR_CONST "\tTo find out if "
 #279 ')'
 #279 ';'
 #280 OBJECTID print
@@ -1091,7 +1091,7 @@
 #281 ';'
 #282 OBJECTID out_string
 #282 '('
-#282 STR_CONST "\\tTo divide "
+#282 STR_CONST "\tTo divide "
 #282 ')'
 #282 ';'
 #283 OBJECTID print
@@ -1106,12 +1106,12 @@
 #284 ';'
 #285 OBJECTID out_string
 #285 '('
-#285 STR_CONST "\\tTo get a new number...enter j:\n"
+#285 STR_CONST "\tTo get a new number...enter j:\n"
 #285 ')'
 #285 ';'
 #286 OBJECTID out_string
 #286 '('
-#286 STR_CONST "\\tTo quit...enter q:\n\n"
+#286 STR_CONST "\tTo quit...enter q:\n\n"
 #286 ')'
 #286 ';'
 #287 OBJECTID in_string
@@ -1154,7 +1154,7 @@
 #300 '{'
 #301 '('
 #301 LET
-#301 ERROR "z"
+#301 OBJECTID z
 #301 ':'
 #301 TYPEID A2I
 #301 ASSIGN
@@ -1163,7 +1163,7 @@
 #301 IN
 #302 '('
 #302 LET
-#302 ERROR "s"
+#302 OBJECTID s
 #302 ':'
 #302 TYPEID String
 #302 ASSIGN
@@ -1171,11 +1171,11 @@
 #302 '('
 #302 ')'
 #302 IN
-#303 ERROR "z"
+#303 OBJECTID z
 #303 '.'
 #303 OBJECTID a2i
 #303 '('
-#303 ERROR "s"
+#303 OBJECTID s
 #303 ')'
 #304 ')'
 #305 ')'
@@ -1194,40 +1194,40 @@
 #309 '{'
 #310 '('
 #310 LET
-#310 ERROR "x"
+#310 OBJECTID x
 #310 ':'
 #310 TYPEID Int
 #310 ASSIGN
 #310 OBJECTID num
 #310 IN
 #311 IF
-#311 ERROR "x"
+#311 OBJECTID x
 #311 '<'
 #311 INT_CONST 0
 #311 THEN
 #311 OBJECTID is_even
 #311 '('
 #311 '~'
-#311 ERROR "x"
+#311 OBJECTID x
 #311 ')'
 #311 ELSE
 #312 IF
 #312 INT_CONST 0
 #312 '='
-#312 ERROR "x"
+#312 OBJECTID x
 #312 THEN
 #312 BOOL_CONST true
 #312 ELSE
 #313 IF
 #313 INT_CONST 1
 #313 '='
-#313 ERROR "x"
+#313 OBJECTID x
 #313 THEN
 #313 OBJECTID false
 #313 ELSE
 #314 OBJECTID is_even
 #314 '('
-#314 ERROR "x"
+#314 OBJECTID x
 #314 '-'
 #314 INT_CONST 2
 #314 ')'
@@ -1241,7 +1241,7 @@
 #319 '('
 #319 OBJECTID var
 #319 ':'
-#319 ERROR "A"
+#319 TYPEID A
 #319 ')'
 #319 ':'
 #319 TYPEID SELF_TYPE
@@ -1249,52 +1249,52 @@
 #320 CASE
 #320 OBJECTID var
 #320 OF
-#321 ERROR "a"
+#321 OBJECTID a
 #321 ':'
-#321 ERROR "A"
+#321 TYPEID A
 #321 DARROW
 #321 OBJECTID out_string
 #321 '('
 #321 STR_CONST "Class type is now A\n"
 #321 ')'
 #321 ';'
-#322 ERROR "b"
+#322 OBJECTID b
 #322 ':'
-#322 ERROR "B"
+#322 TYPEID B
 #322 DARROW
 #322 OBJECTID out_string
 #322 '('
 #322 STR_CONST "Class type is now B\n"
 #322 ')'
 #322 ';'
-#323 ERROR "c"
+#323 OBJECTID c
 #323 ':'
-#323 ERROR "C"
+#323 TYPEID C
 #323 DARROW
 #323 OBJECTID out_string
 #323 '('
 #323 STR_CONST "Class type is now C\n"
 #323 ')'
 #323 ';'
-#324 ERROR "d"
+#324 OBJECTID d
 #324 ':'
-#324 ERROR "D"
+#324 TYPEID D
 #324 DARROW
 #324 OBJECTID out_string
 #324 '('
 #324 STR_CONST "Class type is now D\n"
 #324 ')'
 #324 ';'
-#325 ERROR "e"
+#325 OBJECTID e
 #325 ':'
-#325 ERROR "E"
+#325 TYPEID E
 #325 DARROW
 #325 OBJECTID out_string
 #325 '('
 #325 STR_CONST "Class type is now E\n"
 #325 ')'
 #325 ';'
-#326 ERROR "o"
+#326 OBJECTID o
 #326 ':'
 #326 TYPEID Object
 #326 DARROW
@@ -1310,14 +1310,14 @@
 #330 '('
 #330 OBJECTID var
 #330 ':'
-#330 ERROR "A"
+#330 TYPEID A
 #330 ')'
 #330 ':'
 #330 TYPEID SELF_TYPE
 #330 '{'
 #331 '('
 #331 LET
-#331 ERROR "z"
+#331 OBJECTID z
 #331 ':'
 #331 TYPEID A2I
 #331 ASSIGN
@@ -1327,7 +1327,7 @@
 #332 '{'
 #333 OBJECTID out_string
 #333 '('
-#333 ERROR "z"
+#333 OBJECTID z
 #333 '.'
 #333 OBJECTID i2a
 #333 '('
@@ -1359,7 +1359,7 @@
 #341 ASSIGN
 #341 '('
 #341 NEW
-#341 ERROR "A"
+#341 TYPEID A
 #341 ')'
 #341 ';'
 #342 WHILE
@@ -1418,7 +1418,7 @@
 #357 ASSIGN
 #357 '('
 #357 NEW
-#357 ERROR "A"
+#357 TYPEID A
 #357 ')'
 #357 '.'
 #357 OBJECTID set_var
@@ -1432,7 +1432,7 @@
 #358 ASSIGN
 #358 '('
 #358 NEW
-#358 ERROR "B"
+#358 TYPEID B
 #358 ')'
 #358 '.'
 #358 OBJECTID method2
@@ -1460,41 +1460,41 @@
 #361 CASE
 #361 OBJECTID avar
 #361 OF
-#362 ERROR "c"
+#362 OBJECTID c
 #362 ':'
-#362 ERROR "C"
+#362 TYPEID C
 #362 DARROW
 #362 OBJECTID avar
 #362 ASSIGN
-#362 ERROR "c"
+#362 OBJECTID c
 #362 '.'
 #362 OBJECTID method6
 #362 '('
-#362 ERROR "c"
+#362 OBJECTID c
 #362 '.'
 #362 OBJECTID value
 #362 '('
 #362 ')'
 #362 ')'
 #362 ';'
-#363 ERROR "a"
+#363 OBJECTID a
 #363 ':'
-#363 ERROR "A"
+#363 TYPEID A
 #363 DARROW
 #363 OBJECTID avar
 #363 ASSIGN
-#363 ERROR "a"
+#363 OBJECTID a
 #363 '.'
 #363 OBJECTID method3
 #363 '('
-#363 ERROR "a"
+#363 OBJECTID a
 #363 '.'
 #363 OBJECTID value
 #363 '('
 #363 ')'
 #363 ')'
 #363 ';'
-#364 ERROR "o"
+#364 OBJECTID o
 #364 ':'
 #364 TYPEID Object
 #364 DARROW
@@ -1524,7 +1524,7 @@
 #371 ASSIGN
 #371 '('
 #371 NEW
-#371 ERROR "A"
+#371 TYPEID A
 #371 ')'
 #371 '.'
 #371 OBJECTID set_var
@@ -1538,7 +1538,7 @@
 #372 ASSIGN
 #372 '('
 #372 NEW
-#372 ERROR "D"
+#372 TYPEID D
 #372 ')'
 #372 '.'
 #372 OBJECTID method4
@@ -1567,10 +1567,10 @@
 #374 ASSIGN
 #374 '('
 #374 NEW
-#374 ERROR "C"
+#374 TYPEID C
 #374 ')'
 #374 '@'
-#374 ERROR "A"
+#374 TYPEID A
 #374 '.'
 #374 OBJECTID method5
 #374 '('
@@ -1590,10 +1590,10 @@
 #376 ASSIGN
 #376 '('
 #376 NEW
-#376 ERROR "C"
+#376 TYPEID C
 #376 ')'
 #376 '@'
-#376 ERROR "B"
+#376 TYPEID B
 #376 '.'
 #376 OBJECTID method5
 #376 '('
@@ -1613,10 +1613,10 @@
 #378 ASSIGN
 #378 '('
 #378 NEW
-#378 ERROR "C"
+#378 TYPEID C
 #378 ')'
 #378 '@'
-#378 ERROR "C"
+#378 TYPEID C
 #378 '.'
 #378 OBJECTID method5
 #378 '('
@@ -1636,7 +1636,7 @@
 #381 '('
 #381 '('
 #381 NEW
-#381 ERROR "D"
+#381 TYPEID D
 #381 ')'
 #381 '.'
 #381 OBJECTID method7
@@ -1693,16 +1693,16 @@
 #395 THEN
 #396 '('
 #396 LET
-#396 ERROR "x"
+#396 OBJECTID x
 #396 ':'
-#396 ERROR "A"
+#396 TYPEID A
 #396 IN
 #397 '{'
-#398 ERROR "x"
+#398 OBJECTID x
 #398 ASSIGN
 #398 '('
 #398 NEW
-#398 ERROR "E"
+#398 TYPEID E
 #398 ')'
 #398 '.'
 #398 OBJECTID method6
@@ -1716,7 +1716,7 @@
 #398 ';'
 #399 '('
 #399 LET
-#399 ERROR "r"
+#399 OBJECTID r
 #399 ':'
 #399 TYPEID Int
 #399 ASSIGN
@@ -1728,7 +1728,7 @@
 #399 ')'
 #399 '-'
 #399 '('
-#399 ERROR "x"
+#399 OBJECTID x
 #399 '.'
 #399 OBJECTID value
 #399 '('
@@ -1756,7 +1756,7 @@
 #403 ';'
 #404 OBJECTID print
 #404 '('
-#404 ERROR "x"
+#404 OBJECTID x
 #404 ')'
 #404 ';'
 #405 OBJECTID out_string
@@ -1766,7 +1766,7 @@
 #405 ';'
 #406 '('
 #406 LET
-#406 ERROR "a"
+#406 OBJECTID a
 #406 ':'
 #406 TYPEID A2I
 #406 ASSIGN
@@ -1776,11 +1776,11 @@
 #407 '{'
 #408 OBJECTID out_string
 #408 '('
-#408 ERROR "a"
+#408 OBJECTID a
 #408 '.'
 #408 OBJECTID i2a
 #408 '('
-#408 ERROR "r"
+#408 OBJECTID r
 #408 ')'
 #408 ')'
 #408 ';'
@@ -1797,7 +1797,7 @@
 #413 ';'
 #414 OBJECTID avar
 #414 ASSIGN
-#414 ERROR "x"
+#414 OBJECTID x
 #414 ';'
 #415 '}'
 #416 ')'
@@ -1811,7 +1811,7 @@
 #418 ASSIGN
 #418 '('
 #418 NEW
-#418 ERROR "A"
+#418 TYPEID A
 #418 ')'
 #419 ELSE
 #420 IF
@@ -1827,7 +1827,7 @@
 #422 ASSIGN
 #422 '('
 #422 NEW
-#422 ERROR "A"
+#422 TYPEID A
 #422 ')'
 #422 '.'
 #422 OBJECTID method1

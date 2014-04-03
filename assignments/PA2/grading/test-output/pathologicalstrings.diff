@@ -1646,7 +1646,7 @@
 > '.'
 > '.'
 > LONGERROR
-> ERROR "n"
+> OBJECTID n
 > LONGERROR
 > LONGERROR
 > '.'
@@ -2471,7 +2471,7 @@
 > '.'
 > '.'
 > LONGERROR
-> ERROR "n"
+> OBJECTID n
 > LONGERROR
 > LONGERROR
 > '.'

@@ -2,13 +2,7 @@
 < NOT
 ---
 > OBJECTID not
-3c3
-< OBJECTID a
----
-> ERROR "a"
-7,8c7,8
+7c7
 < NOT
-< OBJECTID a
 ---
 > OBJECTID not
-> ERROR "a"

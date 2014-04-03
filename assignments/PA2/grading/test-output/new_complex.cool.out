@@ -11,7 +11,7 @@ TYPEID SELF_TYPE
 '{'
 '('
 LET
-ERROR "c"
+OBJECTID c
 ':'
 TYPEID Complex
 ASSIGN
@@ -29,13 +29,13 @@ INT_CONST 1
 IN
 '{'
 IF
-ERROR "c"
+OBJECTID c
 '.'
 OBJECTID reflect_X
 '('
 ')'
 '='
-ERROR "c"
+OBJECTID c
 '.'
 OBJECTID reflect_0
 '('
@@ -53,7 +53,7 @@ STR_CONST "=(\n"
 FI
 ';'
 IF
-ERROR "c"
+OBJECTID c
 '.'
 OBJECTID reflect_X
 '('
@@ -65,7 +65,7 @@ OBJECTID reflect_Y
 '.'
 OBJECTID equal
 '('
-ERROR "c"
+OBJECTID c
 '.'
 OBJECTID reflect_0
 '('
@@ -94,21 +94,21 @@ TYPEID Complex
 INHERITS
 TYPEID IO
 '{'
-ERROR "x"
+OBJECTID x
 ':'
 TYPEID Int
 ';'
-ERROR "y"
+OBJECTID y
 ':'
 TYPEID Int
 ';'
 OBJECTID init
 '('
-ERROR "a"
+OBJECTID a
 ':'
 TYPEID Int
 ','
-ERROR "b"
+OBJECTID b
 ':'
 TYPEID Int
 ')'
@@ -116,13 +116,13 @@ TYPEID Int
 TYPEID Complex
 '{'
 '{'
-ERROR "x"
+OBJECTID x
 '='
-ERROR "a"
+OBJECTID a
 ';'
-ERROR "y"
+OBJECTID y
 '='
-ERROR "b"
+OBJECTID b
 ';'
 OBJECTID self
 ';'
@@ -136,18 +136,18 @@ OBJECTID print
 TYPEID Object
 '{'
 IF
-ERROR "y"
+OBJECTID y
 '='
 INT_CONST 0
 THEN
 OBJECTID out_int
 '('
-ERROR "x"
+OBJECTID x
 ')'
 ELSE
 OBJECTID out_int
 '('
-ERROR "x"
+OBJECTID x
 ')'
 '.'
 OBJECTID out_string
@@ -157,7 +157,7 @@ STR_CONST "+"
 '.'
 OBJECTID out_int
 '('
-ERROR "y"
+OBJECTID y
 ')'
 '.'
 OBJECTID out_string
@@ -174,15 +174,15 @@ OBJECTID reflect_0
 TYPEID Complex
 '{'
 '{'
-ERROR "x"
+OBJECTID x
 '='
 '~'
-ERROR "x"
+OBJECTID x
 ';'
-ERROR "y"
+OBJECTID y
 '='
 '~'
-ERROR "y"
+OBJECTID y
 ';'
 OBJECTID self
 ';'
@@ -196,10 +196,10 @@ OBJECTID reflect_X
 TYPEID Complex
 '{'
 '{'
-ERROR "y"
+OBJECTID y
 '='
 '~'
-ERROR "y"
+OBJECTID y
 ';'
 OBJECTID self
 ';'
@@ -213,10 +213,10 @@ OBJECTID reflect_Y
 TYPEID Complex
 '{'
 '{'
-ERROR "x"
+OBJECTID x
 '='
 '~'
-ERROR "x"
+OBJECTID x
 ';'
 OBJECTID self
 ';'
@@ -225,7 +225,7 @@ OBJECTID self
 ';'
 OBJECTID equal
 '('
-ERROR "d"
+OBJECTID d
 ':'
 TYPEID Complex
 ')'
@@ -233,18 +233,18 @@ TYPEID Complex
 TYPEID Bool
 '{'
 IF
-ERROR "x"
+OBJECTID x
 '='
-ERROR "d"
+OBJECTID d
 '.'
 OBJECTID x_value
 '('
 ')'
 THEN
 IF
-ERROR "y"
+OBJECTID y
 '='
-ERROR "d"
+OBJECTID d
 '.'
 OBJECTID y_value
 '('
@@ -265,7 +265,7 @@ OBJECTID x_value
 ':'
 TYPEID Int
 '{'
-ERROR "x"
+OBJECTID x
 '}'
 ';'
 OBJECTID y_value
@@ -274,7 +274,7 @@ OBJECTID y_value
 ':'
 TYPEID Int
 '{'
-ERROR "y"
+OBJECTID y
 '}'
 ';'
 '}'

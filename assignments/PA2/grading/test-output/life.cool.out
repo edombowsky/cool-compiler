@@ -242,7 +242,7 @@ TYPEID SELF_TYPE
 '{'
 '('
 LET
-ERROR "i"
+OBJECTID i
 ':'
 TYPEID Int
 ASSIGN
@@ -263,7 +263,7 @@ STR_CONST "\n"
 ')'
 ';'
 WHILE
-ERROR "i"
+OBJECTID i
 '<'
 OBJECTID num
 LOOP
@@ -274,7 +274,7 @@ OBJECTID population_map
 '.'
 OBJECTID substr
 '('
-ERROR "i"
+OBJECTID i
 ','
 OBJECTID columns
 ')'
@@ -285,9 +285,9 @@ OBJECTID out_string
 STR_CONST "\n"
 ')'
 ';'
-ERROR "i"
+OBJECTID i
 ASSIGN
-ERROR "i"
+OBJECTID i
 '+'
 OBJECTID columns
 ';'
@@ -937,107 +937,107 @@ STR_CONST "\nPlease chose a number:\n"
 ';'
 OBJECTID out_string
 '('
-STR_CONST "\\t1: A cross\n"
+STR_CONST "\t1: A cross\n"
 ')'
 ';'
 OBJECTID out_string
 '('
-STR_CONST "\\t2: A slash from the upper left to lower right\n"
+STR_CONST "\t2: A slash from the upper left to lower right\n"
 ')'
 ';'
 OBJECTID out_string
 '('
-STR_CONST "\\t3: A slash from the upper right to lower left\n"
+STR_CONST "\t3: A slash from the upper right to lower left\n"
 ')'
 ';'
 OBJECTID out_string
 '('
-STR_CONST "\\t4: An X\n"
+STR_CONST "\t4: An X\n"
 ')'
 ';'
 OBJECTID out_string
 '('
-STR_CONST "\\t5: A greater than sign \n"
+STR_CONST "\t5: A greater than sign \n"
 ')'
 ';'
 OBJECTID out_string
 '('
-STR_CONST "\\t6: A less than sign\n"
+STR_CONST "\t6: A less than sign\n"
 ')'
 ';'
 OBJECTID out_string
 '('
-STR_CONST "\\t7: Two greater than signs\n"
+STR_CONST "\t7: Two greater than signs\n"
 ')'
 ';'
 OBJECTID out_string
 '('
-STR_CONST "\\t8: Two less than signs\n"
+STR_CONST "\t8: Two less than signs\n"
 ')'
 ';'
 OBJECTID out_string
 '('
-STR_CONST "\\t9: A 'V'\n"
+STR_CONST "\t9: A 'V'\n"
 ')'
 ';'
 OBJECTID out_string
 '('
-STR_CONST "\\t10: An inverse 'V'\n"
+STR_CONST "\t10: An inverse 'V'\n"
 ')'
 ';'
 OBJECTID out_string
 '('
-STR_CONST "\\t11: Numbers 9 and 10 combined\n"
+STR_CONST "\t11: Numbers 9 and 10 combined\n"
 ')'
 ';'
 OBJECTID out_string
 '('
-STR_CONST "\\t12: A full grid\n"
+STR_CONST "\t12: A full grid\n"
 ')'
 ';'
 OBJECTID out_string
 '('
-STR_CONST "\\t13: A 'T'\n"
+STR_CONST "\t13: A 'T'\n"
 ')'
 ';'
 OBJECTID out_string
 '('
-STR_CONST "\\t14: A plus '+'\n"
+STR_CONST "\t14: A plus '+'\n"
 ')'
 ';'
 OBJECTID out_string
 '('
-STR_CONST "\\t15: A 'W'\n"
+STR_CONST "\t15: A 'W'\n"
 ')'
 ';'
 OBJECTID out_string
 '('
-STR_CONST "\\t16: An 'M'\n"
+STR_CONST "\t16: An 'M'\n"
 ')'
 ';'
 OBJECTID out_string
 '('
-STR_CONST "\\t17: An 'E'\n"
+STR_CONST "\t17: An 'E'\n"
 ')'
 ';'
 OBJECTID out_string
 '('
-STR_CONST "\\t18: A '3'\n"
+STR_CONST "\t18: A '3'\n"
 ')'
 ';'
 OBJECTID out_string
 '('
-STR_CONST "\\t19: An 'O'\n"
+STR_CONST "\t19: An 'O'\n"
 ')'
 ';'
 OBJECTID out_string
 '('
-STR_CONST "\\t20: An '8'\n"
+STR_CONST "\t20: An '8'\n"
 ')'
 ';'
 OBJECTID out_string
 '('
-STR_CONST "\\t21: An 'S'\n"
+STR_CONST "\t21: An 'S'\n"
 ')'
 ';'
 OBJECTID out_string

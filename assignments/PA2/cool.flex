@@ -265,6 +265,36 @@ f(?i:false)     {
                         strcat(string_buf, "\n");
                     }
 	            }
+<STRING>\\t     {
+                    string_length = string_length + 2;
+                    if (string_length >= MAX_STR_CONST) {
+                        string_buf[0] = '\0';
+                        cool_yylval.error_msg = "String constant too long";
+                        return (ERROR);
+                    } else {
+                        strcat(string_buf, "\t");
+                    }
+	            }
+<STRING>\\b     {
+                    string_length = string_length + 2;
+                    if (string_length >= MAX_STR_CONST) {
+                        string_buf[0] = '\0';
+                        cool_yylval.error_msg = "String constant too long";
+                        return (ERROR);
+                    } else {
+                        strcat(string_buf, "\b");
+                    }
+	            }
+<STRING>\\f     {
+                    string_length = string_length + 2;
+                    if (string_length >= MAX_STR_CONST) {
+                        string_buf[0] = '\0';
+                        cool_yylval.error_msg = "String constant too long";
+                        return (ERROR);
+                    } else {
+                        strcat(string_buf, "\f");
+                    }
+	            }
 <STRING>.       {
                     string_length += 1;
                     if (string_length >= MAX_STR_CONST) {

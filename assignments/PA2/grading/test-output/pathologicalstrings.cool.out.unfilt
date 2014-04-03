@@ -1645,7 +1645,7 @@
 #25 '.'
 #25 '.'
 #25 ERROR "\\"
-#25 ERROR "n"
+#25 OBJECTID n
 #25 ERROR "Unterminated string constant"
 #27 ERROR "Unterminated string constant"
 #27 '.'
@@ -2470,7 +2470,7 @@
 #36 '.'
 #36 '.'
 #36 ERROR "\\"
-#36 ERROR "n"
+#36 OBJECTID n
 #36 ERROR "Unterminated string constant"
 #38 ERROR "Unterminated string constant"
 #38 '.'

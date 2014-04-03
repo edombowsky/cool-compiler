@@ -1,4 +1,0 @@
-#name "./s19.test.cool"
-#2 ERROR "Unterminated string constant"
-#2 ERROR "d"
-#2 ERROR "Unterminated string constant"

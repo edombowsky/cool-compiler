@@ -5,7 +5,7 @@ TYPEID IO
 '{'
 OBJECTID pal
 '('
-ERROR "s"
+OBJECTID s
 ':'
 TYPEID String
 ')'
@@ -13,7 +13,7 @@ TYPEID String
 TYPEID Bool
 '{'
 IF
-ERROR "s"
+OBJECTID s
 '.'
 OBJECTID length
 '('
@@ -24,7 +24,7 @@ THEN
 BOOL_CONST true
 ELSE
 IF
-ERROR "s"
+OBJECTID s
 '.'
 OBJECTID length
 '('
@@ -35,7 +35,7 @@ THEN
 BOOL_CONST true
 ELSE
 IF
-ERROR "s"
+OBJECTID s
 '.'
 OBJECTID substr
 '('
@@ -44,11 +44,11 @@ INT_CONST 0
 INT_CONST 1
 ')'
 '='
-ERROR "s"
+OBJECTID s
 '.'
 OBJECTID substr
 '('
-ERROR "s"
+OBJECTID s
 '.'
 OBJECTID length
 '('
@@ -61,13 +61,13 @@ INT_CONST 1
 THEN
 OBJECTID pal
 '('
-ERROR "s"
+OBJECTID s
 '.'
 OBJECTID substr
 '('
 INT_CONST 1
 ','
-ERROR "s"
+OBJECTID s
 '.'
 OBJECTID length
 '('
@@ -83,7 +83,7 @@ FI
 FI
 '}'
 ';'
-ERROR "i"
+OBJECTID i
 ':'
 TYPEID Int
 ';'
@@ -94,7 +94,7 @@ OBJECTID main
 TYPEID SELF_TYPE
 '{'
 '{'
-ERROR "i"
+OBJECTID i
 ASSIGN
 '~'
 INT_CONST 1

@@ -6,7 +6,7 @@
 #1 '{'
 #2 OBJECTID pal
 #2 '('
-#2 ERROR "s"
+#2 OBJECTID s
 #2 ':'
 #2 TYPEID String
 #2 ')'
@@ -14,7 +14,7 @@
 #2 TYPEID Bool
 #2 '{'
 #3 IF
-#3 ERROR "s"
+#3 OBJECTID s
 #3 '.'
 #3 OBJECTID length
 #3 '('
@@ -25,7 +25,7 @@
 #4 BOOL_CONST true
 #5 ELSE
 #5 IF
-#5 ERROR "s"
+#5 OBJECTID s
 #5 '.'
 #5 OBJECTID length
 #5 '('
@@ -36,7 +36,7 @@
 #6 BOOL_CONST true
 #7 ELSE
 #7 IF
-#7 ERROR "s"
+#7 OBJECTID s
 #7 '.'
 #7 OBJECTID substr
 #7 '('
@@ -45,11 +45,11 @@
 #7 INT_CONST 1
 #7 ')'
 #7 '='
-#7 ERROR "s"
+#7 OBJECTID s
 #7 '.'
 #7 OBJECTID substr
 #7 '('
-#7 ERROR "s"
+#7 OBJECTID s
 #7 '.'
 #7 OBJECTID length
 #7 '('
@@ -62,13 +62,13 @@
 #8 THEN
 #8 OBJECTID pal
 #8 '('
-#8 ERROR "s"
+#8 OBJECTID s
 #8 '.'
 #8 OBJECTID substr
 #8 '('
 #8 INT_CONST 1
 #8 ','
-#8 ERROR "s"
+#8 OBJECTID s
 #8 '.'
 #8 OBJECTID length
 #8 '('
@@ -84,7 +84,7 @@
 #10 FI
 #11 '}'
 #11 ';'
-#13 ERROR "i"
+#13 OBJECTID i
 #13 ':'
 #13 TYPEID Int
 #13 ';'
@@ -95,7 +95,7 @@
 #15 TYPEID SELF_TYPE
 #15 '{'
 #16 '{'
-#17 ERROR "i"
+#17 OBJECTID i
 #17 ASSIGN
 #17 '~'
 #17 INT_CONST 1

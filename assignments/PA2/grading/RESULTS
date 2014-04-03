@@ -1,5 +1,4 @@
 	-1 (arith)	  arith example
-	-1 (atoi)	 atoi example
 	-1 (backslash)	 various backslashes in strings
 	-1 (backslash2)	 more backslashes in strings
 	-1 (book_list)	 sample program
@@ -9,10 +8,6 @@
 	-1 (escapednull)	 escaped null char in a string
 	-1 (escapedquote)	 escaped quote
 	-1 (escapedunprintables)	 escaped nonprinting chars
-	-1 (hairyscary)	 hairyscary example
-	-1 (integers2)	 less typical integers
-	-1 (invalidinvisible)	 unprintable characters not allowed in cool
-	-1 (io)	 io example
 	-1 (keywords)	 all of the keywords
 	-1 (life)	 the life program
 	-1 (lineno2)	 line number test 2
@@ -29,8 +24,6 @@
 	-1 (palindrome)	 palindrome example
 	-1 (pathologicalstrings)	 some pathological strings
 	-1 (s04)	 different types of whitespaces
-	-1 (s19)	 unescaped newline
-	-1 (s26)	 number and object id
 	-1 (s34)	 unterminated string
 	-1 (sort_list)	 sample program
 	-1 (stringwithescapes)	 a long string with escaped characters
