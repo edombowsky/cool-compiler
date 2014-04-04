@@ -37,7 +37,7 @@ extern FILE *fin; /* we read from this file */
 /* Given
  * ------------------------------------------------------------------------ */
 
-/* to assembl string constants */
+/* to assemble string constants */
 char string_buf[MAX_STR_CONST];
 char *string_buf_ptr;
 extern int curr_lineno;
@@ -84,12 +84,7 @@ ASSIGN          <-
 %%
 
  /* RULES
-  *
   * flex.sourceforge.net/manual/Patterns.html
-  *
-  * TONO:
-  * Why () around DARROW?
-  * What is an EOF in the file? What does it actually "look" like?
   * ======================================================================== */
 
  /* Comments
@@ -111,12 +106,12 @@ ASSIGN          <-
 <COMMENT><<EOF>>    {
                         setErrMsg("EOF in comment");
                         BEGIN(INITIAL);
-                        return (ERROR);
+                        return ERROR;
 	                }
 "*)"                {
                         setErrMsg("Unmatched *)");
                         BEGIN(INITIAL);
-                        return (ERROR);
+                        return ERROR;
 	                }
 "--"                {   BEGIN(S_LINE_COMMENT); }
 <S_LINE_COMMENT>.   {}
@@ -129,16 +124,12 @@ ASSIGN          <-
   * ------------------------------------------------------------------------ */
 
 {NUMBER}+       {
-                    /* See ./utilities.cc for a list of constants you can
-                     * return. */
                     cool_yylval.symbol = inttable.add_string(yytext);
                     return INT_CONST;
 	            }
-
-{DARROW}		{   return (DARROW); }
-{LE}            {   return (LE); }
-{ASSIGN}        {   return (ASSIGN); }
-
+{DARROW}		{   return DARROW; }
+{LE}            {   return LE; }
+{ASSIGN}        {   return ASSIGN; }
 "+"             {   return '+'; }
 "/"             {   return '/'; }
 "-"             {   return '-'; }
@@ -155,6 +146,7 @@ ASSIGN          <-
 "@"             {   return '@'; }
 "{"             {   return '{'; }
 "}"             {   return '}'; }
+
 
  /* Keywords
   * 
@@ -180,9 +172,9 @@ ASSIGN          <-
 (?i:not)        {   return (NOT); }
 (?i:isvoid)     {   return (ISVOID); }
 
+
  /* "For boolean constants, the semantic value is stored in the field
-  * `cool_yylval.boolean`.
-  */
+  * `cool_yylval.boolean`. */
 t(?i:rue)       {   
 	                cool_yylval.boolean = true;
 	                return (BOOL_CONST);
@@ -224,13 +216,13 @@ f(?i:alse)      {
                     setErrMsg("String contains null character");
                     resetStr();
                     BEGIN(STRING_ERR);
-                    return (ERROR);
+                    return ERROR;
 	            }
 <STRING>\\\0    {
                     setErrMsg("String contains escaped null character.");
                     resetStr();
                     BEGIN(STRING_ERR);
-                    return (ERROR);
+                    return ERROR;
 	            }
 <STRING>\n      {
                     setErrMsg("Unterminated string constant");
@@ -239,13 +231,22 @@ f(?i:alse)      {
                     /* Begin lexing at the next line */
                     curr_lineno++;
                     BEGIN(INITIAL);
-                    return (ERROR);
+                    return ERROR;
 	            }
+  /* this is an escaped backslash '\' followed by an 'n'*/
 <STRING>\\n     {
-                    if (strTooLong()) { return strLenErr(); }
-                    string_length++;
+	                /* Manually change check to handle when we are adding two to string */
+                    if (string_length + 2 >= MAX_STR_CONST) { return strLenErr(); }
+                    string_length = string_length + 2;
                     addToStr("\n");
 	            }
+ /* this is an escaped newline character  */
+<STRING>\\\n    {
+                    if (strTooLong()) { return strLenErr(); }
+                    string_length++;
+                    curr_lineno++;
+                    addToStr("\n");
+                }
 <STRING>\\t     {
                     if (strTooLong()) { return strLenErr(); }
                     string_length++;
@@ -261,10 +262,7 @@ f(?i:alse)      {
                     string_length++;
                     addToStr("\f");
 	            }
-<STRING>\\\n    {
-                    if (strTooLong()) { return strLenErr(); }
-                    addToStr("\n");
-                }
+
  /* All other escaped characters should just return the character. */
 <STRING>\\.     {
                     if (strTooLong()) { return strLenErr(); }
@@ -275,7 +273,7 @@ f(?i:alse)      {
 	                setErrMsg("EOF in string constant");
 	                curr_lineno++;
                     BEGIN(INITIAL);
-                    return (ERROR);
+                    return ERROR;
 	            }
 <STRING>.       {
                     if (strTooLong()) { return strLenErr(); }
@@ -299,7 +297,7 @@ f(?i:alse)      {
 [ \t\b\f]       {}
 .               {   
 	                setErrMsg(yytext);
-                    return (ERROR);
+                    return ERROR;
                 }
 
 %%
@@ -309,7 +307,8 @@ f(?i:alse)      {
   * ======================================================================== */
 
 bool strTooLong() {
-	if (string_length >= MAX_STR_CONST) {
+	if (string_length + 1 >= MAX_STR_CONST) {
+		BEGIN(STRING_ERR);
         return true;
     }
     return false;
@@ -326,10 +325,9 @@ void setErrMsg(char* msg) {
 int strLenErr() {
 	resetStr();
     setErrMsg("String constant too long");
-    return (ERROR);
+    return ERROR;
 }
 
 void addToStr(char* str) {
     strcat(string_buf, str);
-
 }

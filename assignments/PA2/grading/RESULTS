@@ -1,3 +1,2 @@
-	-1 (longstring_escapedbackslashes)	 long strings with escaped characters
 	-1 (pathologicalstrings)	 some pathological strings
 	-1 (s04)	 different types of whitespaces
