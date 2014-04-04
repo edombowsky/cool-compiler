@@ -31,26 +31,34 @@ extern FILE *fin; /* we read from this file */
 	if ( (result = fread( (char*)buf, sizeof(char), max_size, fin)) < 0) \
 		YY_FATAL_ERROR( "read() in flex scanner failed");
 
-/* to assembl string constants */
-char string_buf[MAX_STR_CONST];
-
-/* I think this is to find the last position in the array */
-char *string_buf_ptr;
-
-extern int curr_lineno;
-extern int verbose_flag;
-
-extern YYSTYPE cool_yylval;
-
 /* DECLARATIONS
  * ======================================================================== */
 
-/* `comment_depth` ensures that we properly handle nested comments */
+/* Given
+ * ------------------------------------------------------------------------ */
+
+/* to assembl string constants */
+char string_buf[MAX_STR_CONST];
+char *string_buf_ptr;
+extern int curr_lineno;
+extern int verbose_flag;
+extern YYSTYPE cool_yylval;
+
+/* Custom
+ * ------------------------------------------------------------------------ */
+
+/* ensures that we properly handle nested comments */
 int comment_depth = 0;
 
-/* `string_length` ensures that we do not go over Cool's 1024 char limit 
- * I think we can just compare this to MAX_STR_CONST */
+/* ensures that we do not go over Cool's 1024 char limit */ 
 int string_length;
+
+/* forward declarations */
+bool strTooLong(char* str);
+void resetStrBuf();
+void setErrMsg(char* msg);
+void exitStrState(char* msg);
+int strLenErr();
 
 
 %}
@@ -58,8 +66,8 @@ int string_length;
 /* DEFINITIONS
  * ======================================================================== */
 
-/* State declarations, which are syntactic sugar for a global variable that
- * keeps track of the state.
+/* State declarations, which are syntactic sugar for global variables that
+ * keep track of state.
  */
 %x COMMENT
 %x S_LINE_COMMENT
@@ -68,22 +76,15 @@ int string_length;
 
 NUMBER          [0-9]
 ALPHANUMERIC    [a-zA-Z0-9_]
-
+TYPEID          [A-Z]{ALPHANUMERIC}*
+OBJECTID        [a-z]{ALPHANUMERIC}*
 DARROW          =>
 LE              <=
 ASSIGN          <-
-
-/* space, backspace, tab, newline, formfeed */
-WHITESPACE      [ \t]
-
-TYPEID          [A-Z]{ALPHANUMERIC}*
-OBJECTID        [a-z]{ALPHANUMERIC}*
-
 %%
 
  /* RULES
   *
-  * Flex documentation on patterns:
   * flex.sourceforge.net/manual/Patterns.html
   *
   * TONO:
@@ -91,8 +92,7 @@ OBJECTID        [a-z]{ALPHANUMERIC}*
   * What is an EOF in the file? What does it actually "look" like?
   * ======================================================================== */
 
- /*
-  * Comments
+ /* Comments
   * ------------------------------------------------------------------------ */
 
 "(*"                {
@@ -112,14 +112,14 @@ OBJECTID        [a-z]{ALPHANUMERIC}*
                         }
                     }
 <COMMENT><<EOF>>    {
-                        cool_yylval.error_msg = "EOF in comment";
+                        setErrMsg("EOF in comment");
                         curr_lineno++;
                         BEGIN(INITIAL);
                         return (ERROR);
 	                }
 "*)"                {
                         BEGIN(INITIAL);
-                        cool_yylval.error_msg = "Unmatched *)";
+                        setErrMsg("Unmatched *)");
                         return (ERROR);
 	                }
 "--"                {   BEGIN(S_LINE_COMMENT); }
@@ -128,7 +128,6 @@ OBJECTID        [a-z]{ALPHANUMERIC}*
                         curr_lineno++;
                         BEGIN(INITIAL);
                     }
-
 
  /* Numbers and operators
   * ------------------------------------------------------------------------ */
@@ -160,7 +159,6 @@ OBJECTID        [a-z]{ALPHANUMERIC}*
 "@"             {   return '@'; }
 "{"             {   return '{'; }
 "}"             {   return '}'; }
-
 
  /* Keywords
   * 
@@ -227,102 +225,93 @@ f(?i:alse)     {
                     return (STR_CONST);
 	            }
 <STRING>\0      {
-                    cool_yylval.error_msg = "String contains null character";
+                    resetStrBuf();
+                    setErrMsg("String contains null character");
                     curr_lineno++;
-                    string_buf[0] = '\0';
                     BEGIN(STRING_ERR);
                     return (ERROR);
 	            }
 <STRING>\\\0    {
-                    cool_yylval.error_msg = "String contains escaped null character.";
+                    setErrMsg("String contains escaped null character.");
                     curr_lineno++;
                     string_buf[0] = '\0';
                     BEGIN(STRING_ERR);
                     return (ERROR);
 	            }
 <STRING>\n      {
-                    cool_yylval.error_msg = "Unterminated string constant";
+                    setErrMsg("Unterminated string constant");
                     curr_lineno++;
                     string_buf[0] = '\0';
                     BEGIN(INITIAL);
                     return (ERROR);
 	            }
 <STRING>\\n     {
-                    string_length = string_length + 2;
-                    if (string_length >= MAX_STR_CONST - 1) {
-                        string_buf[0] = '\0';
-                        cool_yylval.error_msg = "String constant too long";
-                        return (ERROR);
+                    if (strTooLong(string_buf)) {
+                        return strLenErr();
                     } else {
+                    	curr_lineno++;
                         strcat(string_buf, "\n");
                     }
 	            }
 <STRING>\\t     {
-                    string_length = string_length + 2;
-                    if (string_length >= MAX_STR_CONST - 1) {
-                        string_buf[0] = '\0';
-                        cool_yylval.error_msg = "String constant too long";
-                        return (ERROR);
+                    if (strTooLong(string_buf)) {
+                        return strLenErr();
                     } else {
-                        strcat(string_buf, "\t");
+                    	curr_lineno++;
+                    	strcat(string_buf, "\t");
                     }
-	            }
+                }
 <STRING>\\b     {
-                    string_length = string_length + 2;
-                    if (string_length >= MAX_STR_CONST - 1) {
-                        string_buf[0] = '\0';
-                        cool_yylval.error_msg = "String constant too long";
-                        return (ERROR);
+                    if (strTooLong(string_buf)) {
+                        return strLenErr();
                     } else {
+                    	curr_lineno++;
                         strcat(string_buf, "\b");
                     }
 	            }
 <STRING>\\f     {
-                    string_length = string_length + 2;
-                    if (string_length >= MAX_STR_CONST - 1) {
-                        string_buf[0] = '\0';
-                        cool_yylval.error_msg = "String constant too long";
-                        return (ERROR);
+                    if (strTooLong(string_buf)) {
+                        return strLenErr();
                     } else {
+                    	curr_lineno++;
                         strcat(string_buf, "\f");
                     }
 	            }
-
- /* Escaped newline character*/
 <STRING>\\\n    {
                     curr_lineno++;
                     strcat(string_buf, "\n");
                 }
-
+ /* If we see an escaped string, count both chars as a single char */
+<STRING>\\\     {
+	                if (strTooLong(string_buf)) {
+                        return strLenErr();
+	                } else {
+                        string_length++;
+                        char* str = strdup(yytext);
+                        strcat(string_buf, &str[1]);
+	                }
+	            }
  /* All other escaped characters should just return the character. */
 <STRING>\\.     {
-                    string_length = string_length + 2;
-                    if (string_length >= MAX_STR_CONST - 1) {
-                        string_buf[0] = '\0';
-                        cool_yylval.error_msg = "String constant too long";
-                        return (ERROR);
+                    if (strTooLong(string_buf)) {
+                    	return strLenErr();
                     } else {
-                    	/* `yytext` is a const. Convert it to a pointer to a new string */
-                    	char* myStr = strdup(yytext);
-                    	/* dereference the string and get the first element, disregarding the escape slash */
-                        strcat(string_buf, &myStr[1]);
+                    	string_length++;
+                    	char* str = strdup(yytext);
+                        strcat(string_buf, &str[1]);
                     }
 	            }
 <STRING><<EOF>> {
-                    cool_yylval.error_msg = "EOF in string constant";
-                    curr_lineno++;
-	                BEGIN(INITIAL);
+	                curr_lineno++;
+	                setErrMsg("EOF in string constant");
+                    BEGIN(INITIAL);
                     return (ERROR);
 	            }
 <STRING>.       {
-                    string_length += 1;
-                    if (string_length >= MAX_STR_CONST - 1) {
-                    	/* TODO: Not sure this actually works */
-                        string_buf[0] = '\0';
-                        cool_yylval.error_msg = "String constant too long";
-                        return (ERROR);
+                    if (strTooLong(string_buf)) {
+                        return strLenErr();
                     } else {
-                        /* www.cplusplus.com/reference/cstring/strcat/ */
+                    	string_length++;
                         strcat(string_buf, yytext);
                     }
 	            }
@@ -334,16 +323,10 @@ f(?i:alse)     {
  /* eat up everything else
   * ------------------------------------------------------------------------ */
 
- /*\<<EOF>>        {
-	                BEGIN(INITIAL);
-                    curr_lineno++;
-                    cool_yylval.error_msg = "EOF in comment";
-                    return (ERROR);
-	            }*/
 \n              {   curr_lineno++; }
 [ \t]           {}
 .               {   
-	                cool_yylval.error_msg = yytext;
+	                setErrMsg(yytext);
                     return (ERROR);
                 }
 
@@ -353,3 +336,23 @@ f(?i:alse)     {
  /* USER SUBROUTINES
   * ======================================================================== */
 
+bool strTooLong(char* str) {
+	if (string_length + strlen(str) >= MAX_STR_CONST) {
+        return true;
+    }
+    return false;
+}
+
+void resetStrBuf() {
+    string_buf[0] = '\0';
+}
+
+void setErrMsg(char* msg) {
+    cool_yylval.error_msg = msg;
+}
+
+int strLenErr() {
+	resetStrBuf();
+    setErrMsg("String constant too long");
+    return (ERROR);
+}
