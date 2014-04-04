@@ -233,8 +233,7 @@ f(?i:alse)     {
 	            }
 <STRING>\\\0    {
                     setErrMsg("String contains escaped null character.");
-                    curr_lineno++;
-                    string_buf[0] = '\0';
+                    resetStrBuf();
                     BEGIN(STRING_ERR);
                     return (ERROR);
 	            }
@@ -249,7 +248,7 @@ f(?i:alse)     {
                     if (strTooLong(string_buf)) {
                         return strLenErr();
                     } else {
-                    	curr_lineno++;
+                    	string_length++;
                         strcat(string_buf, "\n");
                     }
 	            }
@@ -257,7 +256,7 @@ f(?i:alse)     {
                     if (strTooLong(string_buf)) {
                         return strLenErr();
                     } else {
-                    	curr_lineno++;
+                    	string_length++;
                     	strcat(string_buf, "\t");
                     }
                 }
@@ -265,7 +264,7 @@ f(?i:alse)     {
                     if (strTooLong(string_buf)) {
                         return strLenErr();
                     } else {
-                    	curr_lineno++;
+                    	string_length++;
                         strcat(string_buf, "\b");
                     }
 	            }
@@ -273,24 +272,14 @@ f(?i:alse)     {
                     if (strTooLong(string_buf)) {
                         return strLenErr();
                     } else {
-                    	curr_lineno++;
+                    	string_length++;
                         strcat(string_buf, "\f");
                     }
 	            }
 <STRING>\\\n    {
-                    curr_lineno++;
+                    string_length++;
                     strcat(string_buf, "\n");
                 }
- /* If we see an escaped string, count both chars as a single char */
-<STRING>\\\     {
-	                if (strTooLong(string_buf)) {
-                        return strLenErr();
-	                } else {
-                        string_length++;
-                        char* str = strdup(yytext);
-                        strcat(string_buf, &str[1]);
-	                }
-	            }
  /* All other escaped characters should just return the character. */
 <STRING>\\.     {
                     if (strTooLong(string_buf)) {
@@ -319,6 +308,11 @@ f(?i:alse)     {
 <STRING_ERR>\"  {
                     BEGIN(INITIAL);
 	            }
+<STRING_ERR>\n  {
+	                curr_lineno++;
+                    BEGIN(INITIAL);
+	            }
+<STRING_ERR>.   {}
 
  /* eat up everything else
   * ------------------------------------------------------------------------ */

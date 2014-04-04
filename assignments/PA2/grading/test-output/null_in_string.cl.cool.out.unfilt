@@ -1,3 +1,0 @@
-#name "./null_in_string.cl.cool"
-#3 ERROR "String contains null character"
-<-
