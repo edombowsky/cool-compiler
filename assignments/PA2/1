@@ -226,6 +226,11 @@ f(?i:alse)      {
                     BEGIN(STRING_ERR);
                     return (ERROR);
 	            }
+ /* the sequence of two characters, \0, is allowed but should be converted to
+  * one character */
+<STRING>\\0     {
+                     
+	            }
 <STRING>\\\0    {
                     setErrMsg("String contains escaped null character.");
                     resetStr();
@@ -269,7 +274,7 @@ f(?i:alse)      {
 <STRING>\\.     {
                     if (strTooLong()) { return strLenErr(); }
                     string_length++;
-                    addToStr(&strdup(yytext)[1]);
+                    addToStr(&strdup(yytext)[0]);
 	            }
 <STRING><<EOF>> {
 	                setErrMsg("EOF in string constant");
@@ -296,7 +301,7 @@ f(?i:alse)      {
   * ------------------------------------------------------------------------ */
 
 \n              {   curr_lineno++; }
-[ \t\b\f]       {}
+[ \t]           {}
 .               {   
 	                setErrMsg(yytext);
                     return (ERROR);

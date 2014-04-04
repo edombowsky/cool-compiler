@@ -1,4 +1,0 @@
-#name "./stringwithescapes.cool"
-#3 ERROR "String constant too long"
-#3 STR_CONST "90\n1234567890\n1234567890\n1234567890\n1234567890\n1234567890\n1234567890\n1234567890\n"
-#4 INT_CONST 42

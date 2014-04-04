@@ -1,7 +1,6 @@
 #name "./s04.test.cool"
 #2 INT_CONST 0
 #4 INT_CONST 1
-#5 ERROR "\f"
 #6 INT_CONST 2
 #7 ERROR "\015"
 #8 INT_CONST 3
