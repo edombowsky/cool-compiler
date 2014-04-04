@@ -228,7 +228,7 @@ f(?i:alse)      {
                     setErrMsg("Unterminated string constant");
                     resetStr();
 
-                    /* Begin lexing at the next line */
+                    /* assume the programmer just forgot the closing " */
                     curr_lineno++;
                     BEGIN(INITIAL);
                     return ERROR;
@@ -236,7 +236,7 @@ f(?i:alse)      {
   /* this is an escaped backslash '\' followed by an 'n'*/
 <STRING>\\n     {
 	                /* Manually change check to handle when we are adding two to string */
-                    if (string_length + 2 >= MAX_STR_CONST) { return strLenErr(); }
+                    if (strTooLong()) { return strLenErr(); }
                     string_length = string_length + 2;
                     addToStr("\n");
 	            }
@@ -280,10 +280,15 @@ f(?i:alse)      {
                     string_length++;
                     addToStr(yytext);
 	            }
-
+ /* for certain in-string errors, lexing should resume at an unescaped newline
+  * or a closing " */
 <STRING_ERR>\"  {
                     BEGIN(INITIAL);
 	            }
+<STRING_ERR>\\\n {
+	                curr_lineno++;
+                    BEGIN(INITIAL);
+                }
 <STRING_ERR>\n  {
 	                curr_lineno++;
                     BEGIN(INITIAL);
