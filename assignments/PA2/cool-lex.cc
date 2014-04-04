@@ -487,8 +487,8 @@ static yyconst flex_int16_t yy_accept[189] =
 
 static yyconst flex_int32_t yy_ec[256] =
     {   0,
-        1,    1,    1,    1,    1,    1,    1,    2,    2,    3,
-        1,    2,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    2,    3,
+        2,    2,    2,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    2,    1,    4,    1,    1,    1,    1,    1,    5,
         6,    7,    8,    9,   10,   11,   12,   13,   13,   13,
@@ -684,7 +684,7 @@ static yyconst flex_int16_t yy_rule_linenum[69] =
       158,  159,  160,  161,  162,  163,  164,  165,  166,  167,
       168,  169,  170,  171,  172,  173,  178,  182,  190,  194,
       205,  209,  215,  221,  227,  237,  244,  250,  255,  260,
-      267,  278,  284,  287,  291,  296,  297,  298
+      267,  278,  284,  287,  291,  296,  299,  300
     } ;
 
 /* The intent behind this definition is that it'll catch
@@ -1606,14 +1606,16 @@ YY_RULE_SETUP
 #line 296 "cool.flex"
 {   curr_lineno++; }
 	YY_BREAK
+/* Note this is *not* the same list of whitespace chars that can be escaped
+  * in a string */
 case 67:
 YY_RULE_SETUP
-#line 297 "cool.flex"
+#line 299 "cool.flex"
 {}
 	YY_BREAK
 case 68:
 YY_RULE_SETUP
-#line 298 "cool.flex"
+#line 300 "cool.flex"
 {   
 	                setErrMsg(yytext);
                     return ERROR;
@@ -1621,10 +1623,10 @@ YY_RULE_SETUP
 	YY_BREAK
 case 69:
 YY_RULE_SETUP
-#line 303 "cool.flex"
+#line 305 "cool.flex"
 ECHO;
 	YY_BREAK
-#line 1628 "cool-lex.cc"
+#line 1630 "cool-lex.cc"
 case YY_STATE_EOF(INITIAL):
 case YY_STATE_EOF(S_LINE_COMMENT):
 case YY_STATE_EOF(STRING_ERR):
@@ -2761,7 +2763,7 @@ void yyfree (void * ptr )
 
 /* %ok-for-header */
 
-#line 303 "cool.flex"
+#line 305 "cool.flex"
 
 
 

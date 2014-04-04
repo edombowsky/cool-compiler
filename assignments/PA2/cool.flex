@@ -294,7 +294,9 @@ f(?i:alse)      {
   * ------------------------------------------------------------------------ */
 
 \n              {   curr_lineno++; }
-[ \t\b\f]       {}
+ /* Note this is *not* the same list of whitespace chars that can be escaped
+  * in a string */
+[ \f\r\t\v]     {}
 .               {   
 	                setErrMsg(yytext);
                     return ERROR;
