@@ -1,0 +1,25 @@
+1,21c1,2
+< 
+< _program
+< 
+<   _class
+<     Hello
+<     Object
+<     filename
+<     (
+< 
+<     _method
+<       cow
+< 
+<       _formal
+<         a
+<         Int
+<       SELF_TYPE
+< 
+<       _object
+<         self
+<       : _no_type
+<     )
+---
+> filename, line 3: syntax error at or near LOCATION
+> Compilation halted due to lex and syntax errors
