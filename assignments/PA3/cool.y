@@ -141,7 +141,6 @@
     %type <features> feature_list
     %type <feature> feature
     %type <formal> formal
-    %type <formals> formal_list
     %type <expression> expr
     
     /* Precedence declarations go here. */
@@ -175,16 +174,16 @@
     class	    : CLASS TYPEID '{' feature_list '}' ';'
                     {
                         /* The class_ constructor builds a Class_ tree node with four arguments as children  */
-                        $$ = class_($2,idtable.add_string("Object"),$4,
-                        stringtable.add_string(curr_filename));
+                        $$ = class_($2, idtable.add_string("Object"), $4, stringtable.add_string(curr_filename));
                     }
                 | CLASS TYPEID INHERITS TYPEID '{' feature_list '}' ';'
                     {
-                        $$ = class_($2,$4,$6,stringtable.add_string(curr_filename));
+                        $$ = class_($2, $4, $6, stringtable.add_string(curr_filename));
                     }
                 ;
     
-    /* Feature list may be empty, but no empty features in list. */
+    /* feature_list may be empty, but no empty features in list. */
+    /* feature_list is a meta-symbol for methods and attributes. */
     feature_list: feature ';'
                     {
                         $$ = single_Features($1);
@@ -194,9 +193,25 @@
                     }
                 ;
 
+    /* TODO: This only handles a single formal. We need to handle one or more. */
     feature     : OBJECTID '(' formal ')' ':' TYPEID '{' expr '}'
+                    {
+
+                    }
+                /* attribute w/ and w/o assignment */
+                | OBJECTID ':' TYPEID
+                    {
+                        /* TODO: Do I need to handle the third argument? */
+                        /* YEP */
+                        $$ = attr($1, $3, no_expr());
+                    }
+                | OBJECTID ':' TYPEID ASSIGN expr
+                    {
+                        $$ = attr($1, $3, $5);
+                    }
                 ;
 
+    /* TODO: What's the difference between feature's OBJECTID : TYPEID and formal's? */
     formal      : OBJECTID ':' TYPEID
                     {
                         $$ = formal($1);
