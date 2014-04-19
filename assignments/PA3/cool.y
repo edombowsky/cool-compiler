@@ -138,9 +138,10 @@
     %type <class_> class
     
     /* Features are not part of Cool; they are meta-symbols in Cool's grammar. */
-    %type <features> feature_list
+    %type <features> features_opt
     %type <features> features
     %type <feature> feature
+    %type <formals> formals
     %type <formal> formal
     %type <cases> case_branch_list 
     %type <case_> case_branch
@@ -173,34 +174,37 @@
     
     /* if no parent is specified, the class inherits from the Object class. */
     /* notice the optional "inherits" expression is handled by options in the grammar */
-    class	    : CLASS TYPEID '{' feature_list '}' ';' {
+    class	    : CLASS TYPEID '{' features_opt '}' ';' {
                     /* The class_ constructor builds a Class_ tree node with four arguments as children  */
                     $$ = class_($2, idtable.add_string("Object"), $4, stringtable.add_string(curr_filename)); }
-                | CLASS TYPEID INHERITS TYPEID '{' feature_list '}' ';' {
+                | CLASS TYPEID INHERITS TYPEID '{' features_opt '}' ';' {
                     $$ = class_($2, $4, $6, stringtable.add_string(curr_filename)); }
                 ;
     
-    /* feature_list may be empty, but no empty features in list. */
-    feature_list: features { $$ = $1; }
+    /* features_opt may be empty, but no empty features in list. */
+    features_opt: features { $$ = $1; }
                 | { $$ = nil_Features(); }
                 ;
     features    : feature ';' { single_Features($1); }
-                | features feature { append_Features($1, single_Features($2)); }
+                | features feature ';' { append_Features($1, single_Features($2)); }
                 ;
-    feature     : OBJECTID '(' formal ')' ':' TYPEID '{' expr '}' {
-                    }
+    feature     : OBJECTID '(' formals ')' ':' TYPEID '{' expr '}' { $$ = method($1, $3, $6, $8); }
                 /* attribute w/ and w/o assignment */
                 | OBJECTID ':' TYPEID { $$ = attr($1, $3, no_expr()); }
                 | OBJECTID ':' TYPEID ASSIGN expr { $$ = attr($1, $3, $5); }
                 ;
 
-    /* TODO: What's the difference between feature's OBJECTID : TYPEID and formal's? */
+    /* formals are comma-separated arguments, i.e. "formal parameters" */
+    formals     : formal { single_Formals($1); }
+                | formals ',' formal { append_Formals($1, single_Formals($3)); }
+                /* empty argument list allowed */
+                | { $$ = nil_Formals(); }
+                ;
     formal      : OBJECTID ':' TYPEID { $$ = formal($1, $3); }
                 ;
-    
+   
+    /* expressions are the body of the program */
     expr        : OBJECTID ASSIGN expr { $$ = assign($1, $3); }
-
-
                 | IF expr THEN expr ELSE expr FI { $$ = cond($2, $4, $6); }
                 | WHILE expr LOOP expr POOL { $$ = loop($2, $4); }
                 | '{' one_or_more_expr '}' { }
