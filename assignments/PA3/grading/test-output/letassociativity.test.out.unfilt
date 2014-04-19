@@ -1,2 +1,2 @@
-"./letassociativity.test", line 3: syntax error at or near OBJECTID = help
+"./letassociativity.test", line 4: syntax error at or near LET
 Compilation halted due to lex and parse errors

@@ -1,2 +1,2 @@
-"./associativity-times.test", line 2: syntax error at or near OBJECTID = foo
+"./associativity-times.test", line 4: syntax error at or near ','
 Compilation halted due to lex and parse errors

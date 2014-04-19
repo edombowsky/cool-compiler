@@ -1,2 +1,2 @@
-"./multipleattributes.test", line 2: syntax error at or near OBJECTID = x
+"./multipleattributes.test", line 3: syntax error at or near ';'
 Compilation halted due to lex and parse errors

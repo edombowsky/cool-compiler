@@ -1,10 +1,4 @@
-1,16c1,2
-< 
-< _program
-< 
-<   _class
-<     Hello
-<     Object
+7,16c7
 <     filename
 <     (
 < 
@@ -16,5 +10,4 @@
 <       : _no_type
 <     )
 ---
-> filename, line 2: syntax error at or near LOCATION
-> Compilation halted due to lex and syntax errors
+> Segmentation fault

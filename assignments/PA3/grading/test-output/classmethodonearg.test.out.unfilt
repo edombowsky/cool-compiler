@@ -1,2 +1,7 @@
-"./classmethodonearg.test", line 3: syntax error at or near OBJECTID = cow
-Compilation halted due to lex and parse errors
+#1
+_program
+  #1
+  _class
+    Hello
+    Object
+Segmentation fault
