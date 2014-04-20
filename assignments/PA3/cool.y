@@ -234,8 +234,14 @@
    
     /* expressions are the body of the program */
     expr        : OBJECTID ASSIGN expr { $$ = assign($1, $3); }
+
+                /* dispatch: normal, static, omitted self */
                 | expr '.' OBJECTID '(' comma_sep_expr ')' { $$ = dispatch($1, $3, $5); }
                 | expr '@' TYPEID '.' OBJECTID '(' comma_sep_expr ')' { $$ = static_dispatch($1, $3, $5, $7); }
+
+                /* `object` constructor requires an argument of type Symbol.
+                 * idtable.add_string returns a Symbol from a string */
+                | OBJECTID '(' comma_sep_expr ')' { $$ = dispatch(object(idtable.add_string("self")), $1, $3); }
 
                 | IF expr THEN expr ELSE expr FI { $$ = cond($2, $4, $6); }
                 | WHILE expr LOOP expr POOL { $$ = loop($2, $4); }

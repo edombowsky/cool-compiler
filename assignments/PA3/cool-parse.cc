@@ -535,16 +535,16 @@ union yyalloc
 /* YYFINAL -- State number of the termination state.  */
 #define YYFINAL  6
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   328
+#define YYLAST   316
 
 /* YYNTOKENS -- Number of terminals.  */
 #define YYNTOKENS  45
 /* YYNNTS -- Number of nonterminals.  */
 #define YYNNTS  14
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  47
+#define YYNRULES  48
 /* YYNRULES -- Number of states.  */
-#define YYNSTATES  119
+#define YYNSTATES  122
 
 /* YYTRANSLATE(YYLEX) -- Bison symbol number corresponding to YYLEX.  */
 #define YYUNDEFTOK  2
@@ -594,9 +594,9 @@ static const yytype_uint8 yyprhs[] =
 {
        0,     0,     3,     5,     7,    10,    17,    26,    28,    29,
       32,    36,    46,    50,    56,    58,    62,    63,    67,    71,
-      78,    87,    95,   101,   105,   111,   114,   117,   121,   125,
-     129,   133,   136,   140,   144,   148,   151,   155,   157,   159,
-     161,   163,   166,   170,   172,   176,   178,   181
+      78,    87,    92,   100,   106,   110,   116,   119,   122,   126,
+     130,   134,   138,   141,   145,   149,   153,   156,   160,   162,
+     164,   166,   168,   171,   175,   177,   181,   183,   186
 };
 
 /* YYRHS -- A `-1'-separated list of the rules' RHS.  */
@@ -610,27 +610,28 @@ static const yytype_int8 yyrhs[] =
       24,    40,    23,    25,    54,    -1,    53,    -1,    52,    41,
       53,    -1,    -1,    24,    40,    23,    -1,    24,    25,    54,
       -1,    54,    42,    24,    38,    56,    39,    -1,    54,    43,
-      23,    42,    24,    38,    56,    39,    -1,     6,    54,    12,
-      54,     4,    54,     5,    -1,    13,    54,    10,    54,    11,
-      -1,    35,    55,    36,    -1,    14,    54,    16,    57,    15,
-      -1,    18,    23,    -1,    19,    54,    -1,    54,    31,    54,
-      -1,    54,    32,    54,    -1,    54,    29,    54,    -1,    54,
-      30,    54,    -1,    44,    54,    -1,    54,    33,    54,    -1,
-      54,    27,    54,    -1,    54,    34,    54,    -1,    26,    54,
-      -1,    38,    55,    39,    -1,    24,    -1,    21,    -1,    20,
-      -1,    22,    -1,    54,    37,    -1,    55,    54,    37,    -1,
-      54,    -1,    56,    41,    54,    -1,    58,    -1,    57,    58,
-      -1,    24,    40,    23,    17,    54,    -1
+      23,    42,    24,    38,    56,    39,    -1,    24,    38,    56,
+      39,    -1,     6,    54,    12,    54,     4,    54,     5,    -1,
+      13,    54,    10,    54,    11,    -1,    35,    55,    36,    -1,
+      14,    54,    16,    57,    15,    -1,    18,    23,    -1,    19,
+      54,    -1,    54,    31,    54,    -1,    54,    32,    54,    -1,
+      54,    29,    54,    -1,    54,    30,    54,    -1,    44,    54,
+      -1,    54,    33,    54,    -1,    54,    27,    54,    -1,    54,
+      34,    54,    -1,    26,    54,    -1,    38,    55,    39,    -1,
+      24,    -1,    21,    -1,    20,    -1,    22,    -1,    54,    37,
+      -1,    55,    54,    37,    -1,    54,    -1,    56,    41,    54,
+      -1,    58,    -1,    57,    58,    -1,    24,    40,    23,    17,
+      54,    -1
 };
 
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint16 yyrline[] =
 {
        0,   185,   185,   191,   199,   206,   209,   214,   215,   217,
-     218,   220,   222,   223,   227,   228,   230,   232,   236,   237,
-     238,   240,   241,   242,   258,   261,   262,   265,   266,   267,
-     268,   269,   270,   271,   272,   273,   276,   279,   282,   283,
-     284,   300,   301,   304,   305,   310,   312,   314
+     218,   220,   222,   223,   227,   228,   230,   232,   236,   239,
+     240,   244,   246,   247,   248,   264,   267,   268,   271,   272,
+     273,   274,   275,   276,   277,   278,   279,   282,   285,   288,
+     289,   290,   306,   307,   310,   311,   316,   318,   320
 };
 #endif
 
@@ -670,7 +671,7 @@ static const yytype_uint8 yyr1[] =
       50,    51,    51,    51,    52,    52,    52,    53,    54,    54,
       54,    54,    54,    54,    54,    54,    54,    54,    54,    54,
       54,    54,    54,    54,    54,    54,    54,    54,    54,    54,
-      54,    55,    55,    56,    56,    57,    57,    58
+      54,    54,    55,    55,    56,    56,    57,    57,    58
 };
 
 /* YYR2[YYN] -- Number of symbols composing right hand side of rule YYN.  */
@@ -678,9 +679,9 @@ static const yytype_uint8 yyr2[] =
 {
        0,     2,     1,     1,     2,     6,     8,     1,     0,     2,
        3,     9,     3,     5,     1,     3,     0,     3,     3,     6,
-       8,     7,     5,     3,     5,     2,     2,     3,     3,     3,
-       3,     2,     3,     3,     3,     2,     3,     1,     1,     1,
-       1,     2,     3,     1,     3,     1,     2,     5
+       8,     4,     7,     5,     3,     5,     2,     2,     3,     3,
+       3,     3,     2,     3,     3,     3,     2,     3,     1,     1,
+       1,     1,     2,     3,     1,     3,     1,     2,     5
 };
 
 /* YYDEFACT[STATE-NAME] -- Default rule to reduce with in state
@@ -692,47 +693,49 @@ static const yytype_uint8 yydefact[] =
        0,     0,     0,     7,     0,     8,    16,     0,     0,     0,
        9,     0,     0,     0,    14,    12,     5,    10,     0,     0,
        0,     0,     0,     6,    17,     0,    15,     0,     0,     0,
-       0,     0,    39,    38,    40,    37,     0,     0,     0,     0,
-      13,     0,     0,     0,     0,    25,    26,     0,    35,     0,
-       0,     0,    31,     0,     0,     0,     0,     0,     0,     0,
-       0,     0,     0,     0,     0,     0,    18,    41,    23,     0,
-      36,    33,    29,    30,    27,    28,    32,    34,     0,     0,
-       0,     0,     0,     0,     0,    45,    42,     0,     0,    11,
-       0,    22,     0,    24,    46,    43,     0,     0,     0,     0,
-      19,     0,     0,    21,     0,    44,     0,    47,    20
+       0,     0,    40,    39,    41,    38,     0,     0,     0,     0,
+      13,     0,     0,     0,     0,    26,    27,     0,     0,    36,
+       0,     0,     0,    32,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,    18,    44,     0,
+      42,    24,     0,    37,    34,    30,    31,    28,    29,    33,
+      35,     0,     0,     0,     0,     0,     0,     0,    46,    21,
+       0,    43,     0,     0,    11,     0,    23,     0,    25,    47,
+      45,     0,     0,     0,     0,    19,     0,    22,     0,     0,
+      48,    20
 };
 
 /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
-      -1,     2,     3,     4,    12,    13,    14,    23,    24,    59,
-      60,   106,    94,    95
+      -1,     2,     3,     4,    12,    13,    14,    23,    24,    78,
+      61,    79,    97,    98
 };
 
 /* YYPACT[STATE-NUM] -- Index in YYTABLE of the portion describing
    STATE-NUM.  */
-#define YYPACT_NINF -37
+#define YYPACT_NINF -95
 static const yytype_int16 yypact[] =
 {
-       5,   -11,    15,     5,   -37,    -5,   -37,   -37,    -1,     2,
-      -8,   -36,     3,     2,     1,     2,    20,    28,    17,    18,
-     -37,    21,    12,   -28,   -37,    39,   -37,   -37,    30,    43,
-      13,    20,   124,   -37,   -37,    46,   -37,   124,   124,   124,
-      47,   124,   -37,   -37,   -37,    48,   124,   124,   124,   124,
-     274,    40,   187,   147,   206,   -37,   274,   124,   274,   223,
-      70,    97,   274,   124,   124,   124,   124,   124,   124,   124,
-      50,    54,   124,   124,   124,    57,   274,   -37,   -37,   240,
-     -37,   -19,    29,    29,   285,   285,   -19,   -19,    49,    36,
-     257,    16,   164,    45,   -14,   -37,   -37,   124,    62,   -37,
-     124,   -37,    72,   -37,   -37,   274,   -23,    55,   122,    80,
-     -37,   124,   124,   -37,   124,   274,   -20,   274,   -37
+       9,     0,    24,     9,   -95,    -7,   -95,   -95,     8,    15,
+       5,    14,    20,    15,    21,    15,    29,    48,    35,    42,
+     -95,    45,    43,    16,   -95,    59,   -95,   -95,    50,    62,
+      53,    29,   110,   -95,   -95,    65,   -95,   110,   110,   110,
+      67,   110,   -95,   -95,   -95,   -12,   110,   110,   110,   110,
+     260,    10,   173,   133,   192,   -95,   260,   110,   110,   260,
+     209,    56,    83,   260,   110,   110,   110,   110,   110,   110,
+     110,    71,    75,   110,   110,   110,    82,   260,   260,    22,
+     -95,   -95,   226,   -95,   -40,   273,   273,   -23,   -23,   -40,
+     -40,    61,    66,   243,    17,   150,    70,     3,   -95,   -95,
+     110,   -95,   110,    87,   -95,   110,   -95,    89,   -95,   -95,
+     260,    25,    76,   108,    98,   -95,   110,   -95,   110,    26,
+     260,   -95
 };
 
 /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-     -37,   -37,   -37,    95,    84,   -37,    87,   -37,    71,   -32,
-      53,    -3,   -37,    10
+     -95,   -95,   -95,   114,   104,   -95,   107,   -95,    94,   -32,
+      78,   -94,   -95,    36
 };
 
 /* YYTABLE[YYPACT[STATE-NUM]].  What to do in state STATE-NUM.  If
@@ -742,76 +745,74 @@ static const yytype_int8 yypgoto[] =
 #define YYTABLE_NINF -1
 static const yytype_uint8 yytable[] =
 {
-      50,   103,    16,     8,    17,    52,    53,    54,     1,    56,
-      93,    30,     5,    31,    58,     6,   110,    62,   111,   118,
-     100,   111,    10,    70,    71,    76,    11,    15,    79,    79,
-       9,    81,    82,    83,    84,    85,    86,    87,    20,    18,
-      90,    91,    92,    63,    22,    64,    65,    66,    67,    68,
-      69,    25,    29,    35,    26,    27,    63,    28,    70,    71,
-      66,    67,    68,    69,    32,   105,    34,    33,   108,    51,
-      55,    70,    71,    57,    88,    72,    37,    89,    98,   115,
-     105,    93,   117,    38,    39,   102,   107,    97,    40,    41,
-      42,    43,    44,   112,    45,   109,    46,   114,     7,    21,
-      19,    61,    36,    37,   104,    47,    78,     0,    48,   116,
-      38,    39,     0,     0,    49,    40,    41,    42,    43,    44,
-       0,    45,     0,    46,     0,     0,     0,   113,     0,     0,
-      37,     0,    47,     0,     0,    48,    80,    38,    39,     0,
-       0,    49,    40,    41,    42,    43,    44,     0,    45,    63,
-      46,    64,    65,    66,    67,    68,    69,    74,     0,    47,
-       0,     0,    48,     0,    70,    71,     0,     0,    49,     0,
-       0,     0,     0,     0,    63,   101,    64,    65,    66,    67,
-      68,    69,     0,     0,     0,     0,     0,     0,     0,    70,
-      71,    63,     0,    64,    65,    66,    67,    68,    69,    73,
-       0,     0,     0,     0,     0,     0,    70,    71,     0,     0,
-       0,     0,     0,     0,    63,     0,    64,    65,    66,    67,
-      68,    69,    75,     0,     0,     0,     0,     0,     0,    70,
-      71,     0,     0,    63,     0,    64,    65,    66,    67,    68,
-      69,     0,     0,     0,     0,     0,     0,     0,    70,    71,
-      63,     0,    64,    65,    66,    67,    68,    69,     0,     0,
-      77,     0,     0,     0,     0,    70,    71,    63,     0,    64,
-      65,    66,    67,    68,    69,     0,     0,    96,     0,     0,
-       0,     0,    70,    71,    63,     0,    64,    65,    66,    67,
-      68,    69,     0,    99,     0,     0,     0,     0,     0,    70,
-      71,    63,     0,    64,    65,    66,    67,    68,    69,     0,
-       0,     0,    63,     0,     0,     0,    70,    71,    68,    69,
-       0,     0,     0,     0,     0,     0,     0,    70,    71
+      50,     8,    71,    72,    64,    52,    53,    54,   111,    56,
+      69,    70,     1,    57,    59,    60,    60,    63,   108,    71,
+      72,   105,   119,     5,     6,    77,    58,    96,     9,    82,
+      82,    10,    84,    85,    86,    87,    88,    89,    90,    11,
+      15,    93,    94,    95,    64,    73,    65,    66,    67,    68,
+      69,    70,    16,    22,    17,    30,    18,    31,    20,    71,
+      72,    99,    37,   100,   115,   121,   100,   100,   110,    38,
+      39,    25,    26,   113,    40,    41,    42,    43,    44,    27,
+      45,    28,    46,    29,    32,    34,   120,    33,    51,    37,
+      55,    47,    81,    35,    48,    91,    38,    39,    92,   102,
+      49,    40,    41,    42,    43,    44,    96,    45,   103,    46,
+     107,   112,   114,   117,   116,   118,    37,     7,    47,    21,
+      19,    48,    83,    38,    39,    36,    62,    49,    40,    41,
+      42,    43,    44,   109,    45,    64,    46,    65,    66,    67,
+      68,    69,    70,    75,     0,    47,     0,     0,    48,     0,
+      71,    72,     0,     0,    49,     0,     0,     0,     0,     0,
+      64,   106,    65,    66,    67,    68,    69,    70,     0,     0,
+       0,     0,     0,     0,     0,    71,    72,    64,     0,    65,
+      66,    67,    68,    69,    70,    74,     0,     0,     0,     0,
+       0,     0,    71,    72,     0,     0,     0,     0,     0,     0,
+      64,     0,    65,    66,    67,    68,    69,    70,    76,     0,
+       0,     0,     0,     0,     0,    71,    72,     0,     0,    64,
+       0,    65,    66,    67,    68,    69,    70,     0,     0,     0,
+       0,     0,     0,     0,    71,    72,    64,     0,    65,    66,
+      67,    68,    69,    70,     0,     0,    80,     0,     0,     0,
+       0,    71,    72,    64,     0,    65,    66,    67,    68,    69,
+      70,     0,     0,   101,     0,     0,     0,     0,    71,    72,
+      64,     0,    65,    66,    67,    68,    69,    70,     0,   104,
+       0,     0,     0,     0,     0,    71,    72,    64,     0,    65,
+      66,    67,    68,    69,    70,     0,     0,     0,     0,     0,
+      64,     0,    71,    72,    67,    68,    69,    70,     0,     0,
+       0,     0,     0,     0,     0,    71,    72
 };
 
 static const yytype_int8 yycheck[] =
 {
-      32,    15,    38,     8,    40,    37,    38,    39,     3,    41,
-      24,    39,    23,    41,    46,     0,    39,    49,    41,    39,
-       4,    41,    23,    42,    43,    57,    24,    35,    60,    61,
-      35,    63,    64,    65,    66,    67,    68,    69,    37,    36,
-      72,    73,    74,    27,    24,    29,    30,    31,    32,    33,
-      34,    23,    40,    40,    37,    37,    27,    36,    42,    43,
-      31,    32,    33,    34,    25,    97,    23,    37,   100,    23,
-      23,    42,    43,    25,    24,    35,     6,    23,    42,   111,
-     112,    24,   114,    13,    14,    40,    24,    38,    18,    19,
-      20,    21,    22,    38,    24,    23,    26,    17,     3,    15,
-      13,    48,    31,     6,    94,    35,    36,    -1,    38,   112,
-      13,    14,    -1,    -1,    44,    18,    19,    20,    21,    22,
-      -1,    24,    -1,    26,    -1,    -1,    -1,     5,    -1,    -1,
-       6,    -1,    35,    -1,    -1,    38,    39,    13,    14,    -1,
-      -1,    44,    18,    19,    20,    21,    22,    -1,    24,    27,
-      26,    29,    30,    31,    32,    33,    34,    10,    -1,    35,
-      -1,    -1,    38,    -1,    42,    43,    -1,    -1,    44,    -1,
-      -1,    -1,    -1,    -1,    27,    11,    29,    30,    31,    32,
-      33,    34,    -1,    -1,    -1,    -1,    -1,    -1,    -1,    42,
-      43,    27,    -1,    29,    30,    31,    32,    33,    34,    12,
-      -1,    -1,    -1,    -1,    -1,    -1,    42,    43,    -1,    -1,
-      -1,    -1,    -1,    -1,    27,    -1,    29,    30,    31,    32,
-      33,    34,    16,    -1,    -1,    -1,    -1,    -1,    -1,    42,
-      43,    -1,    -1,    27,    -1,    29,    30,    31,    32,    33,
-      34,    -1,    -1,    -1,    -1,    -1,    -1,    -1,    42,    43,
-      27,    -1,    29,    30,    31,    32,    33,    34,    -1,    -1,
-      37,    -1,    -1,    -1,    -1,    42,    43,    27,    -1,    29,
-      30,    31,    32,    33,    34,    -1,    -1,    37,    -1,    -1,
-      -1,    -1,    42,    43,    27,    -1,    29,    30,    31,    32,
-      33,    34,    -1,    36,    -1,    -1,    -1,    -1,    -1,    42,
-      43,    27,    -1,    29,    30,    31,    32,    33,    34,    -1,
-      -1,    -1,    27,    -1,    -1,    -1,    42,    43,    33,    34,
-      -1,    -1,    -1,    -1,    -1,    -1,    -1,    42,    43
+      32,     8,    42,    43,    27,    37,    38,    39,   102,    41,
+      33,    34,     3,    25,    46,    47,    48,    49,    15,    42,
+      43,     4,   116,    23,     0,    57,    38,    24,    35,    61,
+      62,    23,    64,    65,    66,    67,    68,    69,    70,    24,
+      35,    73,    74,    75,    27,    35,    29,    30,    31,    32,
+      33,    34,    38,    24,    40,    39,    36,    41,    37,    42,
+      43,    39,     6,    41,    39,    39,    41,    41,   100,    13,
+      14,    23,    37,   105,    18,    19,    20,    21,    22,    37,
+      24,    36,    26,    40,    25,    23,   118,    37,    23,     6,
+      23,    35,    36,    40,    38,    24,    13,    14,    23,    38,
+      44,    18,    19,    20,    21,    22,    24,    24,    42,    26,
+      40,    24,    23,     5,    38,    17,     6,     3,    35,    15,
+      13,    38,    39,    13,    14,    31,    48,    44,    18,    19,
+      20,    21,    22,    97,    24,    27,    26,    29,    30,    31,
+      32,    33,    34,    10,    -1,    35,    -1,    -1,    38,    -1,
+      42,    43,    -1,    -1,    44,    -1,    -1,    -1,    -1,    -1,
+      27,    11,    29,    30,    31,    32,    33,    34,    -1,    -1,
+      -1,    -1,    -1,    -1,    -1,    42,    43,    27,    -1,    29,
+      30,    31,    32,    33,    34,    12,    -1,    -1,    -1,    -1,
+      -1,    -1,    42,    43,    -1,    -1,    -1,    -1,    -1,    -1,
+      27,    -1,    29,    30,    31,    32,    33,    34,    16,    -1,
+      -1,    -1,    -1,    -1,    -1,    42,    43,    -1,    -1,    27,
+      -1,    29,    30,    31,    32,    33,    34,    -1,    -1,    -1,
+      -1,    -1,    -1,    -1,    42,    43,    27,    -1,    29,    30,
+      31,    32,    33,    34,    -1,    -1,    37,    -1,    -1,    -1,
+      -1,    42,    43,    27,    -1,    29,    30,    31,    32,    33,
+      34,    -1,    -1,    37,    -1,    -1,    -1,    -1,    42,    43,
+      27,    -1,    29,    30,    31,    32,    33,    34,    -1,    36,
+      -1,    -1,    -1,    -1,    -1,    42,    43,    27,    -1,    29,
+      30,    31,    32,    33,    34,    -1,    -1,    -1,    -1,    -1,
+      27,    -1,    42,    43,    31,    32,    33,    34,    -1,    -1,
+      -1,    -1,    -1,    -1,    -1,    42,    43
 };
 
 /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
@@ -823,13 +824,14 @@ static const yytype_uint8 yystos[] =
       37,    49,    24,    52,    53,    23,    37,    37,    36,    40,
       39,    41,    25,    37,    23,    40,    53,     6,    13,    14,
       18,    19,    20,    21,    22,    24,    26,    35,    38,    44,
-      54,    23,    54,    54,    54,    23,    54,    25,    54,    54,
-      55,    55,    54,    27,    29,    30,    31,    32,    33,    34,
-      42,    43,    35,    12,    10,    16,    54,    37,    36,    54,
-      39,    54,    54,    54,    54,    54,    54,    54,    24,    23,
-      54,    54,    54,    24,    57,    58,    37,    38,    42,    36,
-       4,    11,    40,    15,    58,    54,    56,    24,    54,    23,
-      39,    41,    38,     5,    17,    54,    56,    54,    39
+      54,    23,    54,    54,    54,    23,    54,    25,    38,    54,
+      54,    55,    55,    54,    27,    29,    30,    31,    32,    33,
+      34,    42,    43,    35,    12,    10,    16,    54,    54,    56,
+      37,    36,    54,    39,    54,    54,    54,    54,    54,    54,
+      54,    24,    23,    54,    54,    54,    24,    57,    58,    39,
+      41,    37,    38,    42,    36,     4,    11,    40,    15,    58,
+      54,    56,    24,    54,    23,    39,    38,     5,    17,    56,
+      54,    39
 };
 
 #define yyerrok		(yyerrstatus = 0)
@@ -1812,210 +1814,217 @@ yyreduce:
   case 19:
 
 /* Line 1455 of yacc.c  */
-#line 237 "cool.y"
+#line 239 "cool.y"
     { (yyval.expression) = dispatch((yyvsp[(1) - (6)].expression), (yyvsp[(3) - (6)].symbol), (yyvsp[(5) - (6)].expressions)); }
     break;
 
   case 20:
 
 /* Line 1455 of yacc.c  */
-#line 238 "cool.y"
+#line 240 "cool.y"
     { (yyval.expression) = static_dispatch((yyvsp[(1) - (8)].expression), (yyvsp[(3) - (8)].symbol), (yyvsp[(5) - (8)].symbol), (yyvsp[(7) - (8)].expressions)); }
     break;
 
   case 21:
 
 /* Line 1455 of yacc.c  */
-#line 240 "cool.y"
-    { (yyval.expression) = cond((yyvsp[(2) - (7)].expression), (yyvsp[(4) - (7)].expression), (yyvsp[(6) - (7)].expression)); }
+#line 244 "cool.y"
+    { (yyval.expression) = dispatch(object(idtable.add_string("self")), (yyvsp[(1) - (4)].symbol), (yyvsp[(3) - (4)].expressions)); }
     break;
 
   case 22:
 
 /* Line 1455 of yacc.c  */
-#line 241 "cool.y"
-    { (yyval.expression) = loop((yyvsp[(2) - (5)].expression), (yyvsp[(4) - (5)].expression)); }
+#line 246 "cool.y"
+    { (yyval.expression) = cond((yyvsp[(2) - (7)].expression), (yyvsp[(4) - (7)].expression), (yyvsp[(6) - (7)].expression)); }
     break;
 
   case 23:
 
 /* Line 1455 of yacc.c  */
-#line 242 "cool.y"
-    { }
+#line 247 "cool.y"
+    { (yyval.expression) = loop((yyvsp[(2) - (5)].expression), (yyvsp[(4) - (5)].expression)); }
     break;
 
   case 24:
 
 /* Line 1455 of yacc.c  */
-#line 258 "cool.y"
+#line 248 "cool.y"
     { }
     break;
 
   case 25:
 
 /* Line 1455 of yacc.c  */
-#line 261 "cool.y"
-    { new_((yyvsp[(2) - (2)].symbol)); }
+#line 264 "cool.y"
+    { }
     break;
 
   case 26:
 
 /* Line 1455 of yacc.c  */
-#line 262 "cool.y"
-    { isvoid((yyvsp[(2) - (2)].expression)); }
+#line 267 "cool.y"
+    { new_((yyvsp[(2) - (2)].symbol)); }
     break;
 
   case 27:
 
 /* Line 1455 of yacc.c  */
-#line 265 "cool.y"
-    { (yyval.expression) = plus((yyvsp[(1) - (3)].expression), (yyvsp[(3) - (3)].expression)); }
+#line 268 "cool.y"
+    { isvoid((yyvsp[(2) - (2)].expression)); }
     break;
 
   case 28:
 
 /* Line 1455 of yacc.c  */
-#line 266 "cool.y"
-    { (yyval.expression) = sub((yyvsp[(1) - (3)].expression), (yyvsp[(3) - (3)].expression)); }
+#line 271 "cool.y"
+    { (yyval.expression) = plus((yyvsp[(1) - (3)].expression), (yyvsp[(3) - (3)].expression)); }
     break;
 
   case 29:
 
 /* Line 1455 of yacc.c  */
-#line 267 "cool.y"
-    { (yyval.expression) = mul((yyvsp[(1) - (3)].expression), (yyvsp[(3) - (3)].expression)); }
+#line 272 "cool.y"
+    { (yyval.expression) = sub((yyvsp[(1) - (3)].expression), (yyvsp[(3) - (3)].expression)); }
     break;
 
   case 30:
 
 /* Line 1455 of yacc.c  */
-#line 268 "cool.y"
-    { (yyval.expression) = divide((yyvsp[(1) - (3)].expression), (yyvsp[(3) - (3)].expression)); }
+#line 273 "cool.y"
+    { (yyval.expression) = mul((yyvsp[(1) - (3)].expression), (yyvsp[(3) - (3)].expression)); }
     break;
 
   case 31:
 
 /* Line 1455 of yacc.c  */
-#line 269 "cool.y"
-    { (yyval.expression) = neg((yyvsp[(2) - (2)].expression)); }
+#line 274 "cool.y"
+    { (yyval.expression) = divide((yyvsp[(1) - (3)].expression), (yyvsp[(3) - (3)].expression)); }
     break;
 
   case 32:
 
 /* Line 1455 of yacc.c  */
-#line 270 "cool.y"
-    { (yyval.expression) = lt((yyvsp[(1) - (3)].expression), (yyvsp[(3) - (3)].expression)); }
+#line 275 "cool.y"
+    { (yyval.expression) = neg((yyvsp[(2) - (2)].expression)); }
     break;
 
   case 33:
 
 /* Line 1455 of yacc.c  */
-#line 271 "cool.y"
-    { (yyval.expression) = leq((yyvsp[(1) - (3)].expression), (yyvsp[(3) - (3)].expression)); }
+#line 276 "cool.y"
+    { (yyval.expression) = lt((yyvsp[(1) - (3)].expression), (yyvsp[(3) - (3)].expression)); }
     break;
 
   case 34:
 
 /* Line 1455 of yacc.c  */
-#line 272 "cool.y"
-    { (yyval.expression) = eq((yyvsp[(1) - (3)].expression), (yyvsp[(3) - (3)].expression)); }
+#line 277 "cool.y"
+    { (yyval.expression) = leq((yyvsp[(1) - (3)].expression), (yyvsp[(3) - (3)].expression)); }
     break;
 
   case 35:
 
 /* Line 1455 of yacc.c  */
-#line 273 "cool.y"
-    { (yyval.expression) = comp((yyvsp[(2) - (2)].expression)); }
+#line 278 "cool.y"
+    { (yyval.expression) = eq((yyvsp[(1) - (3)].expression), (yyvsp[(3) - (3)].expression)); }
     break;
 
   case 36:
 
 /* Line 1455 of yacc.c  */
-#line 276 "cool.y"
-    { (yyval.expression) = block((yyvsp[(2) - (3)].expressions)); }
+#line 279 "cool.y"
+    { (yyval.expression) = comp((yyvsp[(2) - (2)].expression)); }
     break;
 
   case 37:
 
 /* Line 1455 of yacc.c  */
-#line 279 "cool.y"
-    { (yyval.expression) = object((yyvsp[(1) - (1)].symbol)); }
+#line 282 "cool.y"
+    { (yyval.expression) = block((yyvsp[(2) - (3)].expressions)); }
     break;
 
   case 38:
 
 /* Line 1455 of yacc.c  */
-#line 282 "cool.y"
-    { (yyval.expression) = int_const((yyvsp[(1) - (1)].symbol)); }
+#line 285 "cool.y"
+    { (yyval.expression) = object((yyvsp[(1) - (1)].symbol)); }
     break;
 
   case 39:
 
 /* Line 1455 of yacc.c  */
-#line 283 "cool.y"
-    { (yyval.expression) = string_const((yyvsp[(1) - (1)].symbol)); }
+#line 288 "cool.y"
+    { (yyval.expression) = int_const((yyvsp[(1) - (1)].symbol)); }
     break;
 
   case 40:
 
 /* Line 1455 of yacc.c  */
-#line 284 "cool.y"
-    { (yyval.expression) = bool_const((yyvsp[(1) - (1)].boolean)); }
+#line 289 "cool.y"
+    { (yyval.expression) = string_const((yyvsp[(1) - (1)].symbol)); }
     break;
 
   case 41:
 
 /* Line 1455 of yacc.c  */
-#line 300 "cool.y"
-    { (yyval.expressions) = single_Expressions((yyvsp[(1) - (2)].expression)); }
+#line 290 "cool.y"
+    { (yyval.expression) = bool_const((yyvsp[(1) - (1)].boolean)); }
     break;
 
   case 42:
 
 /* Line 1455 of yacc.c  */
-#line 301 "cool.y"
-    { (yyval.expressions) = append_Expressions((yyvsp[(1) - (3)].expressions), single_Expressions((yyvsp[(2) - (3)].expression))); }
+#line 306 "cool.y"
+    { (yyval.expressions) = single_Expressions((yyvsp[(1) - (2)].expression)); }
     break;
 
   case 43:
 
 /* Line 1455 of yacc.c  */
-#line 304 "cool.y"
-    { (yyval.expressions) = single_Expressions((yyvsp[(1) - (1)].expression)); }
+#line 307 "cool.y"
+    { (yyval.expressions) = append_Expressions((yyvsp[(1) - (3)].expressions), single_Expressions((yyvsp[(2) - (3)].expression))); }
     break;
 
   case 44:
 
 /* Line 1455 of yacc.c  */
-#line 305 "cool.y"
-    { (yyval.expressions) = append_Expressions((yyvsp[(1) - (3)].expressions), single_Expressions((yyvsp[(3) - (3)].expression))); }
+#line 310 "cool.y"
+    { (yyval.expressions) = single_Expressions((yyvsp[(1) - (1)].expression)); }
     break;
 
   case 45:
 
 /* Line 1455 of yacc.c  */
-#line 310 "cool.y"
-    { single_Cases((yyvsp[(1) - (1)].case_)); }
+#line 311 "cool.y"
+    { (yyval.expressions) = append_Expressions((yyvsp[(1) - (3)].expressions), single_Expressions((yyvsp[(3) - (3)].expression))); }
     break;
 
   case 46:
 
 /* Line 1455 of yacc.c  */
-#line 312 "cool.y"
-    { append_Cases((yyvsp[(1) - (2)].cases), single_Cases((yyvsp[(2) - (2)].case_))); }
+#line 316 "cool.y"
+    { single_Cases((yyvsp[(1) - (1)].case_)); }
     break;
 
   case 47:
 
 /* Line 1455 of yacc.c  */
-#line 314 "cool.y"
+#line 318 "cool.y"
+    { append_Cases((yyvsp[(1) - (2)].cases), single_Cases((yyvsp[(2) - (2)].case_))); }
+    break;
+
+  case 48:
+
+/* Line 1455 of yacc.c  */
+#line 320 "cool.y"
     { branch((yyvsp[(1) - (5)].symbol), (yyvsp[(3) - (5)].symbol), (yyvsp[(5) - (5)].expression)); }
     break;
 
 
 
 /* Line 1455 of yacc.c  */
-#line 2019 "cool.tab.c"
+#line 2028 "cool.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -2234,7 +2243,7 @@ yyreturn:
 
 
 /* Line 1675 of yacc.c  */
-#line 318 "cool.y"
+#line 324 "cool.y"
 
     
     /* This function is called automatically when Bison detects a parse error. */
