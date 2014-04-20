@@ -1,2 +1,4 @@
 "./atoi.test", line 26: syntax error at or near ')'
+"./atoi.test", line 44: syntax error at or near ')'
+"./atoi.test", line 57: syntax error at or near ')'
 Compilation halted due to lex and parse errors

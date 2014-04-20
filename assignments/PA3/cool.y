@@ -289,6 +289,7 @@
 
                 /* block of expression(s) */
                 | '{' one_or_more_expr '}' { $$ = block($2); }
+                | '{' error '}'
 
                 /* names */
                 | OBJECTID { $$ = object($1); }

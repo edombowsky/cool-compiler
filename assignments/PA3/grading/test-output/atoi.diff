@@ -1,4 +1,4 @@
-1,910c1,2
+1,910c1,4
 < 
 < _program
 < 
@@ -911,4 +911,6 @@
 <     )
 ---
 > filename, line 26: syntax error at or near LOCATION
+> filename, line 44: syntax error at or near LOCATION
+> filename, line 57: syntax error at or near LOCATION
 > Compilation halted due to lex and syntax errors
