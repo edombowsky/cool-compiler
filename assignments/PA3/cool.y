@@ -176,9 +176,16 @@
     /* "The declarations %left and %right ([left and] right associativity) take the place of %token
      * which is used to declare a token type name without associativity/precedence.
      * - Bison manual - sec 2.2 */
+    
+    %left '.'
+    %left '@'
+    %left '~'
+    %left ISVOID
     %left '*' '/'
     %left '+' '-'
     %left LE '<' '='
+    %left NOT
+    %right ASSIGN
 
     %%
     /* Think about what this grammar means; a program is made up of a list of one or more classes */
@@ -238,11 +245,13 @@
                 /* dispatch: normal, static, omitted self */
                 | expr '.' OBJECTID '(' comma_sep_expr ')' { $$ = dispatch($1, $3, $5); }
                 | expr '@' TYPEID '.' OBJECTID '(' comma_sep_expr ')' { $$ = static_dispatch($1, $3, $5, $7); }
+                | OBJECTID '(' comma_sep_expr ')' {
+                     /* `object` constructor requires an argument of type Symbol.
+                    * idtable.add_string returns a Symbol from a string */
+                    $$ = dispatch(object(idtable.add_string("self")), $1, $3);
+                    }
 
-                /* `object` constructor requires an argument of type Symbol.
-                 * idtable.add_string returns a Symbol from a string */
-                | OBJECTID '(' comma_sep_expr ')' { $$ = dispatch(object(idtable.add_string("self")), $1, $3); }
-
+                /* control structures */
                 | IF expr THEN expr ELSE expr FI { $$ = cond($2, $4, $6); }
                 | WHILE expr LOOP expr POOL { $$ = loop($2, $4); }
                 | '{' one_or_more_expr '}' { }
@@ -279,7 +288,7 @@
                 | NOT expr { $$ = comp($2); }
 
                 /* block of expression(s) */
-                | '(' one_or_more_expr ')' { $$ = block($2); }
+                | '{' one_or_more_expr '}' { $$ = block($2); }
 
                 /* names */
                 | OBJECTID { $$ = object($1); }

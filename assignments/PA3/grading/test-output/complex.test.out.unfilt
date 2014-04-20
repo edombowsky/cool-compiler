@@ -1,2 +1,2 @@
-"./complex.test", line 3: syntax error at or near LET
+"./complex.test", line 3: syntax error at or near '('
 Compilation halted due to lex and parse errors
