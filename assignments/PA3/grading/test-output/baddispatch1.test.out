@@ -1,0 +1,3 @@
+filename, line 2: syntax error at or near LOCATION
+filename, line 3: syntax error at or near LOCATION
+Compilation halted due to lex and syntax errors

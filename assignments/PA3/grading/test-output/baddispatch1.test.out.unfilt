@@ -1,0 +1,3 @@
+"./baddispatch1.test", line 2: syntax error at or near ')'
+"./baddispatch1.test", line 3: syntax error at or near INT_CONST = 5
+Compilation halted due to lex and parse errors

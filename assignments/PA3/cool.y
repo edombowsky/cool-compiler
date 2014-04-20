@@ -215,6 +215,8 @@
                     $$ = class_($2, idtable.add_string("Object"), $4, stringtable.add_string(curr_filename)); }
                 | CLASS TYPEID INHERITS TYPEID '{' features_opt '}' ';' {
                     $$ = class_($2, $4, $6, stringtable.add_string(curr_filename)); }
+                | CLASS error '{' features_opt '}' ';'
+                | CLASS error '{' error '}' ';'
                 ;
     
     /* features_opt may be empty, but no empty features in list. */
