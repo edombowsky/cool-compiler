@@ -7,7 +7,6 @@
 	-1 (associativitydiv)	 testing associativity of /
 	-1 (atoi)	 the atoi program
 	-1 (badblock)	 a block with multiple errors
-	-1 (baddispatch1)	 bad dispatch syntax
 	-1 (badfeaturenames)	 method and attribute names capitalized
 	-1 (badfeatures)	 multiple errors in features in a class
 	-1 (casemultiplebranch)	 a case with multiple branches
