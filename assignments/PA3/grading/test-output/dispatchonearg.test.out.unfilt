@@ -1,2 +1,7 @@
-"./dispatchonearg.test", line 3: syntax error at or near '.'
-Compilation halted due to lex and parse errors
+#1
+_program
+  #1
+  _class
+    Test
+    Object
+Segmentation fault

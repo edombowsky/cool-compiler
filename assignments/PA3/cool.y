@@ -11,6 +11,7 @@
   #include "cool-tree.h"
   #include "stringtab.h"
   #include "utilities.h"
+  #include "list.h"
   
   extern char *curr_filename;
   
@@ -79,7 +80,28 @@
     
     void yyerror(char *s);        /*  defined below; called for each parse error */
     extern int yylex();           /*  the entry point to the lexer  */
-    
+
+    /* We define struct to handle nested lets and save them in the List data structure. 
+     * A struct is just a generic data structure; it is analogous to JavaScript's object,
+     * except that it can be typed */
+    struct Let_item
+    {
+        Let_item(Symbol i, Symbol t, Expression ae)
+        {
+            id = i;
+            type = t;
+            assign_expr = ae;
+        }
+        Symbol id;
+        Symbol type;
+        Expression assign_expr; /* This refers to the assignment expression; not the expression after IN */
+    };
+
+    /* Templates are a C++ feature that allow classes and functions to use generic types
+     * Since List is implemented with templates, it can operate on a generic type, meaning it flexible. */
+    /*template <class Elem>
+    List<Elem> *letlist;*/
+
     /************************************************************************/
     /*                DONT CHANGE ANYTHING IN THIS SECTION                  */
     
@@ -132,12 +154,10 @@
     value of each non terminal. (See section 3.6 in the bison 
     documentation for details). */
     
-    /* Declare (C++?) types for the grammar's non-terminals. */
+    /* Declare types for the grammar's non-terminals. */
     %type <program> program
     %type <classes> class_list
     %type <class_> class
-    
-    /* Features are not part of Cool; they are meta-symbols in Cool's grammar. */
     %type <features> features_opt
     %type <features> features
     %type <feature> feature
@@ -146,11 +166,20 @@
     %type <cases> case_branch_list 
     %type <case_> case_branch
     %type <expressions> one_or_more_expr
+    %type <expressions> comma_sep_expr
     %type <expression> expr
+    /*%type <expressions> lets_expr
+    %type <expression> let_expr*/
     
     /* Precedence declarations go here. */
-    
-    
+
+    /* "The declarations %left and %right ([left and] right associativity) take the place of %token
+     * which is used to declare a token type name without associativity/precedence.
+     * - Bison manual - sec 2.2 */
+    %left '*' '/'
+    %left '+' '-'
+    %left LE '<' '='
+
     %%
     /* Think about what this grammar means; a program is made up of a list of one or more classes */
     program	    : class_list { 
@@ -205,9 +234,23 @@
    
     /* expressions are the body of the program */
     expr        : OBJECTID ASSIGN expr { $$ = assign($1, $3); }
+                | expr '.' OBJECTID '(' comma_sep_expr ')' { $$ = dispatch($1, $3, $5); }
+                | expr '@' TYPEID '.' OBJECTID '(' comma_sep_expr ')' { $$ = static_dispatch($1, $3, $5, $7); }
+
                 | IF expr THEN expr ELSE expr FI { $$ = cond($2, $4, $6); }
                 | WHILE expr LOOP expr POOL { $$ = loop($2, $4); }
                 | '{' one_or_more_expr '}' { }
+
+                /*| LET lets_expr IN expr
+                    {
+                        int len = list_length($2);
+                        Let_item item = lets_expr->tl();
+                        Expression inner_expr = let(item.id, item.type, item.assign_expr, $4);
+
+                        for (int i = 0; i < len; i++) {
+                            inner_expr = let(item.id, item.type, item.assign_expr, inner_expr);
+                        }
+                    }*/
 
                 /* Use `case_branch_list` nonterminal to handle one or more cases 
                  * See Cool Tour for more information on constructors
@@ -240,12 +283,27 @@
                 | STR_CONST { $$ = string_const($1); }
                 | BOOL_CONST { $$ = bool_const($1); }
                 ;
+    
+    /* Look in cool/include/PA3/list.h for how to use the provided List data structure */
+    /*lets_expr   : let_expr { $$ = new List<Let_item>($1); }
+                | lets_expr ',' let_expr { $$ = new List<Let_item>($3, $1); }
+                ;*/
+    /* Save the "object:type [assign expr]" part of the let expression in a struct.
+     * We are using aggregate initialization here, because Let_item is an aggregate. */
+    /*let_expr    : OBJECTID ':' TYPEID { $$ = new Let_item($1, $3, no_expr()); }
+                | OBJECTID ':' TYPEID ASSIGN expr { $$ = new Let_item($1, $3, $5); }
+                ;*/
 
     /* one or more expressions, separated by a semicolon
      * this is not the same as comma-separated expressions (e.g. a list of arguments)
      */
-    one_or_more_expr    : expr ';' { single_Expressions($1); }
-                        | one_or_more_expr expr ';' { append_Expressions($1, single_Expressions($2)); }
+    one_or_more_expr    : expr ';' { $$ = single_Expressions($1); }
+                        | one_or_more_expr expr ';' { $$ = append_Expressions($1, single_Expressions($2)); }
+                        ;
+
+    comma_sep_expr      : expr { $$ = single_Expressions($1); }
+                        | comma_sep_expr ',' expr { $$ = append_Expressions($1, single_Expressions($3)); }
+                        /* Do we need nil_Expressions? Why? */
                         ;
 
     /* must have at least one case_branch */

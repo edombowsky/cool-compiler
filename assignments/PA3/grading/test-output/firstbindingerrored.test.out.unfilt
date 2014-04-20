@@ -1,2 +1,2 @@
-"./firstbindingerrored.test", line 2: syntax error at or near ')'
+"./firstbindingerrored.test", line 2: syntax error at or near LET
 Compilation halted due to lex and parse errors

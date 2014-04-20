@@ -1,0 +1,11 @@
+1,2c1,7
+< filename, line 3: syntax error at or near LOCATION
+< Compilation halted due to lex and syntax errors
+---
+> 
+> _program
+> 
+>   _class
+>     Test
+>     Object
+> Segmentation fault
