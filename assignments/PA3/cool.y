@@ -158,7 +158,7 @@
     %type <program> program
     %type <classes> class_list
     %type <class_> class
-    %type <features> features_opt
+    %type <features> features_list
     %type <features> features
     %type <feature> feature
     %type <formals> formals
@@ -210,22 +210,24 @@
     
     /* if no parent is specified, the class inherits from the Object class. */
     /* notice the optional "inherits" expression is handled by options in the grammar */
-    class	    : CLASS TYPEID '{' features_opt '}' ';' {
+    class	    : CLASS TYPEID '{' features_list '}' ';' {
                     /* The class_ constructor builds a Class_ tree node with four arguments as children  */
                     $$ = class_($2, idtable.add_string("Object"), $4, stringtable.add_string(curr_filename)); }
-                | CLASS TYPEID INHERITS TYPEID '{' features_opt '}' ';' {
+                | CLASS TYPEID INHERITS TYPEID '{' features_list '}' ';' {
                     $$ = class_($2, $4, $6, stringtable.add_string(curr_filename)); }
 
                 /* handling errors in class definitions and body */
                 | CLASS TYPEID '{' error '}' ';'
-                | CLASS error '{' features_opt '}' ';'
+                | CLASS error '{' features_list '}' ';'
                 | CLASS error '{' error '}' ';'
                 ;
     
-    /* features_opt may be empty, but no empty features in list. */
-    features_opt: features { $$ = $1; }
-                | { $$ = nil_Features(); }
-                ;
+    /* features_list may be empty, but no empty features in list. 
+     * practically, this means the nonterminal features_list can be empty,
+     * but we cannot allow the features nonterminal to call nil_Features() */
+    features_list   : features { $$ = $1; }
+                    | { $$ = nil_Features(); }
+                    ;
     features    : feature ';' { single_Features($1); }
                 | features feature ';' { append_Features($1, single_Features($2)); }
                 ;

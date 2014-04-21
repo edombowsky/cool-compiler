@@ -22,14 +22,14 @@ Grammar
     2 class_list: class
     3           | class_list class
 
-    4 class: CLASS TYPEID '{' features_opt '}' ';'
-    5      | CLASS TYPEID INHERITS TYPEID '{' features_opt '}' ';'
+    4 class: CLASS TYPEID '{' features_list '}' ';'
+    5      | CLASS TYPEID INHERITS TYPEID '{' features_list '}' ';'
     6      | CLASS TYPEID '{' error '}' ';'
-    7      | CLASS error '{' features_opt '}' ';'
+    7      | CLASS error '{' features_list '}' ';'
     8      | CLASS error '{' error '}' ';'
 
-    9 features_opt: features
-   10             | /* empty */
+    9 features_list: features
+   10              | /* empty */
 
    11 features: feature ';'
    12         | features feature ';'
@@ -140,7 +140,7 @@ class_list (47)
     on left: 2 3, on right: 1 3
 class (48)
     on left: 4 5 6 7 8, on right: 2 3
-features_opt (49)
+features_list (49)
     on left: 9 10, on right: 4 5 7
 features (50)
     on left: 11 12, on right: 9 12
@@ -177,10 +177,10 @@ state 0
 
 state 1
 
-    4 class: CLASS . TYPEID '{' features_opt '}' ';'
-    5      | CLASS . TYPEID INHERITS TYPEID '{' features_opt '}' ';'
+    4 class: CLASS . TYPEID '{' features_list '}' ';'
+    5      | CLASS . TYPEID INHERITS TYPEID '{' features_list '}' ';'
     6      | CLASS . TYPEID '{' error '}' ';'
-    7      | CLASS . error '{' features_opt '}' ';'
+    7      | CLASS . error '{' features_list '}' ';'
     8      | CLASS . error '{' error '}' ';'
 
     error   shift, and go to state 5
@@ -215,7 +215,7 @@ state 4
 
 state 5
 
-    7 class: CLASS error . '{' features_opt '}' ';'
+    7 class: CLASS error . '{' features_list '}' ';'
     8      | CLASS error . '{' error '}' ';'
 
     '{'  shift, and go to state 9
@@ -223,8 +223,8 @@ state 5
 
 state 6
 
-    4 class: CLASS TYPEID . '{' features_opt '}' ';'
-    5      | CLASS TYPEID . INHERITS TYPEID '{' features_opt '}' ';'
+    4 class: CLASS TYPEID . '{' features_list '}' ';'
+    5      | CLASS TYPEID . INHERITS TYPEID '{' features_list '}' ';'
     6      | CLASS TYPEID . '{' error '}' ';'
 
     INHERITS  shift, and go to state 10
@@ -247,39 +247,39 @@ state 8
 
 state 9
 
-    7 class: CLASS error '{' . features_opt '}' ';'
+    7 class: CLASS error '{' . features_list '}' ';'
     8      | CLASS error '{' . error '}' ';'
 
     error     shift, and go to state 12
     OBJECTID  shift, and go to state 13
 
-    '}'  reduce using rule 10 (features_opt)
+    '}'  reduce using rule 10 (features_list)
 
-    features_opt  go to state 14
-    features      go to state 15
-    feature       go to state 16
+    features_list  go to state 14
+    features       go to state 15
+    feature        go to state 16
 
 
 state 10
 
-    5 class: CLASS TYPEID INHERITS . TYPEID '{' features_opt '}' ';'
+    5 class: CLASS TYPEID INHERITS . TYPEID '{' features_list '}' ';'
 
     TYPEID  shift, and go to state 17
 
 
 state 11
 
-    4 class: CLASS TYPEID '{' . features_opt '}' ';'
+    4 class: CLASS TYPEID '{' . features_list '}' ';'
     6      | CLASS TYPEID '{' . error '}' ';'
 
     error     shift, and go to state 18
     OBJECTID  shift, and go to state 13
 
-    '}'  reduce using rule 10 (features_opt)
+    '}'  reduce using rule 10 (features_list)
 
-    features_opt  go to state 19
-    features      go to state 15
-    feature       go to state 16
+    features_list  go to state 19
+    features       go to state 15
+    feature        go to state 16
 
 
 state 12
@@ -301,19 +301,19 @@ state 13
 
 state 14
 
-    7 class: CLASS error '{' features_opt . '}' ';'
+    7 class: CLASS error '{' features_list . '}' ';'
 
     '}'  shift, and go to state 23
 
 
 state 15
 
-    9 features_opt: features .
+    9 features_list: features .
    12 features: features . feature ';'
 
     OBJECTID  shift, and go to state 13
 
-    $default  reduce using rule 9 (features_opt)
+    $default  reduce using rule 9 (features_list)
 
     feature  go to state 24
 
@@ -327,7 +327,7 @@ state 16
 
 state 17
 
-    5 class: CLASS TYPEID INHERITS TYPEID . '{' features_opt '}' ';'
+    5 class: CLASS TYPEID INHERITS TYPEID . '{' features_list '}' ';'
 
     '{'  shift, and go to state 26
 
@@ -341,7 +341,7 @@ state 18
 
 state 19
 
-    4 class: CLASS TYPEID '{' features_opt . '}' ';'
+    4 class: CLASS TYPEID '{' features_list . '}' ';'
 
     '}'  shift, and go to state 28
 
@@ -375,7 +375,7 @@ state 22
 
 state 23
 
-    7 class: CLASS error '{' features_opt '}' . ';'
+    7 class: CLASS error '{' features_list '}' . ';'
 
     ';'  shift, and go to state 34
 
@@ -396,15 +396,15 @@ state 25
 
 state 26
 
-    5 class: CLASS TYPEID INHERITS TYPEID '{' . features_opt '}' ';'
+    5 class: CLASS TYPEID INHERITS TYPEID '{' . features_list '}' ';'
 
     OBJECTID  shift, and go to state 13
 
-    $default  reduce using rule 10 (features_opt)
+    $default  reduce using rule 10 (features_list)
 
-    features_opt  go to state 36
-    features      go to state 15
-    feature       go to state 16
+    features_list  go to state 36
+    features       go to state 15
+    feature        go to state 16
 
 
 state 27
@@ -416,7 +416,7 @@ state 27
 
 state 28
 
-    4 class: CLASS TYPEID '{' features_opt '}' . ';'
+    4 class: CLASS TYPEID '{' features_list '}' . ';'
 
     ';'  shift, and go to state 38
 
@@ -463,7 +463,7 @@ state 33
 
 state 34
 
-    7 class: CLASS error '{' features_opt '}' ';' .
+    7 class: CLASS error '{' features_list '}' ';' .
 
     $default  reduce using rule 7 (class)
 
@@ -477,7 +477,7 @@ state 35
 
 state 36
 
-    5 class: CLASS TYPEID INHERITS TYPEID '{' features_opt . '}' ';'
+    5 class: CLASS TYPEID INHERITS TYPEID '{' features_list . '}' ';'
 
     '}'  shift, and go to state 43
 
@@ -491,7 +491,7 @@ state 37
 
 state 38
 
-    4 class: CLASS TYPEID '{' features_opt '}' ';' .
+    4 class: CLASS TYPEID '{' features_list '}' ';' .
 
     $default  reduce using rule 4 (class)
 
@@ -541,7 +541,7 @@ state 42
 
 state 43
 
-    5 class: CLASS TYPEID INHERITS TYPEID '{' features_opt '}' . ';'
+    5 class: CLASS TYPEID INHERITS TYPEID '{' features_list '}' . ';'
 
     ';'  shift, and go to state 60
 
@@ -779,7 +779,7 @@ state 59
 
 state 60
 
-    5 class: CLASS TYPEID INHERITS TYPEID '{' features_opt '}' ';' .
+    5 class: CLASS TYPEID INHERITS TYPEID '{' features_list '}' ';' .
 
     $default  reduce using rule 5 (class)
 

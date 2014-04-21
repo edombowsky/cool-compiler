@@ -631,11 +631,11 @@ static const yytype_int8 yyrhs[] =
 static const yytype_uint16 yyrline[] =
 {
        0,   192,   192,   198,   206,   213,   216,   220,   221,   222,
-     226,   227,   229,   230,   232,   234,   235,   239,   240,   242,
-     244,   248,   251,   252,   253,   260,   261,   262,   278,   281,
-     282,   285,   286,   287,   288,   289,   290,   291,   292,   293,
-     296,   297,   300,   303,   304,   305,   321,   322,   325,   326,
-     331,   333,   335
+     228,   229,   231,   232,   234,   236,   237,   241,   242,   244,
+     246,   250,   253,   254,   255,   262,   263,   264,   280,   283,
+     284,   287,   288,   289,   290,   291,   292,   293,   294,   295,
+     298,   299,   302,   305,   306,   307,   323,   324,   327,   328,
+     333,   335,   337
 };
 #endif
 
@@ -650,7 +650,7 @@ static const char *const yytname[] =
   "TYPEID", "OBJECTID", "ASSIGN", "NOT", "LE", "ERROR", "'.'", "'@'",
   "'~'", "'*'", "'/'", "'+'", "'-'", "'<'", "'='", "'{'", "'}'", "';'",
   "'('", "')'", "':'", "','", "$accept", "program", "class_list", "class",
-  "features_opt", "features", "feature", "formals", "formal", "expr",
+  "features_list", "features", "feature", "formals", "formal", "expr",
   "one_or_more_expr", "comma_sep_expr", "case_branch_list", "case_branch", 0
 };
 #endif
@@ -1727,298 +1727,298 @@ yyreduce:
   case 10:
 
 /* Line 1455 of yacc.c  */
-#line 226 "cool.y"
+#line 228 "cool.y"
     { (yyval.features) = (yyvsp[(1) - (1)].features); }
     break;
 
   case 11:
 
 /* Line 1455 of yacc.c  */
-#line 227 "cool.y"
+#line 229 "cool.y"
     { (yyval.features) = nil_Features(); }
     break;
 
   case 12:
 
 /* Line 1455 of yacc.c  */
-#line 229 "cool.y"
+#line 231 "cool.y"
     { single_Features((yyvsp[(1) - (2)].feature)); }
     break;
 
   case 13:
 
 /* Line 1455 of yacc.c  */
-#line 230 "cool.y"
+#line 232 "cool.y"
     { append_Features((yyvsp[(1) - (3)].features), single_Features((yyvsp[(2) - (3)].feature))); }
     break;
 
   case 14:
 
 /* Line 1455 of yacc.c  */
-#line 232 "cool.y"
+#line 234 "cool.y"
     { (yyval.feature) = method((yyvsp[(1) - (9)].symbol), (yyvsp[(3) - (9)].formals), (yyvsp[(6) - (9)].symbol), (yyvsp[(8) - (9)].expression)); }
     break;
 
   case 15:
 
 /* Line 1455 of yacc.c  */
-#line 234 "cool.y"
+#line 236 "cool.y"
     { (yyval.feature) = attr((yyvsp[(1) - (3)].symbol), (yyvsp[(3) - (3)].symbol), no_expr()); }
     break;
 
   case 16:
 
 /* Line 1455 of yacc.c  */
-#line 235 "cool.y"
+#line 237 "cool.y"
     { (yyval.feature) = attr((yyvsp[(1) - (5)].symbol), (yyvsp[(3) - (5)].symbol), (yyvsp[(5) - (5)].expression)); }
     break;
 
   case 17:
 
 /* Line 1455 of yacc.c  */
-#line 239 "cool.y"
+#line 241 "cool.y"
     { single_Formals((yyvsp[(1) - (1)].formal)); }
     break;
 
   case 18:
 
 /* Line 1455 of yacc.c  */
-#line 240 "cool.y"
+#line 242 "cool.y"
     { append_Formals((yyvsp[(1) - (3)].formals), single_Formals((yyvsp[(3) - (3)].formal))); }
     break;
 
   case 19:
 
 /* Line 1455 of yacc.c  */
-#line 242 "cool.y"
+#line 244 "cool.y"
     { (yyval.formals) = nil_Formals(); }
     break;
 
   case 20:
 
 /* Line 1455 of yacc.c  */
-#line 244 "cool.y"
+#line 246 "cool.y"
     { (yyval.formal) = formal((yyvsp[(1) - (3)].symbol), (yyvsp[(3) - (3)].symbol)); }
     break;
 
   case 21:
 
 /* Line 1455 of yacc.c  */
-#line 248 "cool.y"
+#line 250 "cool.y"
     { (yyval.expression) = assign((yyvsp[(1) - (3)].symbol), (yyvsp[(3) - (3)].expression)); }
     break;
 
   case 22:
 
 /* Line 1455 of yacc.c  */
-#line 251 "cool.y"
+#line 253 "cool.y"
     { (yyval.expression) = dispatch((yyvsp[(1) - (6)].expression), (yyvsp[(3) - (6)].symbol), (yyvsp[(5) - (6)].expressions)); }
     break;
 
   case 23:
 
 /* Line 1455 of yacc.c  */
-#line 252 "cool.y"
+#line 254 "cool.y"
     { (yyval.expression) = static_dispatch((yyvsp[(1) - (8)].expression), (yyvsp[(3) - (8)].symbol), (yyvsp[(5) - (8)].symbol), (yyvsp[(7) - (8)].expressions)); }
     break;
 
   case 24:
 
 /* Line 1455 of yacc.c  */
-#line 253 "cool.y"
+#line 255 "cool.y"
     {
                      /* `object` constructor requires an argument of type Symbol.
                     * idtable.add_string returns a Symbol from a string */
-                    (yyval.expression) = dispatch(object(idtable.add_string("self")), (yyvsp[(1) - (4)].symbol), (yyvsp[(3) - (4)].expressions));
+                    (yyval.expression) = dispatch(idtable.add_string("self"), (yyvsp[(1) - (4)].symbol), (yyvsp[(3) - (4)].expressions));
                     }
     break;
 
   case 25:
 
 /* Line 1455 of yacc.c  */
-#line 260 "cool.y"
+#line 262 "cool.y"
     { (yyval.expression) = cond((yyvsp[(2) - (7)].expression), (yyvsp[(4) - (7)].expression), (yyvsp[(6) - (7)].expression)); }
     break;
 
   case 26:
 
 /* Line 1455 of yacc.c  */
-#line 261 "cool.y"
+#line 263 "cool.y"
     { (yyval.expression) = loop((yyvsp[(2) - (5)].expression), (yyvsp[(4) - (5)].expression)); }
     break;
 
   case 27:
 
 /* Line 1455 of yacc.c  */
-#line 262 "cool.y"
+#line 264 "cool.y"
     { }
     break;
 
   case 28:
 
 /* Line 1455 of yacc.c  */
-#line 278 "cool.y"
+#line 280 "cool.y"
     { }
     break;
 
   case 29:
 
 /* Line 1455 of yacc.c  */
-#line 281 "cool.y"
+#line 283 "cool.y"
     { new_((yyvsp[(2) - (2)].symbol)); }
     break;
 
   case 30:
 
 /* Line 1455 of yacc.c  */
-#line 282 "cool.y"
+#line 284 "cool.y"
     { isvoid((yyvsp[(2) - (2)].expression)); }
     break;
 
   case 31:
 
 /* Line 1455 of yacc.c  */
-#line 285 "cool.y"
+#line 287 "cool.y"
     { (yyval.expression) = plus((yyvsp[(1) - (3)].expression), (yyvsp[(3) - (3)].expression)); }
     break;
 
   case 32:
 
 /* Line 1455 of yacc.c  */
-#line 286 "cool.y"
+#line 288 "cool.y"
     { (yyval.expression) = sub((yyvsp[(1) - (3)].expression), (yyvsp[(3) - (3)].expression)); }
     break;
 
   case 33:
 
 /* Line 1455 of yacc.c  */
-#line 287 "cool.y"
+#line 289 "cool.y"
     { (yyval.expression) = mul((yyvsp[(1) - (3)].expression), (yyvsp[(3) - (3)].expression)); }
     break;
 
   case 34:
 
 /* Line 1455 of yacc.c  */
-#line 288 "cool.y"
+#line 290 "cool.y"
     { (yyval.expression) = divide((yyvsp[(1) - (3)].expression), (yyvsp[(3) - (3)].expression)); }
     break;
 
   case 35:
 
 /* Line 1455 of yacc.c  */
-#line 289 "cool.y"
+#line 291 "cool.y"
     { (yyval.expression) = neg((yyvsp[(2) - (2)].expression)); }
     break;
 
   case 36:
 
 /* Line 1455 of yacc.c  */
-#line 290 "cool.y"
+#line 292 "cool.y"
     { (yyval.expression) = lt((yyvsp[(1) - (3)].expression), (yyvsp[(3) - (3)].expression)); }
     break;
 
   case 37:
 
 /* Line 1455 of yacc.c  */
-#line 291 "cool.y"
+#line 293 "cool.y"
     { (yyval.expression) = leq((yyvsp[(1) - (3)].expression), (yyvsp[(3) - (3)].expression)); }
     break;
 
   case 38:
 
 /* Line 1455 of yacc.c  */
-#line 292 "cool.y"
+#line 294 "cool.y"
     { (yyval.expression) = eq((yyvsp[(1) - (3)].expression), (yyvsp[(3) - (3)].expression)); }
     break;
 
   case 39:
 
 /* Line 1455 of yacc.c  */
-#line 293 "cool.y"
+#line 295 "cool.y"
     { (yyval.expression) = comp((yyvsp[(2) - (2)].expression)); }
     break;
 
   case 40:
 
 /* Line 1455 of yacc.c  */
-#line 296 "cool.y"
+#line 298 "cool.y"
     { (yyval.expression) = block((yyvsp[(2) - (3)].expressions)); }
     break;
 
   case 42:
 
 /* Line 1455 of yacc.c  */
-#line 300 "cool.y"
+#line 302 "cool.y"
     { (yyval.expression) = object((yyvsp[(1) - (1)].symbol)); }
     break;
 
   case 43:
 
 /* Line 1455 of yacc.c  */
-#line 303 "cool.y"
+#line 305 "cool.y"
     { (yyval.expression) = int_const((yyvsp[(1) - (1)].symbol)); }
     break;
 
   case 44:
 
 /* Line 1455 of yacc.c  */
-#line 304 "cool.y"
+#line 306 "cool.y"
     { (yyval.expression) = string_const((yyvsp[(1) - (1)].symbol)); }
     break;
 
   case 45:
 
 /* Line 1455 of yacc.c  */
-#line 305 "cool.y"
+#line 307 "cool.y"
     { (yyval.expression) = bool_const((yyvsp[(1) - (1)].boolean)); }
     break;
 
   case 46:
 
 /* Line 1455 of yacc.c  */
-#line 321 "cool.y"
+#line 323 "cool.y"
     { (yyval.expressions) = single_Expressions((yyvsp[(1) - (2)].expression)); }
     break;
 
   case 47:
 
 /* Line 1455 of yacc.c  */
-#line 322 "cool.y"
+#line 324 "cool.y"
     { (yyval.expressions) = append_Expressions((yyvsp[(1) - (3)].expressions), single_Expressions((yyvsp[(2) - (3)].expression))); }
     break;
 
   case 48:
 
 /* Line 1455 of yacc.c  */
-#line 325 "cool.y"
+#line 327 "cool.y"
     { (yyval.expressions) = single_Expressions((yyvsp[(1) - (1)].expression)); }
     break;
 
   case 49:
 
 /* Line 1455 of yacc.c  */
-#line 326 "cool.y"
+#line 328 "cool.y"
     { (yyval.expressions) = append_Expressions((yyvsp[(1) - (3)].expressions), single_Expressions((yyvsp[(3) - (3)].expression))); }
     break;
 
   case 50:
 
 /* Line 1455 of yacc.c  */
-#line 331 "cool.y"
+#line 333 "cool.y"
     { single_Cases((yyvsp[(1) - (1)].case_)); }
     break;
 
   case 51:
 
 /* Line 1455 of yacc.c  */
-#line 333 "cool.y"
+#line 335 "cool.y"
     { append_Cases((yyvsp[(1) - (2)].cases), single_Cases((yyvsp[(2) - (2)].case_))); }
     break;
 
   case 52:
 
 /* Line 1455 of yacc.c  */
-#line 335 "cool.y"
+#line 337 "cool.y"
     { branch((yyvsp[(1) - (5)].symbol), (yyvsp[(3) - (5)].symbol), (yyvsp[(5) - (5)].expression)); }
     break;
 
@@ -2244,7 +2244,7 @@ yyreturn:
 
 
 /* Line 1675 of yacc.c  */
-#line 339 "cool.y"
+#line 341 "cool.y"
 
     
     /* This function is called automatically when Bison detects a parse error. */
