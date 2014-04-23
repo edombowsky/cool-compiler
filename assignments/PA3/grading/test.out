@@ -18,16 +18,17 @@ _program
       bar
       Int
 
-      _cond
+      _loop
 
-        _eq
+        _comp
 
-          _object
-            x
-          : _no_type
-
-          _int
-            3
+          _bool
+            0
           : _no_type
         : _no_type
-Segmentation fault
+
+        _string
+          "Ooga booga"
+        : _no_type
+      : _no_type
+    )

@@ -1,56 +1,33 @@
-13,65c13
-< 
-<       _block
-< 
+16,17d15
 <         _plus
 < 
-<           _isvoid
-< 
-<             _object
-<               a
-<             : _no_type
+19a18,21
+>           _mul
+> 
+>             _plus
+> 
+23,25d24
 <           : _no_type
 < 
 <           _mul
-< 
-<             _object
-<               b
-<             : _no_type
-< 
-<             _object
-<               c
-<             : _no_type
-<           : _no_type
-<         : _no_type
-< 
+29a29
+>             : _no_type
+37,38d36
 <         _comp
 < 
-<           _lt
-< 
-<             _object
-<               a
-<             : _no_type
-< 
-<             _object
-<               b
-<             : _no_type
-<           : _no_type
+40a39,40
+>           _comp
+> 
+43a44
+>           : _no_type
+49,51d49
 <         : _no_type
 < 
 <         _plus
-< 
-<           _neg
-< 
-<             _object
-<               a
-<             : _no_type
+54a53,54
+>           _plus
+> 
+58d57
 <           : _no_type
-< 
-<           _object
-<             b
-<           : _no_type
-<         : _no_type
-<       : _no_type
-<     )
----
-> Segmentation fault
+64a64
+>       : _no_type

@@ -10,4 +10,56 @@ _program
     _method
       bar
       Int
-Segmentation fault
+
+      _block
+
+        _isvoid
+
+          _mul
+
+            _plus
+
+              _object
+                a
+              : _no_type
+
+              _object
+                b
+              : _no_type
+            : _no_type
+
+            _object
+              c
+            : _no_type
+          : _no_type
+        : _no_type
+
+        _lt
+
+          _comp
+
+            _object
+              a
+            : _no_type
+          : _no_type
+
+          _object
+            b
+          : _no_type
+        : _no_type
+
+        _neg
+
+          _plus
+
+            _object
+              a
+            : _no_type
+
+            _object
+              b
+            : _no_type
+          : _no_type
+        : _no_type
+      : _no_type
+    )

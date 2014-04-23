@@ -4,7 +4,7 @@ _program
   _class
     Test
     Object
-    "./ifnested.test"
+    "./whileoneexpression.test"
     (
     #2
     _attr
@@ -18,16 +18,17 @@ _program
       bar
       Int
       #3
-      _cond
+      _loop
         #3
-        _eq
+        _comp
           #3
-          _object
-            x
-          : _no_type
-          #3
-          _int
-            3
+          _bool
+            0
           : _no_type
         : _no_type
-Segmentation fault
+        #3
+        _string
+          "Ooga booga"
+        : _no_type
+      : _no_type
+    )

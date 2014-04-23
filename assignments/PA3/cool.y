@@ -237,7 +237,10 @@
                 /* control structures */
                 | IF expr THEN expr ELSE expr FI { $$ = cond($2, $4, $6); }
                 | WHILE expr LOOP expr POOL { $$ = loop($2, $4); }
-                | '{' one_or_more_expr '}' { }
+
+                /* block of expression(s) */
+                | '{' one_or_more_expr '}' { $$ = block($2); }
+                | '{' error '}'
 
                 /* nested lets */
                 | LET let_expr { $$ = $2; }
@@ -261,10 +264,9 @@
                 | expr LE expr { $$ = leq($1, $3); }
                 | expr '=' expr { $$ = eq($1, $3); }
                 | NOT expr { $$ = comp($2); }
-
-                /* block of expression(s) */
-                | '{' one_or_more_expr '}' { $$ = block($2); }
-                | '{' error '}'
+                
+                /* parentheses */
+                | '(' expr ')' { $$ = $2; }
 
                 /* names */
                 | OBJECTID { $$ = object($1); }

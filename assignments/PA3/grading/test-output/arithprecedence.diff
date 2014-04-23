@@ -1,223 +1,73 @@
-13,232c13
+51a52,53
+>         _mul
+> 
+58,59d59
+<           _mul
 < 
-<       _block
-< 
-<         _sub
-< 
-<           _plus
-< 
-<             _object
-<               a
-<             : _no_type
-< 
-<             _object
-<               b
-<             : _no_type
-<           : _no_type
-< 
-<           _object
-<             c
-<           : _no_type
+62a63
+>           : _no_type
+68,70d68
 <         : _no_type
 < 
 <         _plus
-< 
-<           _sub
-< 
-<             _object
-<               a
-<             : _no_type
-< 
-<             _object
-<               b
-<             : _no_type
+77a76,77
+>           _plus
+> 
+81d80
 <           : _no_type
+86a86,88
+>         : _no_type
+> 
+>         _divide
+94,95d95
+<           _divide
 < 
-<           _object
-<             c
-<           : _no_type
+98a99
+>           : _no_type
+104,106d104
 <         : _no_type
 < 
 <         _plus
-< 
-<           _object
-<             a
+113a112,113
+>           _plus
+> 
+117d116
 <           : _no_type
-< 
+122a122,124
+>         : _no_type
+> 
+>         _mul
+130,131d131
 <           _mul
 < 
-<             _object
-<               b
-<             : _no_type
-< 
-<             _object
-<               c
-<             : _no_type
-<           : _no_type
-<         : _no_type
-< 
-<         _plus
-< 
-<           _mul
-< 
-<             _object
-<               a
-<             : _no_type
-< 
-<             _object
-<               b
-<             : _no_type
-<           : _no_type
-< 
-<           _object
-<             c
-<           : _no_type
-<         : _no_type
-< 
-<         _plus
-< 
-<           _object
-<             a
-<           : _no_type
-< 
-<           _divide
-< 
-<             _object
-<               b
-<             : _no_type
-< 
-<             _object
-<               c
-<             : _no_type
-<           : _no_type
-<         : _no_type
-< 
-<         _plus
-< 
-<           _divide
-< 
-<             _object
-<               a
-<             : _no_type
-< 
-<             _object
-<               b
-<             : _no_type
-<           : _no_type
-< 
-<           _object
-<             c
-<           : _no_type
+134a135
+>           : _no_type
+140,142d140
 <         : _no_type
 < 
 <         _sub
-< 
-<           _object
-<             a
+149a148,149
+>           _sub
+> 
+153d152
 <           : _no_type
+158a158,160
+>         : _no_type
+> 
+>         _divide
+166,167d167
+<           _divide
 < 
-<           _mul
-< 
-<             _object
-<               b
-<             : _no_type
-< 
-<             _object
-<               c
-<             : _no_type
-<           : _no_type
+170a171
+>           : _no_type
+176,178d176
 <         : _no_type
 < 
 <         _sub
-< 
-<           _mul
-< 
-<             _object
-<               a
-<             : _no_type
-< 
-<             _object
-<               b
-<             : _no_type
+185a184,185
+>           _sub
+> 
+189d188
 <           : _no_type
-< 
-<           _object
-<             c
-<           : _no_type
-<         : _no_type
-< 
-<         _sub
-< 
-<           _object
-<             a
-<           : _no_type
-< 
-<           _divide
-< 
-<             _object
-<               b
-<             : _no_type
-< 
-<             _object
-<               c
-<             : _no_type
-<           : _no_type
-<         : _no_type
-< 
-<         _sub
-< 
-<           _divide
-< 
-<             _object
-<               a
-<             : _no_type
-< 
-<             _object
-<               b
-<             : _no_type
-<           : _no_type
-< 
-<           _object
-<             c
-<           : _no_type
-<         : _no_type
-< 
-<         _divide
-< 
-<           _mul
-< 
-<             _object
-<               a
-<             : _no_type
-< 
-<             _object
-<               b
-<             : _no_type
-<           : _no_type
-< 
-<           _object
-<             c
-<           : _no_type
-<         : _no_type
-< 
-<         _mul
-< 
-<           _divide
-< 
-<             _object
-<               a
-<             : _no_type
-< 
-<             _object
-<               b
-<             : _no_type
-<           : _no_type
-< 
-<           _object
-<             c
-<           : _no_type
-<         : _no_type
-<       : _no_type
-<     )
----
-> Segmentation fault
+194a194
+>         : _no_type
