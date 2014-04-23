@@ -155,7 +155,7 @@
      * - Bison manual - sec 2.2 */
     %right ASSIGN
     %left NOT
-    %left LE '<' '='
+    %nonassoc LE '<' '='
     %left '+' '-'
     %left '*' '/'
     %left ISVOID

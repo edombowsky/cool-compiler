@@ -1583,6 +1583,10 @@ state 106
     '@'  shift, and go to state 89
     '.'  shift, and go to state 90
 
+    LE   error (nonassociative)
+    '<'  error (nonassociative)
+    '='  error (nonassociative)
+
     $default  reduce using rule 38 (expr)
 
 
@@ -1606,6 +1610,10 @@ state 107
     '@'  shift, and go to state 89
     '.'  shift, and go to state 90
 
+    LE   error (nonassociative)
+    '<'  error (nonassociative)
+    '='  error (nonassociative)
+
     $default  reduce using rule 37 (expr)
 
 
@@ -1628,6 +1636,10 @@ state 108
     '/'  shift, and go to state 88
     '@'  shift, and go to state 89
     '.'  shift, and go to state 90
+
+    LE   error (nonassociative)
+    '<'  error (nonassociative)
+    '='  error (nonassociative)
 
     $default  reduce using rule 39 (expr)
 
