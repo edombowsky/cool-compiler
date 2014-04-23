@@ -237,12 +237,6 @@
 
                 /* block of expression(s) */
                 | '{' one_or_more_expr '}' { $$ = block($2); }
-                | '{' error '}'
-                    /* the parser enters "panic mode", discarding tokens until it restablizes */
-                    {
-                        yyclearin;
-                        $$ = NULL;
-                    }
 
                 /* nested lets */
                 | LET let_expr { $$ = $2; }
@@ -283,6 +277,8 @@
                 | OBJECTID ':' TYPEID ASSIGN expr IN expr { $$ = let($1, $3, $5, $7); }
                 | OBJECTID ':' TYPEID ',' let_expr { $$ = let($1, $3, no_expr(), $5); }
                 | OBJECTID ':' TYPEID ASSIGN expr ',' let_expr { $$ = let($1, $3, $5, $7); }
+                | error IN expr { yyclearin; $$ = NULL; }
+                | error ',' let_expr { yyclearin; $$ = NULL; }
                 ;
     
     /* one or more expressions, separated by a semicolon
@@ -290,6 +286,8 @@
      */
     one_or_more_expr    : expr ';' { $$ = single_Expressions($1); }
                         | one_or_more_expr expr ';' { $$ = append_Expressions($1, single_Expressions($2)); }
+                        /* recover from an expression inside a block */
+                        | error ';' { yyclearin; $$ = NULL; }
                         ;
 
     param_expr          : expr { $$ = single_Expressions($1); }
