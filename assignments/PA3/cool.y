@@ -228,8 +228,8 @@
     features_list   : features { $$ = $1; }
                     | { $$ = nil_Features(); }
                     ;
-    features    : feature ';' { single_Features($1); }
-                | features feature ';' { append_Features($1, single_Features($2)); }
+    features    : feature ';' { $$ = single_Features($1); }
+                | features feature ';' { $$ = append_Features($1, single_Features($2)); }
                 ;
     feature     : OBJECTID '(' formals ')' ':' TYPEID '{' expr '}' { $$ = method($1, $3, $6, $8); }
                 /* attribute w/ and w/o assignment */
@@ -238,8 +238,8 @@
                 ;
 
     /* formals are comma-separated arguments, i.e. "formal parameters" */
-    formals     : formal { single_Formals($1); }
-                | formals ',' formal { append_Formals($1, single_Formals($3)); }
+    formals     : formal { $$ = single_Formals($1); }
+                | formals ',' formal { $$ = append_Formals($1, single_Formals($3)); }
                 /* empty argument list allowed */
                 | { $$ = nil_Formals(); }
                 ;
@@ -280,8 +280,8 @@
                 | CASE expr OF case_branch_list ESAC { }
 
                 /* prefix keywords */
-                | NEW TYPEID { new_($2); }
-                | ISVOID expr { isvoid($2); }
+                | NEW TYPEID { $$ = new_($2); }
+                | ISVOID expr { $$ = isvoid($2); }
 
                 /* operators  */
                 | expr '+' expr { $$ = plus($1, $3); }
@@ -330,11 +330,11 @@
                         ;
 
     /* must have at least one case_branch */
-    case_branch_list    : case_branch { single_Cases($1); }
+    case_branch_list    : case_branch { $$ = single_Cases($1); }
                         /* "The function `append_Phylums` appends two lists of phylums */
-                        | case_branch_list case_branch { append_Cases($1, single_Cases($2)); }
+                        | case_branch_list case_branch { $$ = append_Cases($1, single_Cases($2)); }
                         ;
-    case_branch         : OBJECTID ':' TYPEID DARROW expr { branch($1, $3, $5); }
+    case_branch         : OBJECTID ':' TYPEID DARROW expr { $$ = branch($1, $3, $5); }
                         ;
 
     /* end of grammar */

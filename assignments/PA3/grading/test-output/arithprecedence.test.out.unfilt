@@ -4,4 +4,10 @@ _program
   _class
     A
     Object
+    "./arithprecedence.test"
+    (
+    #2
+    _method
+      f
+      Int
 Segmentation fault

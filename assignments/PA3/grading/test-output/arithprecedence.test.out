@@ -4,4 +4,10 @@ _program
   _class
     A
     Object
+    filename
+    (
+
+    _method
+      f
+      Int
 Segmentation fault

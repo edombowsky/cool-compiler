@@ -4,4 +4,10 @@ _program
   _class
     Foo
     Object
+    filename
+    (
+
+    _method
+      bar
+      Int
 Segmentation fault

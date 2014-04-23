@@ -4,4 +4,35 @@ _program
   _class
     Test
     Object
-Segmentation fault
+    "./lteassociativity.test"
+    (
+    #2
+    _attr
+      foo
+      Test
+      #2
+      _no_expr
+      : _no_type
+    #3
+    _method
+      bar
+      Int
+      #3
+      _leq
+        #3
+        _leq
+          #3
+          _object
+            x
+          : _no_type
+          #3
+          _object
+            y
+          : _no_type
+        : _no_type
+        #3
+        _object
+          z
+        : _no_type
+      : _no_type
+    )

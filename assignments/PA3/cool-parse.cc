@@ -1742,14 +1742,14 @@ yyreduce:
 
 /* Line 1455 of yacc.c  */
 #line 231 "cool.y"
-    { single_Features((yyvsp[(1) - (2)].feature)); }
+    { (yyval.features) = single_Features((yyvsp[(1) - (2)].feature)); }
     break;
 
   case 13:
 
 /* Line 1455 of yacc.c  */
 #line 232 "cool.y"
-    { append_Features((yyvsp[(1) - (3)].features), single_Features((yyvsp[(2) - (3)].feature))); }
+    { (yyval.features) = append_Features((yyvsp[(1) - (3)].features), single_Features((yyvsp[(2) - (3)].feature))); }
     break;
 
   case 14:
@@ -1777,14 +1777,14 @@ yyreduce:
 
 /* Line 1455 of yacc.c  */
 #line 241 "cool.y"
-    { single_Formals((yyvsp[(1) - (1)].formal)); }
+    { (yyval.formals) = single_Formals((yyvsp[(1) - (1)].formal)); }
     break;
 
   case 18:
 
 /* Line 1455 of yacc.c  */
 #line 242 "cool.y"
-    { append_Formals((yyvsp[(1) - (3)].formals), single_Formals((yyvsp[(3) - (3)].formal))); }
+    { (yyval.formals) = append_Formals((yyvsp[(1) - (3)].formals), single_Formals((yyvsp[(3) - (3)].formal))); }
     break;
 
   case 19:
@@ -1829,7 +1829,7 @@ yyreduce:
     {
                      /* `object` constructor requires an argument of type Symbol.
                     * idtable.add_string returns a Symbol from a string */
-                    (yyval.expression) = dispatch(idtable.add_string("self"), (yyvsp[(1) - (4)].symbol), (yyvsp[(3) - (4)].expressions));
+                    (yyval.expression) = dispatch(object(idtable.add_string("self")), (yyvsp[(1) - (4)].symbol), (yyvsp[(3) - (4)].expressions));
                     }
     break;
 
@@ -1865,14 +1865,14 @@ yyreduce:
 
 /* Line 1455 of yacc.c  */
 #line 283 "cool.y"
-    { new_((yyvsp[(2) - (2)].symbol)); }
+    { (yyval.expression) = new_((yyvsp[(2) - (2)].symbol)); }
     break;
 
   case 30:
 
 /* Line 1455 of yacc.c  */
 #line 284 "cool.y"
-    { isvoid((yyvsp[(2) - (2)].expression)); }
+    { (yyval.expression) = isvoid((yyvsp[(2) - (2)].expression)); }
     break;
 
   case 31:
@@ -2005,21 +2005,21 @@ yyreduce:
 
 /* Line 1455 of yacc.c  */
 #line 333 "cool.y"
-    { single_Cases((yyvsp[(1) - (1)].case_)); }
+    { (yyval.cases) = single_Cases((yyvsp[(1) - (1)].case_)); }
     break;
 
   case 51:
 
 /* Line 1455 of yacc.c  */
 #line 335 "cool.y"
-    { append_Cases((yyvsp[(1) - (2)].cases), single_Cases((yyvsp[(2) - (2)].case_))); }
+    { (yyval.cases) = append_Cases((yyvsp[(1) - (2)].cases), single_Cases((yyvsp[(2) - (2)].case_))); }
     break;
 
   case 52:
 
 /* Line 1455 of yacc.c  */
 #line 337 "cool.y"
-    { branch((yyvsp[(1) - (5)].symbol), (yyvsp[(3) - (5)].symbol), (yyvsp[(5) - (5)].expression)); }
+    { (yyval.case_) = branch((yyvsp[(1) - (5)].symbol), (yyvsp[(3) - (5)].symbol), (yyvsp[(5) - (5)].expression)); }
     break;
 
 

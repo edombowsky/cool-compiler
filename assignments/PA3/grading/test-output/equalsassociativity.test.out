@@ -4,4 +4,35 @@ _program
   _class
     Test
     Object
-Segmentation fault
+    filename
+    (
+
+    _attr
+      foo
+      Test
+
+      _no_expr
+      : _no_type
+
+    _method
+      bar
+      Int
+
+      _eq
+
+        _eq
+
+          _object
+            x
+          : _no_type
+
+          _object
+            y
+          : _no_type
+        : _no_type
+
+        _object
+          z
+        : _no_type
+      : _no_type
+    )

@@ -4,4 +4,10 @@ _program
   _class
     A
     Object
+    "./nestedblocks.test"
+    (
+    #3
+    _method
+      f
+      Int
 Segmentation fault
