@@ -84,7 +84,7 @@ Grammar
    58 case_branch_list: case_branch
    59                 | case_branch_list case_branch
 
-   60 case_branch: OBJECTID ':' TYPEID DARROW expr
+   60 case_branch: OBJECTID ':' TYPEID DARROW expr ';'
 
 
 Terminals, with rules where they appear
@@ -99,7 +99,7 @@ $end (0) 0
 '.' (46) 22 23
 '/' (47) 35
 ':' (58) 14 15 16 20 46 47 48 49 60
-';' (59) 4 5 6 7 8 11 12 13 52 53 54
+';' (59) 4 5 6 7 8 11 12 13 52 53 54 60
 '<' (60) 37
 '=' (61) 39
 '@' (64) 23
@@ -1869,7 +1869,7 @@ state 120
 
 state 121
 
-   60 case_branch: OBJECTID . ':' TYPEID DARROW expr
+   60 case_branch: OBJECTID . ':' TYPEID DARROW expr ';'
 
     ':'  shift, and go to state 135
 
@@ -2053,7 +2053,7 @@ state 134
 
 state 135
 
-   60 case_branch: OBJECTID ':' . TYPEID DARROW expr
+   60 case_branch: OBJECTID ':' . TYPEID DARROW expr ';'
 
     TYPEID  shift, and go to state 145
 
@@ -2210,7 +2210,7 @@ state 144
 
 state 145
 
-   60 case_branch: OBJECTID ':' TYPEID . DARROW expr
+   60 case_branch: OBJECTID ':' TYPEID . DARROW expr ';'
 
     DARROW  shift, and go to state 151
 
@@ -2288,7 +2288,7 @@ state 150
 
 state 151
 
-   60 case_branch: OBJECTID ':' TYPEID DARROW . expr
+   60 case_branch: OBJECTID ':' TYPEID DARROW . expr ';'
 
     IF          shift, and go to state 49
     LET         shift, and go to state 50
@@ -2370,7 +2370,7 @@ state 155
    37     | expr . '<' expr
    38     | expr . LE expr
    39     | expr . '=' expr
-   60 case_branch: OBJECTID ':' TYPEID DARROW expr .
+   60 case_branch: OBJECTID ':' TYPEID DARROW expr . ';'
 
     LE   shift, and go to state 82
     '<'  shift, and go to state 83
@@ -2381,8 +2381,7 @@ state 155
     '/'  shift, and go to state 88
     '@'  shift, and go to state 89
     '.'  shift, and go to state 90
-
-    $default  reduce using rule 60 (case_branch)
+    ';'  shift, and go to state 157
 
 
 state 156
@@ -2390,3 +2389,10 @@ state 156
    23 expr: expr '@' TYPEID '.' OBJECTID '(' param_expr ')' .
 
     $default  reduce using rule 23 (expr)
+
+
+state 157
+
+   60 case_branch: OBJECTID ':' TYPEID DARROW expr ';' .
+
+    $default  reduce using rule 60 (case_branch)

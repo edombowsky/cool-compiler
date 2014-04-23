@@ -244,7 +244,7 @@
                 /* Use `case_branch_list` nonterminal to handle one or more cases 
                  * See Cool Tour for more information on constructors
                  */
-                | CASE expr OF case_branch_list ESAC { }
+                | CASE expr OF case_branch_list ESAC { $$ = typcase($2, $4); }
 
                 /* prefix keywords */
                 | NEW TYPEID { $$ = new_($2); }
@@ -301,7 +301,7 @@
                         /* "The function `append_Phylums` appends two lists of phylums */
                         | case_branch_list case_branch { $$ = append_Cases($1, single_Cases($2)); }
                         ;
-    case_branch         : OBJECTID ':' TYPEID DARROW expr { $$ = branch($1, $3, $5); }
+    case_branch         : OBJECTID ':' TYPEID DARROW expr ';' { $$ = branch($1, $3, $5); }
                         ;
 
     /* end of grammar */
