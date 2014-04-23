@@ -193,9 +193,9 @@
                     $$ = class_($2, $4, $6, stringtable.add_string(curr_filename)); }
 
                 /* handling errors in class definitions and body */
-                | CLASS TYPEID '{' error '}' ';'
-                | CLASS error '{' features_list '}' ';'
-                | CLASS error '{' error '}' ';'
+                | CLASS TYPEID '{' error '}' ';' { yyclearin; $$ = NULL; }
+                | CLASS error '{' features_list '}' ';' { yyclearin; $$ = NULL; }
+                | CLASS error '{' error '}' ';' { yyclearin; $$ = NULL; }
                 ;
     
     /* features_list may be empty, but no empty features in list. 
@@ -206,6 +206,7 @@
                     ;
     features    : feature ';' { $$ = single_Features($1); }
                 | features feature ';' { $$ = append_Features($1, single_Features($2)); }
+                | error ';' { yyclearin; $$ = NULL; }
                 ;
     feature     : OBJECTID '(' formals ')' ':' TYPEID '{' expr '}' { $$ = method($1, $3, $6, $8); }
                 /* attribute w/ and w/o assignment */
@@ -237,6 +238,11 @@
                 /* block of expression(s) */
                 | '{' one_or_more_expr '}' { $$ = block($2); }
                 | '{' error '}'
+                    /* the parser enters "panic mode", discarding tokens until it restablizes */
+                    {
+                        yyclearin;
+                        $$ = NULL;
+                    }
 
                 /* nested lets */
                 | LET let_expr { $$ = $2; }

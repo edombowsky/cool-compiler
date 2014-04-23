@@ -1,2 +1,4 @@
 "./casemultiplebranch.test", line 3: syntax error at or near ';'
+"./casemultiplebranch.test", line 4: syntax error at or near DARROW
+"./casemultiplebranch.test", line 5: syntax error at or near DARROW
 Compilation halted due to lex and parse errors
