@@ -147,7 +147,7 @@
     %type <expressions> one_or_more_expr
     %type <expressions> comma_sep_expr
     %type <expression> expr
-    %type <expression> let_expr
+    %type <expressions> let_expr
 
     /* Precedence declarations go here.
     /* "The declarations %left and %right ([left and] right associativity) take the place of %token
@@ -240,7 +240,7 @@
                 | '{' one_or_more_expr '}' { }
 
                 /* nested lets */
-                | LET let_expr { $$ = $2; }
+                | LET let_expr { $$ = single_Lets($1); }
 
                 /* Use `case_branch_list` nonterminal to handle one or more cases 
                  * See Cool Tour for more information on constructors
@@ -275,10 +275,9 @@
                 | BOOL_CONST { $$ = bool_const($1); }
                 ;
 
-    let_expr    : OBJECTID ':' TYPEID IN expr { $$ = let($1, $3, no_expr(), $5); }
-                | OBJECTID ':' TYPEID ASSIGN expr IN expr { $$ = let($1, $3, $5, $7); }
-                | OBJECTID ':' TYPEID ',' let_expr { $$ = let($1, $3, no_expr(), $5); }
-                | OBJECTID ':' TYPEID ASSIGN expr ',' let_expr { $$ = let($1, $3, $5, $7); }
+    let_expr    : OBJECTID ':' TYPEID IN let_expr { $$ = let($1, $3, no_expr(), $5); }
+                | OBJECTID ':' TYPEID ASSIGN expr IN let_expr { $$ = let($1, $3, $5, $7); }
+                | expr ';' { $$ = $1; }
                 ;
     
     /* one or more expressions, separated by a semicolon
