@@ -145,7 +145,7 @@
     %type <cases> case_branch_list 
     %type <case_> case_branch
     %type <expressions> one_or_more_expr
-    %type <expressions> comma_sep_expr
+    %type <expressions> param_expr
     %type <expression> expr
     %type <expression> let_expr
 
@@ -155,7 +155,7 @@
      * - Bison manual - sec 2.2 */
     %right ASSIGN
     %left NOT
-    %precedence LE '<' '='
+    %left LE '<' '='
     %left '+' '-'
     %left '*' '/'
     %left ISVOID
@@ -226,13 +226,9 @@
     expr        : OBJECTID ASSIGN expr { $$ = assign($1, $3); }
 
                 /* dispatch: normal, static, omitted self */
-                | expr '.' OBJECTID '(' comma_sep_expr ')' { $$ = dispatch($1, $3, $5); }
-                | expr '@' TYPEID '.' OBJECTID '(' comma_sep_expr ')' { $$ = static_dispatch($1, $3, $5, $7); }
-                | OBJECTID '(' comma_sep_expr ')' {
-                     /* `object` constructor requires an argument of type Symbol.
-                    * idtable.add_string returns a Symbol from a string */
-                    $$ = dispatch(object(idtable.add_string("self")), $1, $3);
-                    }
+                | expr '.' OBJECTID '(' param_expr ')' { $$ = dispatch($1, $3, $5); }
+                | expr '@' TYPEID '.' OBJECTID '(' param_expr ')' { $$ = static_dispatch($1, $3, $5, $7); }
+                | OBJECTID '(' param_expr ')' { $$ = dispatch(object(idtable.add_string("self")), $1, $3); }
 
                 /* control structures */
                 | IF expr THEN expr ELSE expr FI { $$ = cond($2, $4, $6); }
@@ -290,9 +286,10 @@
                         | one_or_more_expr expr ';' { $$ = append_Expressions($1, single_Expressions($2)); }
                         ;
 
-    comma_sep_expr      : expr { $$ = single_Expressions($1); }
-                        | comma_sep_expr ',' expr { $$ = append_Expressions($1, single_Expressions($3)); }
-                        /* Do we need nil_Expressions? Why? */
+    param_expr          : expr { $$ = single_Expressions($1); }
+                        | param_expr ',' expr { $$ = append_Expressions($1, single_Expressions($3)); }
+                        /* include nil because params are optional */
+                        | { $$ = nil_Expressions(); }
                         ;
 
     /* must have at least one case_branch */

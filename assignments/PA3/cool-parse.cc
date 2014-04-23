@@ -521,7 +521,7 @@ union yyalloc
 /* YYNNTS -- Number of nonterminals.  */
 #define YYNNTS  15
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  57
+#define YYNRULES  58
 /* YYNRULES -- Number of states.  */
 #define YYNSTATES  150
 
@@ -576,7 +576,7 @@ static const yytype_uint8 yyprhs[] =
       84,    88,    92,    99,   108,   113,   121,   127,   131,   135,
      138,   144,   147,   150,   154,   158,   162,   166,   169,   173,
      177,   181,   184,   188,   190,   192,   194,   196,   202,   210,
-     216,   224,   227,   231,   233,   237,   239,   242
+     216,   224,   227,   231,   233,   237,   238,   240,   243
 };
 
 /* YYRHS -- A `-1'-separated list of the rules' RHS.  */
@@ -605,19 +605,19 @@ static const yytype_int8 yyrhs[] =
       54,    -1,    24,    43,    23,    25,    54,     7,    54,    -1,
       24,    43,    23,    44,    55,    -1,    24,    43,    23,    25,
       54,    44,    55,    -1,    54,    40,    -1,    56,    54,    40,
-      -1,    54,    -1,    57,    44,    54,    -1,    59,    -1,    58,
-      59,    -1,    24,    43,    23,    17,    54,    -1
+      -1,    54,    -1,    57,    44,    54,    -1,    -1,    59,    -1,
+      58,    59,    -1,    24,    43,    23,    17,    54,    -1
 };
 
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint16 yyrline[] =
 {
-       0,   177,   177,   183,   191,   198,   201,   205,   206,   207,
-     213,   214,   216,   217,   219,   221,   222,   226,   227,   229,
-     231,   235,   238,   239,   240,   247,   248,   251,   252,   255,
-     260,   263,   264,   267,   268,   269,   270,   271,   272,   273,
-     274,   275,   278,   281,   284,   285,   286,   289,   290,   291,
-     292,   298,   299,   302,   303,   308,   310,   312
+       0,   168,   168,   174,   182,   189,   192,   196,   197,   198,
+     204,   205,   207,   208,   210,   212,   213,   217,   218,   220,
+     222,   226,   229,   230,   231,   234,   235,   238,   239,   242,
+     247,   250,   251,   254,   255,   256,   257,   258,   259,   260,
+     261,   262,   265,   268,   271,   272,   273,   276,   277,   278,
+     279,   285,   286,   289,   290,   292,   296,   298,   300
 };
 #endif
 
@@ -633,7 +633,7 @@ static const char *const yytname[] =
   "'+'", "'-'", "'*'", "'/'", "'~'", "'@'", "'.'", "'{'", "'}'", "';'",
   "'('", "')'", "':'", "','", "$accept", "program", "class_list", "class",
   "features_list", "features", "feature", "formals", "formal", "expr",
-  "let_expr", "one_or_more_expr", "comma_sep_expr", "case_branch_list",
+  "let_expr", "one_or_more_expr", "param_expr", "case_branch_list",
   "case_branch", 0
 };
 #endif
@@ -659,7 +659,7 @@ static const yytype_uint8 yyr1[] =
       53,    54,    54,    54,    54,    54,    54,    54,    54,    54,
       54,    54,    54,    54,    54,    54,    54,    54,    54,    54,
       54,    54,    54,    54,    54,    54,    54,    55,    55,    55,
-      55,    56,    56,    57,    57,    58,    58,    59
+      55,    56,    56,    57,    57,    57,    58,    58,    59
 };
 
 /* YYR2[YYN] -- Number of symbols composing right hand side of rule YYN.  */
@@ -670,7 +670,7 @@ static const yytype_uint8 yyr2[] =
        3,     3,     6,     8,     4,     7,     5,     3,     3,     2,
        5,     2,     2,     3,     3,     3,     3,     2,     3,     3,
        3,     2,     3,     1,     1,     1,     1,     5,     7,     5,
-       7,     2,     3,     1,     3,     1,     2,     5
+       7,     2,     3,     1,     3,     0,     1,     2,     5
 };
 
 /* YYDEFACT[STATE-NAME] -- Default rule to reduce with in state
@@ -685,14 +685,14 @@ static const yytype_uint8 yydefact[] =
        0,     0,     0,     0,    20,     0,    18,     0,     0,     0,
        0,     0,     0,    45,    44,    46,    43,     0,     0,     0,
        0,    16,     6,     0,     0,     0,    29,     0,     0,    31,
-      32,     0,     0,    41,    37,     0,     0,     0,     0,     0,
+      32,     0,    55,    41,    37,     0,     0,     0,     0,     0,
        0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
        0,     0,     0,    21,    53,     0,    28,    51,    27,     0,
       42,    39,    38,    40,    33,    34,    35,    36,     0,     0,
-       0,     0,     0,     0,     0,     0,    55,    24,     0,    52,
-       0,     0,    14,     0,     0,     0,     0,    26,     0,    30,
-      56,    54,     0,     0,     0,    47,     0,    49,     0,     0,
-      22,    25,     0,     0,     0,     0,    48,    50,    57,    23
+       0,     0,     0,     0,     0,     0,    56,    24,     0,    52,
+       0,    55,    14,     0,     0,     0,     0,    26,     0,    30,
+      57,    54,     0,     0,     0,    47,     0,    49,     0,    55,
+      22,    25,     0,     0,     0,     0,    48,    50,    58,    23
 };
 
 /* YYDEFGOTO[NTERM-NUM].  */
@@ -1675,7 +1675,7 @@ yyreduce:
         case 2:
 
 /* Line 1455 of yacc.c  */
-#line 177 "cool.y"
+#line 168 "cool.y"
     { 
                     /* Save the root of the abstract syntax tree in a global variable @$ 
                      * See section 6.5 in the Tour of Cool pdf */
@@ -1685,7 +1685,7 @@ yyreduce:
   case 3:
 
 /* Line 1455 of yacc.c  */
-#line 183 "cool.y"
+#line 174 "cool.y"
     {
                     /* "In each action, the pseudo-variable $$ stands for the semantic value for the grouping that the rule is going to construct.
                      * Assigning a value to $$ is the main job of most actions.
@@ -1699,7 +1699,7 @@ yyreduce:
   case 4:
 
 /* Line 1455 of yacc.c  */
-#line 191 "cool.y"
+#line 182 "cool.y"
     {
                     (yyval.classes) = append_Classes((yyvsp[(1) - (2)].classes),single_Classes((yyvsp[(2) - (2)].class_)));
                     parse_results = (yyval.classes); }
@@ -1708,7 +1708,7 @@ yyreduce:
   case 5:
 
 /* Line 1455 of yacc.c  */
-#line 198 "cool.y"
+#line 189 "cool.y"
     {
                     /* The class_ constructor builds a Class_ tree node with four arguments as children  */
                     (yyval.class_) = class_((yyvsp[(2) - (6)].symbol), idtable.add_string("Object"), (yyvsp[(4) - (6)].features), stringtable.add_string(curr_filename)); }
@@ -1717,7 +1717,7 @@ yyreduce:
   case 6:
 
 /* Line 1455 of yacc.c  */
-#line 201 "cool.y"
+#line 192 "cool.y"
     {
                     (yyval.class_) = class_((yyvsp[(2) - (8)].symbol), (yyvsp[(4) - (8)].symbol), (yyvsp[(6) - (8)].features), stringtable.add_string(curr_filename)); }
     break;
@@ -1725,340 +1725,343 @@ yyreduce:
   case 10:
 
 /* Line 1455 of yacc.c  */
-#line 213 "cool.y"
+#line 204 "cool.y"
     { (yyval.features) = (yyvsp[(1) - (1)].features); }
     break;
 
   case 11:
 
 /* Line 1455 of yacc.c  */
-#line 214 "cool.y"
+#line 205 "cool.y"
     { (yyval.features) = nil_Features(); }
     break;
 
   case 12:
 
 /* Line 1455 of yacc.c  */
-#line 216 "cool.y"
+#line 207 "cool.y"
     { (yyval.features) = single_Features((yyvsp[(1) - (2)].feature)); }
     break;
 
   case 13:
 
 /* Line 1455 of yacc.c  */
-#line 217 "cool.y"
+#line 208 "cool.y"
     { (yyval.features) = append_Features((yyvsp[(1) - (3)].features), single_Features((yyvsp[(2) - (3)].feature))); }
     break;
 
   case 14:
 
 /* Line 1455 of yacc.c  */
-#line 219 "cool.y"
+#line 210 "cool.y"
     { (yyval.feature) = method((yyvsp[(1) - (9)].symbol), (yyvsp[(3) - (9)].formals), (yyvsp[(6) - (9)].symbol), (yyvsp[(8) - (9)].expression)); }
     break;
 
   case 15:
 
 /* Line 1455 of yacc.c  */
-#line 221 "cool.y"
+#line 212 "cool.y"
     { (yyval.feature) = attr((yyvsp[(1) - (3)].symbol), (yyvsp[(3) - (3)].symbol), no_expr()); }
     break;
 
   case 16:
 
 /* Line 1455 of yacc.c  */
-#line 222 "cool.y"
+#line 213 "cool.y"
     { (yyval.feature) = attr((yyvsp[(1) - (5)].symbol), (yyvsp[(3) - (5)].symbol), (yyvsp[(5) - (5)].expression)); }
     break;
 
   case 17:
 
 /* Line 1455 of yacc.c  */
-#line 226 "cool.y"
+#line 217 "cool.y"
     { (yyval.formals) = single_Formals((yyvsp[(1) - (1)].formal)); }
     break;
 
   case 18:
 
 /* Line 1455 of yacc.c  */
-#line 227 "cool.y"
+#line 218 "cool.y"
     { (yyval.formals) = append_Formals((yyvsp[(1) - (3)].formals), single_Formals((yyvsp[(3) - (3)].formal))); }
     break;
 
   case 19:
 
 /* Line 1455 of yacc.c  */
-#line 229 "cool.y"
+#line 220 "cool.y"
     { (yyval.formals) = nil_Formals(); }
     break;
 
   case 20:
 
 /* Line 1455 of yacc.c  */
-#line 231 "cool.y"
+#line 222 "cool.y"
     { (yyval.formal) = formal((yyvsp[(1) - (3)].symbol), (yyvsp[(3) - (3)].symbol)); }
     break;
 
   case 21:
 
 /* Line 1455 of yacc.c  */
-#line 235 "cool.y"
+#line 226 "cool.y"
     { (yyval.expression) = assign((yyvsp[(1) - (3)].symbol), (yyvsp[(3) - (3)].expression)); }
     break;
 
   case 22:
 
 /* Line 1455 of yacc.c  */
-#line 238 "cool.y"
+#line 229 "cool.y"
     { (yyval.expression) = dispatch((yyvsp[(1) - (6)].expression), (yyvsp[(3) - (6)].symbol), (yyvsp[(5) - (6)].expressions)); }
     break;
 
   case 23:
 
 /* Line 1455 of yacc.c  */
-#line 239 "cool.y"
+#line 230 "cool.y"
     { (yyval.expression) = static_dispatch((yyvsp[(1) - (8)].expression), (yyvsp[(3) - (8)].symbol), (yyvsp[(5) - (8)].symbol), (yyvsp[(7) - (8)].expressions)); }
     break;
 
   case 24:
 
 /* Line 1455 of yacc.c  */
-#line 240 "cool.y"
-    {
-                     /* `object` constructor requires an argument of type Symbol.
-                    * idtable.add_string returns a Symbol from a string */
-                    (yyval.expression) = dispatch(object(idtable.add_string("self")), (yyvsp[(1) - (4)].symbol), (yyvsp[(3) - (4)].expressions));
-                    }
+#line 231 "cool.y"
+    { (yyval.expression) = dispatch(object(idtable.add_string("self")), (yyvsp[(1) - (4)].symbol), (yyvsp[(3) - (4)].expressions)); }
     break;
 
   case 25:
 
 /* Line 1455 of yacc.c  */
-#line 247 "cool.y"
+#line 234 "cool.y"
     { (yyval.expression) = cond((yyvsp[(2) - (7)].expression), (yyvsp[(4) - (7)].expression), (yyvsp[(6) - (7)].expression)); }
     break;
 
   case 26:
 
 /* Line 1455 of yacc.c  */
-#line 248 "cool.y"
+#line 235 "cool.y"
     { (yyval.expression) = loop((yyvsp[(2) - (5)].expression), (yyvsp[(4) - (5)].expression)); }
     break;
 
   case 27:
 
 /* Line 1455 of yacc.c  */
-#line 251 "cool.y"
+#line 238 "cool.y"
     { (yyval.expression) = block((yyvsp[(2) - (3)].expressions)); }
     break;
 
   case 29:
 
 /* Line 1455 of yacc.c  */
-#line 255 "cool.y"
+#line 242 "cool.y"
     { (yyval.expression) = (yyvsp[(2) - (2)].expression); }
     break;
 
   case 30:
 
 /* Line 1455 of yacc.c  */
-#line 260 "cool.y"
+#line 247 "cool.y"
     { }
     break;
 
   case 31:
 
 /* Line 1455 of yacc.c  */
-#line 263 "cool.y"
+#line 250 "cool.y"
     { (yyval.expression) = new_((yyvsp[(2) - (2)].symbol)); }
     break;
 
   case 32:
 
 /* Line 1455 of yacc.c  */
-#line 264 "cool.y"
+#line 251 "cool.y"
     { (yyval.expression) = isvoid((yyvsp[(2) - (2)].expression)); }
     break;
 
   case 33:
 
 /* Line 1455 of yacc.c  */
-#line 267 "cool.y"
+#line 254 "cool.y"
     { (yyval.expression) = plus((yyvsp[(1) - (3)].expression), (yyvsp[(3) - (3)].expression)); }
     break;
 
   case 34:
 
 /* Line 1455 of yacc.c  */
-#line 268 "cool.y"
+#line 255 "cool.y"
     { (yyval.expression) = sub((yyvsp[(1) - (3)].expression), (yyvsp[(3) - (3)].expression)); }
     break;
 
   case 35:
 
 /* Line 1455 of yacc.c  */
-#line 269 "cool.y"
+#line 256 "cool.y"
     { (yyval.expression) = mul((yyvsp[(1) - (3)].expression), (yyvsp[(3) - (3)].expression)); }
     break;
 
   case 36:
 
 /* Line 1455 of yacc.c  */
-#line 270 "cool.y"
+#line 257 "cool.y"
     { (yyval.expression) = divide((yyvsp[(1) - (3)].expression), (yyvsp[(3) - (3)].expression)); }
     break;
 
   case 37:
 
 /* Line 1455 of yacc.c  */
-#line 271 "cool.y"
+#line 258 "cool.y"
     { (yyval.expression) = neg((yyvsp[(2) - (2)].expression)); }
     break;
 
   case 38:
 
 /* Line 1455 of yacc.c  */
-#line 272 "cool.y"
+#line 259 "cool.y"
     { (yyval.expression) = lt((yyvsp[(1) - (3)].expression), (yyvsp[(3) - (3)].expression)); }
     break;
 
   case 39:
 
 /* Line 1455 of yacc.c  */
-#line 273 "cool.y"
+#line 260 "cool.y"
     { (yyval.expression) = leq((yyvsp[(1) - (3)].expression), (yyvsp[(3) - (3)].expression)); }
     break;
 
   case 40:
 
 /* Line 1455 of yacc.c  */
-#line 274 "cool.y"
+#line 261 "cool.y"
     { (yyval.expression) = eq((yyvsp[(1) - (3)].expression), (yyvsp[(3) - (3)].expression)); }
     break;
 
   case 41:
 
 /* Line 1455 of yacc.c  */
-#line 275 "cool.y"
+#line 262 "cool.y"
     { (yyval.expression) = comp((yyvsp[(2) - (2)].expression)); }
     break;
 
   case 42:
 
 /* Line 1455 of yacc.c  */
-#line 278 "cool.y"
+#line 265 "cool.y"
     { (yyval.expression) = (yyvsp[(2) - (3)].expression); }
     break;
 
   case 43:
 
 /* Line 1455 of yacc.c  */
-#line 281 "cool.y"
+#line 268 "cool.y"
     { (yyval.expression) = object((yyvsp[(1) - (1)].symbol)); }
     break;
 
   case 44:
 
 /* Line 1455 of yacc.c  */
-#line 284 "cool.y"
+#line 271 "cool.y"
     { (yyval.expression) = int_const((yyvsp[(1) - (1)].symbol)); }
     break;
 
   case 45:
 
 /* Line 1455 of yacc.c  */
-#line 285 "cool.y"
+#line 272 "cool.y"
     { (yyval.expression) = string_const((yyvsp[(1) - (1)].symbol)); }
     break;
 
   case 46:
 
 /* Line 1455 of yacc.c  */
-#line 286 "cool.y"
+#line 273 "cool.y"
     { (yyval.expression) = bool_const((yyvsp[(1) - (1)].boolean)); }
     break;
 
   case 47:
 
 /* Line 1455 of yacc.c  */
-#line 289 "cool.y"
+#line 276 "cool.y"
     { (yyval.expression) = let((yyvsp[(1) - (5)].symbol), (yyvsp[(3) - (5)].symbol), no_expr(), (yyvsp[(5) - (5)].expression)); }
     break;
 
   case 48:
 
 /* Line 1455 of yacc.c  */
-#line 290 "cool.y"
+#line 277 "cool.y"
     { (yyval.expression) = let((yyvsp[(1) - (7)].symbol), (yyvsp[(3) - (7)].symbol), (yyvsp[(5) - (7)].expression), (yyvsp[(7) - (7)].expression)); }
     break;
 
   case 49:
 
 /* Line 1455 of yacc.c  */
-#line 291 "cool.y"
+#line 278 "cool.y"
     { (yyval.expression) = let((yyvsp[(1) - (5)].symbol), (yyvsp[(3) - (5)].symbol), no_expr(), (yyvsp[(5) - (5)].expression)); }
     break;
 
   case 50:
 
 /* Line 1455 of yacc.c  */
-#line 292 "cool.y"
+#line 279 "cool.y"
     { (yyval.expression) = let((yyvsp[(1) - (7)].symbol), (yyvsp[(3) - (7)].symbol), (yyvsp[(5) - (7)].expression), (yyvsp[(7) - (7)].expression)); }
     break;
 
   case 51:
 
 /* Line 1455 of yacc.c  */
-#line 298 "cool.y"
+#line 285 "cool.y"
     { (yyval.expressions) = single_Expressions((yyvsp[(1) - (2)].expression)); }
     break;
 
   case 52:
 
 /* Line 1455 of yacc.c  */
-#line 299 "cool.y"
+#line 286 "cool.y"
     { (yyval.expressions) = append_Expressions((yyvsp[(1) - (3)].expressions), single_Expressions((yyvsp[(2) - (3)].expression))); }
     break;
 
   case 53:
 
 /* Line 1455 of yacc.c  */
-#line 302 "cool.y"
+#line 289 "cool.y"
     { (yyval.expressions) = single_Expressions((yyvsp[(1) - (1)].expression)); }
     break;
 
   case 54:
 
 /* Line 1455 of yacc.c  */
-#line 303 "cool.y"
+#line 290 "cool.y"
     { (yyval.expressions) = append_Expressions((yyvsp[(1) - (3)].expressions), single_Expressions((yyvsp[(3) - (3)].expression))); }
     break;
 
   case 55:
 
 /* Line 1455 of yacc.c  */
-#line 308 "cool.y"
-    { (yyval.cases) = single_Cases((yyvsp[(1) - (1)].case_)); }
+#line 292 "cool.y"
+    { (yyval.expressions) = nil_Expressions(); }
     break;
 
   case 56:
 
 /* Line 1455 of yacc.c  */
-#line 310 "cool.y"
-    { (yyval.cases) = append_Cases((yyvsp[(1) - (2)].cases), single_Cases((yyvsp[(2) - (2)].case_))); }
+#line 296 "cool.y"
+    { (yyval.cases) = single_Cases((yyvsp[(1) - (1)].case_)); }
     break;
 
   case 57:
 
 /* Line 1455 of yacc.c  */
-#line 312 "cool.y"
+#line 298 "cool.y"
+    { (yyval.cases) = append_Cases((yyvsp[(1) - (2)].cases), single_Cases((yyvsp[(2) - (2)].case_))); }
+    break;
+
+  case 58:
+
+/* Line 1455 of yacc.c  */
+#line 300 "cool.y"
     { (yyval.case_) = branch((yyvsp[(1) - (5)].symbol), (yyvsp[(3) - (5)].symbol), (yyvsp[(5) - (5)].expression)); }
     break;
 
 
 
 /* Line 1455 of yacc.c  */
-#line 2062 "cool.tab.c"
+#line 2065 "cool.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -2277,7 +2280,7 @@ yyreturn:
 
 
 /* Line 1675 of yacc.c  */
-#line 316 "cool.y"
+#line 304 "cool.y"
 
     
     /* This function is called automatically when Bison detects a parse error. */
