@@ -1,4 +1,3 @@
-	-1 (arithprecedence)	 arithmetic expressions to test precedence
 	-1 (atoi)	 the atoi program
 	-1 (badblock)	 a block with multiple errors
 	-1 (badfeaturenames)	 method and attribute names capitalized
@@ -15,5 +14,4 @@
 	-1 (multiplemethoderrors)	 a class with multiple methods and errors 
 	-1 (secondbindingerrored)	 second binding of a let has an error
 	-1 (staticdispatchnoargs)	 static dispatch with no args
-	-1 (unaryassociativity)	 tests associativity of unary operators
 	-1 (while)	 valid and invalid while loops

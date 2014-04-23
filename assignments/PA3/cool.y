@@ -153,15 +153,15 @@
     /* "The declarations %left and %right ([left and] right associativity) take the place of %token
      * which is used to declare a token type name without associativity/precedence.
      * - Bison manual - sec 2.2 */
-    %left '.'
-    %left '@'
-    %left '~'
-    %left ISVOID
-    %left '*' '/'
-    %left '+' '-'
-    %left LE '<' '='
-    %left NOT
     %right ASSIGN
+    %left NOT
+    %precedence LE '<' '='
+    %left '+' '-'
+    %left '*' '/'
+    %left ISVOID
+    %left '~'
+    %left '@'
+    %left '.'
 
     %%
     /* Think about what this grammar means; a program is made up of a list of one or more classes */

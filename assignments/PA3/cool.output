@@ -813,14 +813,14 @@ state 61
    39     | expr . '=' expr
 
     LE   shift, and go to state 79
-    '.'  shift, and go to state 80
-    '@'  shift, and go to state 81
-    '*'  shift, and go to state 82
-    '/'  shift, and go to state 83
-    '+'  shift, and go to state 84
-    '-'  shift, and go to state 85
-    '<'  shift, and go to state 86
-    '='  shift, and go to state 87
+    '<'  shift, and go to state 80
+    '='  shift, and go to state 81
+    '+'  shift, and go to state 82
+    '-'  shift, and go to state 83
+    '*'  shift, and go to state 84
+    '/'  shift, and go to state 85
+    '@'  shift, and go to state 86
+    '.'  shift, and go to state 87
 
     $default  reduce using rule 15 (feature)
 
@@ -854,14 +854,14 @@ state 64
 
     THEN  shift, and go to state 89
     LE    shift, and go to state 79
-    '.'   shift, and go to state 80
-    '@'   shift, and go to state 81
-    '*'   shift, and go to state 82
-    '/'   shift, and go to state 83
-    '+'   shift, and go to state 84
-    '-'   shift, and go to state 85
-    '<'   shift, and go to state 86
-    '='   shift, and go to state 87
+    '<'   shift, and go to state 80
+    '='   shift, and go to state 81
+    '+'   shift, and go to state 82
+    '-'   shift, and go to state 83
+    '*'   shift, and go to state 84
+    '/'   shift, and go to state 85
+    '@'   shift, and go to state 86
+    '.'   shift, and go to state 87
 
 
 state 65
@@ -896,14 +896,14 @@ state 67
 
     LOOP  shift, and go to state 91
     LE    shift, and go to state 79
-    '.'   shift, and go to state 80
-    '@'   shift, and go to state 81
-    '*'   shift, and go to state 82
-    '/'   shift, and go to state 83
-    '+'   shift, and go to state 84
-    '-'   shift, and go to state 85
-    '<'   shift, and go to state 86
-    '='   shift, and go to state 87
+    '<'   shift, and go to state 80
+    '='   shift, and go to state 81
+    '+'   shift, and go to state 82
+    '-'   shift, and go to state 83
+    '*'   shift, and go to state 84
+    '/'   shift, and go to state 85
+    '@'   shift, and go to state 86
+    '.'   shift, and go to state 87
 
 
 state 68
@@ -921,14 +921,14 @@ state 68
 
     OF   shift, and go to state 92
     LE   shift, and go to state 79
-    '.'  shift, and go to state 80
-    '@'  shift, and go to state 81
-    '*'  shift, and go to state 82
-    '/'  shift, and go to state 83
-    '+'  shift, and go to state 84
-    '-'  shift, and go to state 85
-    '<'  shift, and go to state 86
-    '='  shift, and go to state 87
+    '<'  shift, and go to state 80
+    '='  shift, and go to state 81
+    '+'  shift, and go to state 82
+    '-'  shift, and go to state 83
+    '*'  shift, and go to state 84
+    '/'  shift, and go to state 85
+    '@'  shift, and go to state 86
+    '.'  shift, and go to state 87
 
 
 state 69
@@ -951,13 +951,8 @@ state 70
    38     | expr . LE expr
    39     | expr . '=' expr
 
-    LE   shift, and go to state 79
-    '*'  shift, and go to state 82
-    '/'  shift, and go to state 83
-    '+'  shift, and go to state 84
-    '-'  shift, and go to state 85
-    '<'  shift, and go to state 86
-    '='  shift, and go to state 87
+    '@'  shift, and go to state 86
+    '.'  shift, and go to state 87
 
     $default  reduce using rule 31 (expr)
 
@@ -1020,6 +1015,16 @@ state 73
    39     | expr . '=' expr
    40     | NOT expr .
 
+    LE   shift, and go to state 79
+    '<'  shift, and go to state 80
+    '='  shift, and go to state 81
+    '+'  shift, and go to state 82
+    '-'  shift, and go to state 83
+    '*'  shift, and go to state 84
+    '/'  shift, and go to state 85
+    '@'  shift, and go to state 86
+    '.'  shift, and go to state 87
+
     $default  reduce using rule 40 (expr)
 
 
@@ -1036,13 +1041,8 @@ state 74
    38     | expr . LE expr
    39     | expr . '=' expr
 
-    LE   shift, and go to state 79
-    '*'  shift, and go to state 82
-    '/'  shift, and go to state 83
-    '+'  shift, and go to state 84
-    '-'  shift, and go to state 85
-    '<'  shift, and go to state 86
-    '='  shift, and go to state 87
+    '@'  shift, and go to state 86
+    '.'  shift, and go to state 87
 
     $default  reduce using rule 36 (expr)
 
@@ -1068,14 +1068,14 @@ state 76
    50 one_or_more_expr: expr . ';'
 
     LE   shift, and go to state 79
-    '.'  shift, and go to state 80
-    '@'  shift, and go to state 81
-    '*'  shift, and go to state 82
-    '/'  shift, and go to state 83
-    '+'  shift, and go to state 84
-    '-'  shift, and go to state 85
-    '<'  shift, and go to state 86
-    '='  shift, and go to state 87
+    '<'  shift, and go to state 80
+    '='  shift, and go to state 81
+    '+'  shift, and go to state 82
+    '-'  shift, and go to state 83
+    '*'  shift, and go to state 84
+    '/'  shift, and go to state 85
+    '@'  shift, and go to state 86
+    '.'  shift, and go to state 87
     ';'  shift, and go to state 97
 
 
@@ -1117,14 +1117,14 @@ state 78
    41     | '(' expr . ')'
 
     LE   shift, and go to state 79
-    '.'  shift, and go to state 80
-    '@'  shift, and go to state 81
-    '*'  shift, and go to state 82
-    '/'  shift, and go to state 83
-    '+'  shift, and go to state 84
-    '-'  shift, and go to state 85
-    '<'  shift, and go to state 86
-    '='  shift, and go to state 87
+    '<'  shift, and go to state 80
+    '='  shift, and go to state 81
+    '+'  shift, and go to state 82
+    '-'  shift, and go to state 83
+    '*'  shift, and go to state 84
+    '/'  shift, and go to state 85
+    '@'  shift, and go to state 86
+    '.'  shift, and go to state 87
     ')'  shift, and go to state 100
 
 
@@ -1152,21 +1152,51 @@ state 79
 
 state 80
 
-   21 expr: expr '.' . OBJECTID '(' comma_sep_expr ')'
+   37 expr: expr '<' . expr
 
-    OBJECTID  shift, and go to state 102
+    IF          shift, and go to state 47
+    LET         shift, and go to state 48
+    WHILE       shift, and go to state 49
+    CASE        shift, and go to state 50
+    NEW         shift, and go to state 51
+    ISVOID      shift, and go to state 52
+    STR_CONST   shift, and go to state 53
+    INT_CONST   shift, and go to state 54
+    BOOL_CONST  shift, and go to state 55
+    OBJECTID    shift, and go to state 56
+    NOT         shift, and go to state 57
+    '~'         shift, and go to state 58
+    '{'         shift, and go to state 59
+    '('         shift, and go to state 60
+
+    expr  go to state 102
 
 
 state 81
 
-   22 expr: expr '@' . TYPEID '.' OBJECTID '(' comma_sep_expr ')'
+   39 expr: expr '=' . expr
 
-    TYPEID  shift, and go to state 103
+    IF          shift, and go to state 47
+    LET         shift, and go to state 48
+    WHILE       shift, and go to state 49
+    CASE        shift, and go to state 50
+    NEW         shift, and go to state 51
+    ISVOID      shift, and go to state 52
+    STR_CONST   shift, and go to state 53
+    INT_CONST   shift, and go to state 54
+    BOOL_CONST  shift, and go to state 55
+    OBJECTID    shift, and go to state 56
+    NOT         shift, and go to state 57
+    '~'         shift, and go to state 58
+    '{'         shift, and go to state 59
+    '('         shift, and go to state 60
+
+    expr  go to state 103
 
 
 state 82
 
-   34 expr: expr '*' . expr
+   32 expr: expr '+' . expr
 
     IF          shift, and go to state 47
     LET         shift, and go to state 48
@@ -1188,7 +1218,7 @@ state 82
 
 state 83
 
-   35 expr: expr '/' . expr
+   33 expr: expr '-' . expr
 
     IF          shift, and go to state 47
     LET         shift, and go to state 48
@@ -1210,7 +1240,7 @@ state 83
 
 state 84
 
-   32 expr: expr '+' . expr
+   34 expr: expr '*' . expr
 
     IF          shift, and go to state 47
     LET         shift, and go to state 48
@@ -1232,7 +1262,7 @@ state 84
 
 state 85
 
-   33 expr: expr '-' . expr
+   35 expr: expr '/' . expr
 
     IF          shift, and go to state 47
     LET         shift, and go to state 48
@@ -1254,46 +1284,16 @@ state 85
 
 state 86
 
-   37 expr: expr '<' . expr
+   22 expr: expr '@' . TYPEID '.' OBJECTID '(' comma_sep_expr ')'
 
-    IF          shift, and go to state 47
-    LET         shift, and go to state 48
-    WHILE       shift, and go to state 49
-    CASE        shift, and go to state 50
-    NEW         shift, and go to state 51
-    ISVOID      shift, and go to state 52
-    STR_CONST   shift, and go to state 53
-    INT_CONST   shift, and go to state 54
-    BOOL_CONST  shift, and go to state 55
-    OBJECTID    shift, and go to state 56
-    NOT         shift, and go to state 57
-    '~'         shift, and go to state 58
-    '{'         shift, and go to state 59
-    '('         shift, and go to state 60
-
-    expr  go to state 108
+    TYPEID  shift, and go to state 108
 
 
 state 87
 
-   39 expr: expr '=' . expr
+   21 expr: expr '.' . OBJECTID '(' comma_sep_expr ')'
 
-    IF          shift, and go to state 47
-    LET         shift, and go to state 48
-    WHILE       shift, and go to state 49
-    CASE        shift, and go to state 50
-    NEW         shift, and go to state 51
-    ISVOID      shift, and go to state 52
-    STR_CONST   shift, and go to state 53
-    INT_CONST   shift, and go to state 54
-    BOOL_CONST  shift, and go to state 55
-    OBJECTID    shift, and go to state 56
-    NOT         shift, and go to state 57
-    '~'         shift, and go to state 58
-    '{'         shift, and go to state 59
-    '('         shift, and go to state 60
-
-    expr  go to state 109
+    OBJECTID  shift, and go to state 109
 
 
 state 88
@@ -1395,6 +1395,16 @@ state 93
    38     | expr . LE expr
    39     | expr . '=' expr
 
+    LE   shift, and go to state 79
+    '<'  shift, and go to state 80
+    '='  shift, and go to state 81
+    '+'  shift, and go to state 82
+    '-'  shift, and go to state 83
+    '*'  shift, and go to state 84
+    '/'  shift, and go to state 85
+    '@'  shift, and go to state 86
+    '.'  shift, and go to state 87
+
     $default  reduce using rule 20 (expr)
 
 
@@ -1412,14 +1422,14 @@ state 94
    52 comma_sep_expr: expr .
 
     LE   shift, and go to state 79
-    '.'  shift, and go to state 80
-    '@'  shift, and go to state 81
-    '*'  shift, and go to state 82
-    '/'  shift, and go to state 83
-    '+'  shift, and go to state 84
-    '-'  shift, and go to state 85
-    '<'  shift, and go to state 86
-    '='  shift, and go to state 87
+    '<'  shift, and go to state 80
+    '='  shift, and go to state 81
+    '+'  shift, and go to state 82
+    '-'  shift, and go to state 83
+    '*'  shift, and go to state 84
+    '/'  shift, and go to state 85
+    '@'  shift, and go to state 86
+    '.'  shift, and go to state 87
 
     $default  reduce using rule 52 (comma_sep_expr)
 
@@ -1468,14 +1478,14 @@ state 99
    51 one_or_more_expr: one_or_more_expr expr . ';'
 
     LE   shift, and go to state 79
-    '.'  shift, and go to state 80
-    '@'  shift, and go to state 81
-    '*'  shift, and go to state 82
-    '/'  shift, and go to state 83
-    '+'  shift, and go to state 84
-    '-'  shift, and go to state 85
-    '<'  shift, and go to state 86
-    '='  shift, and go to state 87
+    '<'  shift, and go to state 80
+    '='  shift, and go to state 81
+    '+'  shift, and go to state 82
+    '-'  shift, and go to state 83
+    '*'  shift, and go to state 84
+    '/'  shift, and go to state 85
+    '@'  shift, and go to state 86
+    '.'  shift, and go to state 87
     ';'  shift, and go to state 119
 
 
@@ -1499,108 +1509,17 @@ state 101
    38     | expr LE expr .
    39     | expr . '=' expr
 
+    '+'  shift, and go to state 82
+    '-'  shift, and go to state 83
+    '*'  shift, and go to state 84
+    '/'  shift, and go to state 85
+    '@'  shift, and go to state 86
+    '.'  shift, and go to state 87
+
     $default  reduce using rule 38 (expr)
 
 
 state 102
-
-   21 expr: expr '.' OBJECTID . '(' comma_sep_expr ')'
-
-    '('  shift, and go to state 120
-
-
-state 103
-
-   22 expr: expr '@' TYPEID . '.' OBJECTID '(' comma_sep_expr ')'
-
-    '.'  shift, and go to state 121
-
-
-state 104
-
-   21 expr: expr . '.' OBJECTID '(' comma_sep_expr ')'
-   22     | expr . '@' TYPEID '.' OBJECTID '(' comma_sep_expr ')'
-   32     | expr . '+' expr
-   33     | expr . '-' expr
-   34     | expr . '*' expr
-   34     | expr '*' expr .
-   35     | expr . '/' expr
-   37     | expr . '<' expr
-   38     | expr . LE expr
-   39     | expr . '=' expr
-
-    LE   shift, and go to state 79
-    '+'  shift, and go to state 84
-    '-'  shift, and go to state 85
-    '<'  shift, and go to state 86
-    '='  shift, and go to state 87
-
-    $default  reduce using rule 34 (expr)
-
-
-state 105
-
-   21 expr: expr . '.' OBJECTID '(' comma_sep_expr ')'
-   22     | expr . '@' TYPEID '.' OBJECTID '(' comma_sep_expr ')'
-   32     | expr . '+' expr
-   33     | expr . '-' expr
-   34     | expr . '*' expr
-   35     | expr . '/' expr
-   35     | expr '/' expr .
-   37     | expr . '<' expr
-   38     | expr . LE expr
-   39     | expr . '=' expr
-
-    LE   shift, and go to state 79
-    '+'  shift, and go to state 84
-    '-'  shift, and go to state 85
-    '<'  shift, and go to state 86
-    '='  shift, and go to state 87
-
-    $default  reduce using rule 35 (expr)
-
-
-state 106
-
-   21 expr: expr . '.' OBJECTID '(' comma_sep_expr ')'
-   22     | expr . '@' TYPEID '.' OBJECTID '(' comma_sep_expr ')'
-   32     | expr . '+' expr
-   32     | expr '+' expr .
-   33     | expr . '-' expr
-   34     | expr . '*' expr
-   35     | expr . '/' expr
-   37     | expr . '<' expr
-   38     | expr . LE expr
-   39     | expr . '=' expr
-
-    LE   shift, and go to state 79
-    '<'  shift, and go to state 86
-    '='  shift, and go to state 87
-
-    $default  reduce using rule 32 (expr)
-
-
-state 107
-
-   21 expr: expr . '.' OBJECTID '(' comma_sep_expr ')'
-   22     | expr . '@' TYPEID '.' OBJECTID '(' comma_sep_expr ')'
-   32     | expr . '+' expr
-   33     | expr . '-' expr
-   33     | expr '-' expr .
-   34     | expr . '*' expr
-   35     | expr . '/' expr
-   37     | expr . '<' expr
-   38     | expr . LE expr
-   39     | expr . '=' expr
-
-    LE   shift, and go to state 79
-    '<'  shift, and go to state 86
-    '='  shift, and go to state 87
-
-    $default  reduce using rule 33 (expr)
-
-
-state 108
 
    21 expr: expr . '.' OBJECTID '(' comma_sep_expr ')'
    22     | expr . '@' TYPEID '.' OBJECTID '(' comma_sep_expr ')'
@@ -1613,10 +1532,17 @@ state 108
    38     | expr . LE expr
    39     | expr . '=' expr
 
+    '+'  shift, and go to state 82
+    '-'  shift, and go to state 83
+    '*'  shift, and go to state 84
+    '/'  shift, and go to state 85
+    '@'  shift, and go to state 86
+    '.'  shift, and go to state 87
+
     $default  reduce using rule 37 (expr)
 
 
-state 109
+state 103
 
    21 expr: expr . '.' OBJECTID '(' comma_sep_expr ')'
    22     | expr . '@' TYPEID '.' OBJECTID '(' comma_sep_expr ')'
@@ -1629,7 +1555,108 @@ state 109
    39     | expr . '=' expr
    39     | expr '=' expr .
 
+    '+'  shift, and go to state 82
+    '-'  shift, and go to state 83
+    '*'  shift, and go to state 84
+    '/'  shift, and go to state 85
+    '@'  shift, and go to state 86
+    '.'  shift, and go to state 87
+
     $default  reduce using rule 39 (expr)
+
+
+state 104
+
+   21 expr: expr . '.' OBJECTID '(' comma_sep_expr ')'
+   22     | expr . '@' TYPEID '.' OBJECTID '(' comma_sep_expr ')'
+   32     | expr . '+' expr
+   32     | expr '+' expr .
+   33     | expr . '-' expr
+   34     | expr . '*' expr
+   35     | expr . '/' expr
+   37     | expr . '<' expr
+   38     | expr . LE expr
+   39     | expr . '=' expr
+
+    '*'  shift, and go to state 84
+    '/'  shift, and go to state 85
+    '@'  shift, and go to state 86
+    '.'  shift, and go to state 87
+
+    $default  reduce using rule 32 (expr)
+
+
+state 105
+
+   21 expr: expr . '.' OBJECTID '(' comma_sep_expr ')'
+   22     | expr . '@' TYPEID '.' OBJECTID '(' comma_sep_expr ')'
+   32     | expr . '+' expr
+   33     | expr . '-' expr
+   33     | expr '-' expr .
+   34     | expr . '*' expr
+   35     | expr . '/' expr
+   37     | expr . '<' expr
+   38     | expr . LE expr
+   39     | expr . '=' expr
+
+    '*'  shift, and go to state 84
+    '/'  shift, and go to state 85
+    '@'  shift, and go to state 86
+    '.'  shift, and go to state 87
+
+    $default  reduce using rule 33 (expr)
+
+
+state 106
+
+   21 expr: expr . '.' OBJECTID '(' comma_sep_expr ')'
+   22     | expr . '@' TYPEID '.' OBJECTID '(' comma_sep_expr ')'
+   32     | expr . '+' expr
+   33     | expr . '-' expr
+   34     | expr . '*' expr
+   34     | expr '*' expr .
+   35     | expr . '/' expr
+   37     | expr . '<' expr
+   38     | expr . LE expr
+   39     | expr . '=' expr
+
+    '@'  shift, and go to state 86
+    '.'  shift, and go to state 87
+
+    $default  reduce using rule 34 (expr)
+
+
+state 107
+
+   21 expr: expr . '.' OBJECTID '(' comma_sep_expr ')'
+   22     | expr . '@' TYPEID '.' OBJECTID '(' comma_sep_expr ')'
+   32     | expr . '+' expr
+   33     | expr . '-' expr
+   34     | expr . '*' expr
+   35     | expr . '/' expr
+   35     | expr '/' expr .
+   37     | expr . '<' expr
+   38     | expr . LE expr
+   39     | expr . '=' expr
+
+    '@'  shift, and go to state 86
+    '.'  shift, and go to state 87
+
+    $default  reduce using rule 35 (expr)
+
+
+state 108
+
+   22 expr: expr '@' TYPEID . '.' OBJECTID '(' comma_sep_expr ')'
+
+    '.'  shift, and go to state 120
+
+
+state 109
+
+   21 expr: expr '.' OBJECTID . '(' comma_sep_expr ')'
+
+    '('  shift, and go to state 121
 
 
 state 110
@@ -1646,14 +1673,14 @@ state 110
    39     | expr . '=' expr
 
     LE   shift, and go to state 79
-    '.'  shift, and go to state 80
-    '@'  shift, and go to state 81
-    '*'  shift, and go to state 82
-    '/'  shift, and go to state 83
-    '+'  shift, and go to state 84
-    '-'  shift, and go to state 85
-    '<'  shift, and go to state 86
-    '='  shift, and go to state 87
+    '<'  shift, and go to state 80
+    '='  shift, and go to state 81
+    '+'  shift, and go to state 82
+    '-'  shift, and go to state 83
+    '*'  shift, and go to state 84
+    '/'  shift, and go to state 85
+    '@'  shift, and go to state 86
+    '.'  shift, and go to state 87
     '}'  shift, and go to state 122
 
 
@@ -1672,14 +1699,14 @@ state 111
 
     ELSE  shift, and go to state 123
     LE    shift, and go to state 79
-    '.'   shift, and go to state 80
-    '@'   shift, and go to state 81
-    '*'   shift, and go to state 82
-    '/'   shift, and go to state 83
-    '+'   shift, and go to state 84
-    '-'   shift, and go to state 85
-    '<'   shift, and go to state 86
-    '='   shift, and go to state 87
+    '<'   shift, and go to state 80
+    '='   shift, and go to state 81
+    '+'   shift, and go to state 82
+    '-'   shift, and go to state 83
+    '*'   shift, and go to state 84
+    '/'   shift, and go to state 85
+    '@'   shift, and go to state 86
+    '.'   shift, and go to state 87
 
 
 state 112
@@ -1709,14 +1736,14 @@ state 113
 
     POOL  shift, and go to state 127
     LE    shift, and go to state 79
-    '.'   shift, and go to state 80
-    '@'   shift, and go to state 81
-    '*'   shift, and go to state 82
-    '/'   shift, and go to state 83
-    '+'   shift, and go to state 84
-    '-'   shift, and go to state 85
-    '<'   shift, and go to state 86
-    '='   shift, and go to state 87
+    '<'   shift, and go to state 80
+    '='   shift, and go to state 81
+    '+'   shift, and go to state 82
+    '-'   shift, and go to state 83
+    '*'   shift, and go to state 84
+    '/'   shift, and go to state 85
+    '@'   shift, and go to state 86
+    '.'   shift, and go to state 87
 
 
 state 114
@@ -1782,6 +1809,13 @@ state 119
 
 state 120
 
+   22 expr: expr '@' TYPEID '.' . OBJECTID '(' comma_sep_expr ')'
+
+    OBJECTID  shift, and go to state 132
+
+
+state 121
+
    21 expr: expr '.' OBJECTID '(' . comma_sep_expr ')'
 
     IF          shift, and go to state 47
@@ -1800,14 +1834,7 @@ state 120
     '('         shift, and go to state 60
 
     expr            go to state 94
-    comma_sep_expr  go to state 132
-
-
-state 121
-
-   22 expr: expr '@' TYPEID '.' . OBJECTID '(' comma_sep_expr ')'
-
-    OBJECTID  shift, and go to state 133
+    comma_sep_expr  go to state 133
 
 
 state 122
@@ -1935,32 +1962,32 @@ state 131
    53 comma_sep_expr: comma_sep_expr ',' expr .
 
     LE   shift, and go to state 79
-    '.'  shift, and go to state 80
-    '@'  shift, and go to state 81
-    '*'  shift, and go to state 82
-    '/'  shift, and go to state 83
-    '+'  shift, and go to state 84
-    '-'  shift, and go to state 85
-    '<'  shift, and go to state 86
-    '='  shift, and go to state 87
+    '<'  shift, and go to state 80
+    '='  shift, and go to state 81
+    '+'  shift, and go to state 82
+    '-'  shift, and go to state 83
+    '*'  shift, and go to state 84
+    '/'  shift, and go to state 85
+    '@'  shift, and go to state 86
+    '.'  shift, and go to state 87
 
     $default  reduce using rule 53 (comma_sep_expr)
 
 
 state 132
 
-   21 expr: expr '.' OBJECTID '(' comma_sep_expr . ')'
-   53 comma_sep_expr: comma_sep_expr . ',' expr
+   22 expr: expr '@' TYPEID '.' OBJECTID . '(' comma_sep_expr ')'
 
-    ')'  shift, and go to state 139
-    ','  shift, and go to state 118
+    '('  shift, and go to state 139
 
 
 state 133
 
-   22 expr: expr '@' TYPEID '.' OBJECTID . '(' comma_sep_expr ')'
+   21 expr: expr '.' OBJECTID '(' comma_sep_expr . ')'
+   53 comma_sep_expr: comma_sep_expr . ',' expr
 
-    '('  shift, and go to state 140
+    ')'  shift, and go to state 140
+    ','  shift, and go to state 118
 
 
 state 134
@@ -1978,14 +2005,14 @@ state 134
 
     FI   shift, and go to state 141
     LE   shift, and go to state 79
-    '.'  shift, and go to state 80
-    '@'  shift, and go to state 81
-    '*'  shift, and go to state 82
-    '/'  shift, and go to state 83
-    '+'  shift, and go to state 84
-    '-'  shift, and go to state 85
-    '<'  shift, and go to state 86
-    '='  shift, and go to state 87
+    '<'  shift, and go to state 80
+    '='  shift, and go to state 81
+    '+'  shift, and go to state 82
+    '-'  shift, and go to state 83
+    '*'  shift, and go to state 84
+    '/'  shift, and go to state 85
+    '@'  shift, and go to state 86
+    '.'  shift, and go to state 87
 
 
 state 135
@@ -2002,24 +2029,24 @@ state 135
    46 let_expr: OBJECTID ':' TYPEID IN expr .
 
     LE   shift, and go to state 79
-    '.'  shift, and go to state 80
-    '@'  shift, and go to state 81
-    '*'  shift, and go to state 82
-    '/'  shift, and go to state 83
-    '+'  shift, and go to state 84
-    '-'  shift, and go to state 85
-    '<'  shift, and go to state 86
-    '='  shift, and go to state 87
+    '<'  shift, and go to state 80
+    '='  shift, and go to state 81
+    '+'  shift, and go to state 82
+    '-'  shift, and go to state 83
+    '*'  shift, and go to state 84
+    '/'  shift, and go to state 85
+    '@'  shift, and go to state 86
+    '.'  shift, and go to state 87
 
     LE        [reduce using rule 46 (let_expr)]
-    '.'       [reduce using rule 46 (let_expr)]
-    '@'       [reduce using rule 46 (let_expr)]
-    '*'       [reduce using rule 46 (let_expr)]
-    '/'       [reduce using rule 46 (let_expr)]
-    '+'       [reduce using rule 46 (let_expr)]
-    '-'       [reduce using rule 46 (let_expr)]
     '<'       [reduce using rule 46 (let_expr)]
     '='       [reduce using rule 46 (let_expr)]
+    '+'       [reduce using rule 46 (let_expr)]
+    '-'       [reduce using rule 46 (let_expr)]
+    '*'       [reduce using rule 46 (let_expr)]
+    '/'       [reduce using rule 46 (let_expr)]
+    '@'       [reduce using rule 46 (let_expr)]
+    '.'       [reduce using rule 46 (let_expr)]
     $default  reduce using rule 46 (let_expr)
 
 
@@ -2039,14 +2066,14 @@ state 136
 
     IN   shift, and go to state 142
     LE   shift, and go to state 79
-    '.'  shift, and go to state 80
-    '@'  shift, and go to state 81
-    '*'  shift, and go to state 82
-    '/'  shift, and go to state 83
-    '+'  shift, and go to state 84
-    '-'  shift, and go to state 85
-    '<'  shift, and go to state 86
-    '='  shift, and go to state 87
+    '<'  shift, and go to state 80
+    '='  shift, and go to state 81
+    '+'  shift, and go to state 82
+    '-'  shift, and go to state 83
+    '*'  shift, and go to state 84
+    '/'  shift, and go to state 85
+    '@'  shift, and go to state 86
+    '.'  shift, and go to state 87
     ','  shift, and go to state 143
 
 
@@ -2065,13 +2092,6 @@ state 138
 
 
 state 139
-
-   21 expr: expr '.' OBJECTID '(' comma_sep_expr ')' .
-
-    $default  reduce using rule 21 (expr)
-
-
-state 140
 
    22 expr: expr '@' TYPEID '.' OBJECTID '(' . comma_sep_expr ')'
 
@@ -2092,6 +2112,13 @@ state 140
 
     expr            go to state 94
     comma_sep_expr  go to state 145
+
+
+state 140
+
+   21 expr: expr '.' OBJECTID '(' comma_sep_expr ')' .
+
+    $default  reduce using rule 21 (expr)
 
 
 state 141
@@ -2177,24 +2204,24 @@ state 146
    47 let_expr: OBJECTID ':' TYPEID ASSIGN expr IN expr .
 
     LE   shift, and go to state 79
-    '.'  shift, and go to state 80
-    '@'  shift, and go to state 81
-    '*'  shift, and go to state 82
-    '/'  shift, and go to state 83
-    '+'  shift, and go to state 84
-    '-'  shift, and go to state 85
-    '<'  shift, and go to state 86
-    '='  shift, and go to state 87
+    '<'  shift, and go to state 80
+    '='  shift, and go to state 81
+    '+'  shift, and go to state 82
+    '-'  shift, and go to state 83
+    '*'  shift, and go to state 84
+    '/'  shift, and go to state 85
+    '@'  shift, and go to state 86
+    '.'  shift, and go to state 87
 
     LE        [reduce using rule 47 (let_expr)]
-    '.'       [reduce using rule 47 (let_expr)]
-    '@'       [reduce using rule 47 (let_expr)]
-    '*'       [reduce using rule 47 (let_expr)]
-    '/'       [reduce using rule 47 (let_expr)]
-    '+'       [reduce using rule 47 (let_expr)]
-    '-'       [reduce using rule 47 (let_expr)]
     '<'       [reduce using rule 47 (let_expr)]
     '='       [reduce using rule 47 (let_expr)]
+    '+'       [reduce using rule 47 (let_expr)]
+    '-'       [reduce using rule 47 (let_expr)]
+    '*'       [reduce using rule 47 (let_expr)]
+    '/'       [reduce using rule 47 (let_expr)]
+    '@'       [reduce using rule 47 (let_expr)]
+    '.'       [reduce using rule 47 (let_expr)]
     $default  reduce using rule 47 (let_expr)
 
 
@@ -2219,14 +2246,14 @@ state 148
    56 case_branch: OBJECTID ':' TYPEID DARROW expr .
 
     LE   shift, and go to state 79
-    '.'  shift, and go to state 80
-    '@'  shift, and go to state 81
-    '*'  shift, and go to state 82
-    '/'  shift, and go to state 83
-    '+'  shift, and go to state 84
-    '-'  shift, and go to state 85
-    '<'  shift, and go to state 86
-    '='  shift, and go to state 87
+    '<'  shift, and go to state 80
+    '='  shift, and go to state 81
+    '+'  shift, and go to state 82
+    '-'  shift, and go to state 83
+    '*'  shift, and go to state 84
+    '/'  shift, and go to state 85
+    '@'  shift, and go to state 86
+    '.'  shift, and go to state 87
 
     $default  reduce using rule 56 (case_branch)
 
